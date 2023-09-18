@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c88e76926c9a64b92874e628e03a83, type: 3}
+  m_Name: map01
+  m_EditorClassIdentifier: 
+  m_Texture: {fileID: 2800000, guid: 24cba67b5f3aa2b4686d9d2bbb150114, type: 3}
+  m_Padding: 1
+  m_MaxSize: 4096
+  m_PackingMethod: 0
+  m_DefaultPivot: 0
+  m_DefaultCustomPivot: {x: 0.5, y: 0.5}
+  m_Sprites:
+  - source: {fileID: 21300000, guid: 5d204841a9282724298c325669261106, type: 3}
+    targetSprite: {fileID: -2445046833844302995, guid: 24cba67b5f3aa2b4686d9d2bbb150114, type: 3}
+  - source: {fileID: 21300000, guid: 51b2105149baea94e92ae75e89ff8688, type: 3}
+    targetSprite: {fileID: 1488630510040575564, guid: 24cba67b5f3aa2b4686d9d2bbb150114, type: 3}
+  - source: {fileID: 21300000, guid: b9142939b57efdb42bafd73f062a9e13, type: 3}
+    targetSprite: {fileID: -7291860963136259663, guid: 24cba67b5f3aa2b4686d9d2bbb150114, type: 3}
+  - source: {fileID: 21300000, guid: c61e436d810afd741882b5fe18be013c, type: 3}
+    targetSprite: {fileID: 6095756487345178707, guid: 24cba67b5f3aa2b4686d9d2bbb150114, type: 3}
+  - source: {fileID: 21300000, guid: c6e715c2b6352a34c88dedc8efde9ea2, type: 3}
+    targetSprite: {fileID: -6495325478172621056, guid: 24cba67b5f3aa2b4686d9d2bbb150114, type: 3}
+  - source: {fileID: 21300000, guid: 3d765df531098e5409474ab4aaf2f644, type: 3}
+    targetSprite: {fileID: -7734275907098247957, guid: 24cba67b5f3aa2b4686d9d2bbb150114, type: 3}
+  m_PendingActions: []
