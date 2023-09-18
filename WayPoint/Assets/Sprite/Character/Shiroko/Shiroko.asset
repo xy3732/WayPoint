@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c88e76926c9a64b92874e628e03a83, type: 3}
+  m_Name: Shiroko
+  m_EditorClassIdentifier: 
+  m_Texture: {fileID: 2800000, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  m_Padding: 1
+  m_MaxSize: 4096
+  m_PackingMethod: 0
+  m_DefaultPivot: 0
+  m_DefaultCustomPivot: {x: 0.5, y: 0.5}
+  m_Sprites:
+  - source: {fileID: 21300000, guid: 2c8eb9ed4c97cc24092ca88a62b411c6, type: 3}
+    targetSprite: {fileID: 7476990878311286472, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: c2b5cd1cdd34eb644ac88032f5eb212d, type: 3}
+    targetSprite: {fileID: 3783082857687426236, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: 9bb4712b99b2df24f98e3cea401d2eb0, type: 3}
+    targetSprite: {fileID: -3614123973004852074, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: 36f47d121d52e9c4b85d17c8203db6a6, type: 3}
+    targetSprite: {fileID: -7101481778047331922, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: 67db63b568192ef4192416eb3b4611c6, type: 3}
+    targetSprite: {fileID: 1062266732052077063, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: 64c8e0a6572d6b94c828029323f0a5e6, type: 3}
+    targetSprite: {fileID: -3714124954151603835, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: 6cd985289e6d077438ab19025432a589, type: 3}
+    targetSprite: {fileID: 5033419068343208081, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: 1cab0f028be2b35428b34e5c58bacb2e, type: 3}
+    targetSprite: {fileID: 3027524053627479886, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: 91caa862deec32f4f9413d7e9b9ad15c, type: 3}
+    targetSprite: {fileID: 7651467932902002459, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: abf94a496704b074497147a8eefa7462, type: 3}
+    targetSprite: {fileID: 4816607484063533072, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: f6d62d78cb492cf42aa41460b7e581f5, type: 3}
+    targetSprite: {fileID: 3262998593502680889, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: fcf55789bd8b56349a28f381b5359ad0, type: 3}
+    targetSprite: {fileID: -209143576518600603, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: 2881dd2c55682af4ab9e7963dc954277, type: 3}
+    targetSprite: {fileID: -1749832810412010897, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  - source: {fileID: 21300000, guid: cc7ca8c8930fbd04da782b4d0640959d, type: 3}
+    targetSprite: {fileID: 8561296645812072517, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  m_PendingActions: []
