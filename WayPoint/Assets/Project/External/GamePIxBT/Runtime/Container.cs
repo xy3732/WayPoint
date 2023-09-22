@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Container 
 {
-    [HideInInspector] public Rigidbody2D rigidbody2D;
+    [HideInInspector] public Rigidbody2D rigid;
     [HideInInspector] public Transform transform;
 
     [HideInInspector] public bool isInrange = false;
@@ -20,7 +20,7 @@ public class Container
     {
         Container container = new Container();
 
-        container.rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        container.rigid = gameObject.GetComponent<Rigidbody2D>();
         container.transform = gameObject.GetComponent<Transform>();
 
         return container;

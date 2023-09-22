@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class BTContainer
 {
-    public Vector3 moveToPosition;
+    public Vector3 targetPosition;
 }

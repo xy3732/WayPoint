@@ -117,32 +117,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shadow00
+      name: wood_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 832c1bda1b50aa580800000000000000
-      internalID: -8815227059942866376
+      spriteID: 4330f5b9aeca34760800000000000000
+      internalID: 7440981132975211316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_6
+      name: leaf_22
       rect:
         serializedVersion: 2
         x: 0
-        y: 17
+        y: 33
         width: 16
         height: 16
       alignment: 9
@@ -150,20 +150,20 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: db268bfdbd3699160800000000000000
-      internalID: 7032762089118130877
+      spriteID: 44678119b5f54d060800000000000000
+      internalID: 6977306569584703044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_7
+      name: leaf_21
       rect:
         serializedVersion: 2
         x: 0
-        y: 34
+        y: 50
         width: 16
         height: 16
       alignment: 9
@@ -171,20 +171,20 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b26c69a3b81058a00800000000000000
-      internalID: 758013809776838187
+      spriteID: f4ae31115c85f5920800000000000000
+      internalID: 2981199081760877135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_8
+      name: leaf_20
       rect:
         serializedVersion: 2
         x: 0
-        y: 51
+        y: 67
         width: 16
         height: 16
       alignment: 9
@@ -192,20 +192,20 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1e289965b6e308690800000000000000
-      internalID: -7602007540266073375
+      spriteID: db03ed22ab5cb7f40800000000000000
+      internalID: 5727388754371293373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_9
+      name: leaf_19
       rect:
         serializedVersion: 2
         x: 0
-        y: 68
+        y: 84
         width: 16
         height: 16
       alignment: 9
@@ -213,20 +213,20 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 62cca29822e84c2a0800000000000000
-      internalID: -6718088465148621786
+      spriteID: 9dd52f37358952ef0800000000000000
+      internalID: -133533129742590503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_10
+      name: leaf_18
       rect:
         serializedVersion: 2
         x: 0
-        y: 85
+        y: 101
         width: 16
         height: 16
       alignment: 9
@@ -234,37 +234,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8e324e0737665ab00800000000000000
-      internalID: 839189551575737320
+      spriteID: 449466f18a73446c0800000000000000
+      internalID: -4160138960562665148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_11
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 102
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6d89718294d26700800000000000000
-      internalID: 532221431685680493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf_0
+      name: leaf_17
       rect:
         serializedVersion: 2
         x: 17
@@ -276,16 +255,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9cb4e5eb642db3050800000000000000
-      internalID: 5781445747943558089
+      spriteID: c5de05191e0807cd0800000000000000
+      internalID: -2562406481679815332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_1
+      name: leaf_23
       rect:
         serializedVersion: 2
         x: 17
@@ -297,16 +276,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7c9ba61795878cab0800000000000000
-      internalID: -4987604261762582073
+      spriteID: e290a9e619836f830800000000000000
+      internalID: 4104530307671787822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_2
+      name: leaf_16
       rect:
         serializedVersion: 2
         x: 17
@@ -318,16 +297,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cfafdfcacb32bb8f0800000000000000
-      internalID: -523785638395380996
+      spriteID: 1ad2fa27e5efab650800000000000000
+      internalID: 6249587114534448545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_3
+      name: leaf_14
       rect:
         serializedVersion: 2
         x: 17
@@ -339,16 +318,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 079f7481ae05dbe20800000000000000
-      internalID: 3367937062702938480
+      spriteID: 9852861bb51dfc9a0800000000000000
+      internalID: -6210515169372002935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_4
+      name: leaf_13
       rect:
         serializedVersion: 2
         x: 17
@@ -360,16 +339,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3481cf325360efdd0800000000000000
-      internalID: -2450514321936213949
+      spriteID: 1900cca5e79950640800000000000000
+      internalID: 5045607725506756753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_5
+      name: leaf_12
       rect:
         serializedVersion: 2
         x: 17
@@ -381,16 +360,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 40755ed18dcee5580800000000000000
-      internalID: -8836365005895674108
+      spriteID: 79c4ff4a42889e490800000000000000
+      internalID: -7716486795554239337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_6
+      name: leaf_11
       rect:
         serializedVersion: 2
         x: 17
@@ -402,73 +381,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c3c70a9df0f014a40800000000000000
-      internalID: 5350574393042959420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GlassDirt_5
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de7ff4948a2bbb740800000000000000
-      internalID: 5168921433192003565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf_7
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 17
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ce1d900991a29b00800000000000000
-      internalID: 833906559529328329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf_9
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 34
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5c8d003e25ca5b40800000000000000
-      internalID: 5429869102913915997
+      spriteID: 5c9747ba718ac2020800000000000000
+      internalID: 2318412727803214277
       vertices: []
       indices: 
       edges: []
@@ -478,7 +394,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 51
+        y: 0
         width: 16
         height: 16
       alignment: 9
@@ -486,7 +402,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 8562dd337612e09c0800000000000000
       internalID: -3959190295276607912
@@ -495,11 +411,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_11
+      name: leaf_9
       rect:
         serializedVersion: 2
         x: 34
-        y: 68
+        y: 17
         width: 16
         height: 16
       alignment: 9
@@ -507,73 +423,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5c9747ba718ac2020800000000000000
-      internalID: 2318412727803214277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf_12
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 85
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79c4ff4a42889e490800000000000000
-      internalID: -7716486795554239337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf_13
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 102
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1900cca5e79950640800000000000000
-      internalID: 5045607725506756753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf_14
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9852861bb51dfc9a0800000000000000
-      internalID: -6210515169372002935
+      spriteID: d5c8d003e25ca5b40800000000000000
+      internalID: 5429869102913915997
       vertices: []
       indices: 
       edges: []
@@ -582,6 +435,132 @@ TextureImporter:
       name: leaf_15
       rect:
         serializedVersion: 2
+        x: 34
+        y: 34
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3276e99a167bbc710800000000000000
+      internalID: 1714665713230047011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 51
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7b4c72e01d36010800000000000000
+      internalID: 1181017386028152738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf_24
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 68
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7538b7cf94b59a70800000000000000
+      internalID: 8833164842500633983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow01
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 85
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e50f6f6971d72b80800000000000000
+      internalID: -8419530658855057946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow15
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 102
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff085aaaa10b85cc0800000000000000
+      internalID: -3722031463443103489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow14
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87acea9c06ce17220800000000000000
+      internalID: 2482024770102545016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow13
+      rect:
+        serializedVersion: 2
         x: 51
         y: 17
         width: 16
@@ -591,16 +570,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3276e99a167bbc710800000000000000
-      internalID: 1714665713230047011
+      spriteID: 3f3709f1dea6ac000800000000000000
+      internalID: 56975511964906483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_16
+      name: shadow12
       rect:
         serializedVersion: 2
         x: 51
@@ -612,16 +591,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1ad2fa27e5efab650800000000000000
-      internalID: 6249587114534448545
+      spriteID: 7f17ab763549cb4d0800000000000000
+      internalID: -3117453756103757321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_17
+      name: shadow11
       rect:
         serializedVersion: 2
         x: 51
@@ -633,16 +612,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c5de05191e0807cd0800000000000000
-      internalID: -2562406481679815332
+      spriteID: 036e9986ac9218e20800000000000000
+      internalID: 3351005547055408688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_18
+      name: shadow10
       rect:
         serializedVersion: 2
         x: 51
@@ -654,16 +633,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 449466f18a73446c0800000000000000
-      internalID: -4160138960562665148
+      spriteID: 379447861dcbcd480800000000000000
+      internalID: -8873009558240081549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_19
+      name: shadow00
       rect:
         serializedVersion: 2
         x: 51
@@ -675,16 +654,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9dd52f37358952ef0800000000000000
-      internalID: -133533129742590503
+      spriteID: 832c1bda1b50aa580800000000000000
+      internalID: -8815227059942866376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_20
+      name: shadow09
       rect:
         serializedVersion: 2
         x: 51
@@ -696,16 +675,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: db03ed22ab5cb7f40800000000000000
-      internalID: 5727388754371293373
+      spriteID: bf6a9834caa69c1e0800000000000000
+      internalID: -2177091656756910341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_21
+      name: shadow07
       rect:
         serializedVersion: 2
         x: 68
@@ -717,16 +696,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f4ae31115c85f5920800000000000000
-      internalID: 2981199081760877135
+      spriteID: 2059d8e512d4d0a40800000000000000
+      internalID: 5336005939219502338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_8
+      name: shadow06
       rect:
         serializedVersion: 2
         x: 68
@@ -738,16 +717,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2a7b4c72e01d36010800000000000000
-      internalID: 1181017386028152738
+      spriteID: 28640e2a64d666970800000000000000
+      internalID: 8747799476361512578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_22
+      name: shadow05
       rect:
         serializedVersion: 2
         x: 68
@@ -759,16 +738,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 44678119b5f54d060800000000000000
-      internalID: 6977306569584703044
+      spriteID: 2a419633ff6a5bf90800000000000000
+      internalID: -6938456035884985182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_4
+      name: shadow04
       rect:
         serializedVersion: 2
         x: 68
@@ -780,16 +759,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f8596422ec6478120800000000000000
-      internalID: 2415977576259818895
+      spriteID: c13857d02717b9320800000000000000
+      internalID: 2565769147383644956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_2
+      name: shadow03
       rect:
         serializedVersion: 2
         x: 68
@@ -801,31 +780,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ca28dce88f4b6de80800000000000000
-      internalID: -8154131095666982228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadow01
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 85
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6e50f6f6971d72b80800000000000000
-      internalID: -8419530658855057946
+      spriteID: fe1d9a180048f13d0800000000000000
+      internalID: -3233720869718470161
       vertices: []
       indices: 
       edges: []
@@ -835,7 +793,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 68
-        y: 102
+        y: 85
         width: 16
         height: 16
       alignment: 9
@@ -843,7 +801,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 100256554e4a40470800000000000000
       internalID: 8359988108898672641
@@ -852,116 +810,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow03
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe1d9a180048f13d0800000000000000
-      internalID: -3233720869718470161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadow04
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 17
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c13857d02717b9320800000000000000
-      internalID: 2565769147383644956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadow05
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 34
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a419633ff6a5bf90800000000000000
-      internalID: -6938456035884985182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadow06
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 51
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28640e2a64d666970800000000000000
-      internalID: 8747799476361512578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadow07
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 68
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2059d8e512d4d0a40800000000000000
-      internalID: 5336005939219502338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: shadow08
       rect:
         serializedVersion: 2
-        x: 85
-        y: 85
+        x: 68
+        y: 102
         width: 16
         height: 16
       alignment: 9
@@ -969,7 +822,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 856d71811a8da5520800000000000000
       internalID: 2691701913712842328
@@ -978,31 +831,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow09
+      name: leaf_7
       rect:
         serializedVersion: 2
         x: 85
-        y: 102
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf6a9834caa69c1e0800000000000000
-      internalID: -2177091656756910341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadow10
-      rect:
-        serializedVersion: 2
-        x: 102
         y: 0
         width: 16
         height: 16
@@ -1011,19 +843,19 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 379447861dcbcd480800000000000000
-      internalID: -8873009558240081549
+      spriteID: 9ce1d900991a29b00800000000000000
+      internalID: 833906559529328329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow11
+      name: leaf_6
       rect:
         serializedVersion: 2
-        x: 102
+        x: 85
         y: 17
         width: 16
         height: 16
@@ -1032,16 +864,183 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 036e9986ac9218e20800000000000000
-      internalID: 3351005547055408688
+      spriteID: c3c70a9df0f014a40800000000000000
+      internalID: 5350574393042959420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow12
+      name: leaf_5
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 34
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40755ed18dcee5580800000000000000
+      internalID: -8836365005895674108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glass_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 51
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f71a52536d941f0800000000000000
+      internalID: -1060080713516089567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glass_0
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 68
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3d2b5ed10308920800000000000000
+      internalID: 2990443057539896228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 85
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 3}
+        - {x: -8, y: -6}
+        - {x: 7, y: -6}
+        - {x: 7, y: 3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07db3db1917982950800000000000000
+      internalID: 6424551002540850544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_6
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 102
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -7, y: 3}
+        - {x: -7, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70724c07a95624a0800000000000000
+      internalID: -6618504028374273924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_5
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3, y: 8}
+        - {x: -3, y: 3}
+        - {x: -8, y: 3}
+        - {x: -8, y: -6}
+        - {x: 3, y: -6}
+        - {x: 3, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8245c9b7c4d3d950800000000000000
+      internalID: 6472751043741827724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 17
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3, y: 8}
+        - {x: -3, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 3}
+        - {x: 3, y: 3}
+        - {x: 3, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577cd6f2eeef20ea0800000000000000
+      internalID: -5907879462205274251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glass_2
       rect:
         serializedVersion: 2
         x: 102
@@ -1053,16 +1052,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7f17ab763549cb4d0800000000000000
-      internalID: -3117453756103757321
+      spriteID: d560d4fb374a029f0800000000000000
+      internalID: -495215141973064099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow13
+      name: fence_3
       rect:
         serializedVersion: 2
         x: 102
@@ -1070,20 +1069,24 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: 8}
+        - {x: -3, y: -8}
+        - {x: 3, y: -8}
+        - {x: 3, y: 8}
+      tessellationDetail: 0
       bones: []
-      spriteID: 3f3709f1dea6ac000800000000000000
-      internalID: 56975511964906483
+      spriteID: 95399eb6553ff1f40800000000000000
+      internalID: 5701543201482576729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlassDirt_3
+      name: fence_1
       rect:
         serializedVersion: 2
         x: 102
@@ -1091,20 +1094,24 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -8, y: 3}
+        - {x: -8, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 3}
+      tessellationDetail: 0
       bones: []
-      spriteID: 8aa25c64698f52770800000000000000
-      internalID: 8585541588967828136
+      spriteID: 7319def29e9a371a0800000000000000
+      internalID: -6812914992284856009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow14
+      name: fence_0
       rect:
         serializedVersion: 2
         x: 102
@@ -1112,20 +1119,26 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: 3}
+        - {x: -3, y: -8}
+        - {x: 3, y: -8}
+        - {x: 3, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 3}
+      tessellationDetail: 0
       bones: []
-      spriteID: 87acea9c06ce17220800000000000000
-      internalID: 2482024770102545016
+      spriteID: e56daf9d8a5b64d80800000000000000
+      internalID: -8266720329175738786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow16
+      name: Dirt_4
       rect:
         serializedVersion: 2
         x: 102
@@ -1137,16 +1150,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8c9a453907b19a640800000000000000
-      internalID: 5091631024041142728
+      spriteID: b49694cd69123f0b0800000000000000
+      internalID: -5696172171868935861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_24
+      name: Dirt_3
       rect:
         serializedVersion: 2
         x: 119
@@ -1158,16 +1171,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f7538b7cf94b59a70800000000000000
-      internalID: 8833164842500633983
+      spriteID: b2218b504959de770800000000000000
+      internalID: 8641727722977497643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_0
+      name: Dirt_2
       rect:
         serializedVersion: 2
         x: 119
@@ -1179,10 +1192,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ab800d45692872d80800000000000000
-      internalID: -8275502208090371910
+      spriteID: d252c6218be604ee0800000000000000
+      internalID: -1278900557311105747
       vertices: []
       indices: 
       edges: []
@@ -1200,7 +1213,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: dca353df0b23b9310800000000000000
       internalID: 1412778643854539469
@@ -1209,7 +1222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_2
+      name: fence_2
       rect:
         serializedVersion: 2
         x: 119
@@ -1217,20 +1230,26 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -8, y: 3}
+        - {x: -8, y: -6}
+        - {x: -3, y: -6}
+        - {x: -3, y: -8}
+        - {x: 3, y: -8}
+        - {x: 3, y: 3}
+      tessellationDetail: 0
       bones: []
-      spriteID: d252c6218be604ee0800000000000000
-      internalID: -1278900557311105747
+      spriteID: b0a4a2f68b0341a00800000000000000
+      internalID: 726259008610650635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_3
+      name: Glass_3
       rect:
         serializedVersion: 2
         x: 119
@@ -1242,112 +1261,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b2218b504959de770800000000000000
-      internalID: 8641727722977497643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dirt_4
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 85
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b49694cd69123f0b0800000000000000
-      internalID: -5696172171868935861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Glass_0
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 102
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a3d2b5ed10308920800000000000000
-      internalID: 2990443057539896228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Glass_1
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12f71a52536d941f0800000000000000
-      internalID: -1060080713516089567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Glass_2
-      rect:
-        serializedVersion: 2
-        x: 153
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d560d4fb374a029f0800000000000000
-      internalID: -495215141973064099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Glass_3
-      rect:
-        serializedVersion: 2
-        x: 170
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: ecfd6bbfe1a763ae0800000000000000
       internalID: -1569933146601365554
@@ -1359,8 +1273,8 @@ TextureImporter:
       name: GlassDirt_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 0
+        x: 119
+        y: 85
         width: 16
         height: 16
       alignment: 9
@@ -1368,7 +1282,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 7279e9fa2ca016c00800000000000000
       internalID: 892006032482408231
@@ -1380,6 +1294,111 @@ TextureImporter:
       name: GlassDirt_1
       rect:
         serializedVersion: 2
+        x: 119
+        y: 102
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fcfd296b690e660800000000000000
+      internalID: 7413090697544191776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3481cf325360efdd0800000000000000
+      internalID: -2450514321936213949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079f7481ae05dbe20800000000000000
+      internalID: 3367937062702938480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfafdfcacb32bb8f0800000000000000
+      internalID: -523785638395380996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9ba61795878cab0800000000000000
+      internalID: -4987604261762582073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf_0
+      rect:
+        serializedVersion: 2
         x: 204
         y: 0
         width: 16
@@ -1389,16 +1408,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 02fcfd296b690e660800000000000000
-      internalID: 7413090697544191776
+      spriteID: 9cb4e5eb642db3050800000000000000
+      internalID: 5781445747943558089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow15
+      name: GlassDirt_11
       rect:
         serializedVersion: 2
         x: 221
@@ -1410,16 +1429,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ff085aaaa10b85cc0800000000000000
-      internalID: -3722031463443103489
+      spriteID: d6d89718294d26700800000000000000
+      internalID: 532221431685680493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf_23
+      name: GlassDirt_10
       rect:
         serializedVersion: 2
         x: 238
@@ -1431,10 +1450,220 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e290a9e619836f830800000000000000
-      internalID: 4104530307671787822
+      spriteID: 8e324e0737665ab00800000000000000
+      internalID: 839189551575737320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlassDirt_9
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 17
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62cca29822e84c2a0800000000000000
+      internalID: -6718088465148621786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlassDirt_8
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 34
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e289965b6e308690800000000000000
+      internalID: -7602007540266073375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlassDirt_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 51
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26c69a3b81058a00800000000000000
+      internalID: 758013809776838187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlassDirt_6
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 68
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db268bfdbd3699160800000000000000
+      internalID: 7032762089118130877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlassDirt_5
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 85
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7ff4948a2bbb740800000000000000
+      internalID: 5168921433192003565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlassDirt_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 102
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8596422ec6478120800000000000000
+      internalID: 2415977576259818895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlassDirt_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 17
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa25c64698f52770800000000000000
+      internalID: 8585541588967828136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlassDirt_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 17
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca28dce88f4b6de80800000000000000
+      internalID: -8154131095666982228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow16
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 17
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9a453907b19a640800000000000000
+      internalID: 5091631024041142728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dirt_0
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 17
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab800d45692872d80800000000000000
+      internalID: -8275502208090371910
       vertices: []
       indices: 
       edges: []
@@ -1456,9 +1685,9 @@ TextureImporter:
       Glass_3: -1569933146601365554
       GlassDirt_11: 532221431685680493
       GlassDirt_8: -7602007540266073375
-      leaf_4: -2450514321936213949
       leaf_11: 2318412727803214277
       shadow12: -3117453756103757321
+      fence_5: 6472751043741827724
       shadow05: -6938456035884985182
       leaf_1: -4987604261762582073
       GlassDirt_5: 5168921433192003565
@@ -1466,42 +1695,50 @@ TextureImporter:
       leaf_9: 5429869102913915997
       GlassDirt_6: 7032762089118130877
       leaf_5: -8836365005895674108
-      leaf_2: -523785638395380996
       leaf_16: 6249587114534448545
+      leaf_2: -523785638395380996
       leaf_10: -3959190295276607912
+      leaf_4: -2450514321936213949
       shadow11: 3351005547055408688
       Dirt_4: -5696172171868935861
       leaf_21: 2981199081760877135
-      shadow02: 8359988108898672641
       shadow03: -3233720869718470161
-      Dirt_1: 1412778643854539469
+      shadow02: 8359988108898672641
+      fence_1: -6812914992284856009
       leaf_7: 833906559529328329
-      GlassDirt_1: 7413090697544191776
+      fence_7: 6424551002540850544
       shadow01: -8419530658855057946
+      fence_4: -5907879462205274251
+      Dirt_1: 1412778643854539469
+      GlassDirt_1: 7413090697544191776
       GlassDirt_2: -8154131095666982228
       GlassDirt_4: 2415977576259818895
       shadow00: -8815227059942866376
+      fence_0: -8266720329175738786
       Dirt_3: 8641727722977497643
       leaf_6: 5350574393042959420
       shadow13: 56975511964906483
       shadow16: 5091631024041142728
+      wood_0: 7440981132975211316
       leaf_17: -2562406481679815332
       leaf_14: -6210515169372002935
-      shadow10: -8873009558240081549
+      fence_6: -6618504028374273924
       leaf_18: -4160138960562665148
       shadow14: 2482024770102545016
       shadow06: 8747799476361512578
+      shadow10: -8873009558240081549
       Glass_1: -1060080713516089567
       GlassDirt_7: 758013809776838187
       shadow04: 2565769147383644956
+      fence_3: 5701543201482576729
       GlassDirt_10: 839189551575737320
       leaf_3: 3367937062702938480
       Dirt_2: -1278900557311105747
       leaf_0: 5781445747943558089
-      leaf_12: -7716486795554239337
       leaf_20: 5727388754371293373
-      GlassDirt_9: -6718088465148621786
       leaf_23: 4104530307671787822
+      GlassDirt_9: -6718088465148621786
+      leaf_12: -7716486795554239337
       leaf_22: 6977306569584703044
       leaf_8: 1181017386028152738
       shadow15: -3722031463443103489
@@ -1511,6 +1748,7 @@ TextureImporter:
       shadow09: -2177091656756910341
       Glass_2: -495215141973064099
       GlassDirt_3: 8585541588967828136
+      fence_2: 726259008610650635
       leaf_24: 8833164842500633983
       leaf_19: -133533129742590503
   spritePackingTag: 

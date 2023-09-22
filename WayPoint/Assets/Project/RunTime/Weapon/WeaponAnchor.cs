@@ -13,7 +13,7 @@ public class WeaponAnchor : MonoBehaviour
 
     private void Awake()
     {
-        playerObject = GameObject.FindGameObjectWithTag("Player");
+        playerObject = Player.instance.gameObject;
         weaponObject = transform.GetChild(0).gameObject;
     }
 
@@ -35,12 +35,12 @@ public class WeaponAnchor : MonoBehaviour
             && transform.rotation.eulerAngles.z < 270)
         {
             weaponObject.transform.localScale = new Vector3(1, -1, 1);
-            Player.instance.Direction = FlipVector3.Left;
+            Player.instance.transform.localScale = FlipVector3.Left;
         }
         else
         {
             weaponObject.transform.localScale = new Vector3(1, 1, 1);
-            Player.instance.Direction = FlipVector3.Right;
+            Player.instance.transform.localScale = FlipVector3.Right;
         }
     }
 

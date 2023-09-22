@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using GamePix.CustomVector;
+
+[RequireComponent(typeof(PlayerInput))]
 public class Player : Singleton<Player>
 {
-    [HideInInspector] private Animator animator;
-    [HideInInspector] private Rigidbody2D rigid;
+    private Animator animator;
+    private Rigidbody2D rigid;
+    private PlayerInput playerInput;
+
+    private GameObject weaponObject;
+    [HideInInspector] public WeaponData weaponData;
 
     [HideInInspector] public Vector3 Direction = FlipVector3.Default;
 
@@ -14,38 +20,59 @@ public class Player : Singleton<Player>
 
     private void Awake()
     {
+        playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
+
+        weaponObject = GameObject.FindGameObjectWithTag("Weapon");
+        weaponData = weaponObject.GetComponent<WeaponData>();
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-        characterFlip();
-
-        FixedKeyInput();
+        playerInput.move = testMove;
+        playerInput.idle = AnimationSetIdle;
+        playerInput.shot = Shot;
+        playerInput.reload = Reload;
     }
 
-    // 키 INPUT [ FIXED 전용]
-    void FixedKeyInput()
+    private void Shot()
     {
-        Vector2 moveVelocity = Vector2.zero;
+        weaponData.Shot();
+    }
 
-        if (Input.GetKey(KeyCode.A)) moveVelocity = move(Vector3.left);
-        else if (Input.GetKey(KeyCode.D)) moveVelocity = move(Vector3.right);
-        else if (Input.GetKey(KeyCode.W)) moveVelocity = move(Vector3.up);
-        else if (Input.GetKey(KeyCode.S)) moveVelocity = move(Vector3.down);
-        else
+    private void Reload()
+    {
+        weaponData.doReload();
+    }
+
+    // 캐릭터 이동
+    private void testMove(Vector3 input)
+    {
+        Vector3 moveVelocity = move(input);
+
+        rigid.MovePosition(rigid.position + (Vector2)moveVelocity * moveSpeed * Time.smoothDeltaTime);
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("enemy"))
         {
-            animator.SetBool("isMove",false);
+            hit();
         }
-
-        rigid.MovePosition(rigid.position + moveVelocity * moveSpeed * Time.smoothDeltaTime);
     }
 
-    // 캐릭터 뒤집기
-    private void characterFlip()
+    private void hit()
     {
-        transform.localScale = Direction;
+        rigid.velocity = Vector2.zero;
+    }
+
+    // 에니메이션 IDLE 로 설정
+    private void AnimationSetIdle()
+    {
+        rigid.velocity = Vector2.zero;
+        animator.SetBool("isMove", false);
     }
 
     // 캐릭터 이동

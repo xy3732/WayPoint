@@ -31,8 +31,6 @@ public class BehaviourTreeRunner : MonoBehaviour
         var component = gameObject?.GetComponentInChildren<BTIRange>();
         component?.OnRunnerAwake(container);
 
-        Debug.Log(component);
-
         // 실행되면 트리 복사 해서 사용.
         tree = tree.Clone();
         tree.Bind(container);
