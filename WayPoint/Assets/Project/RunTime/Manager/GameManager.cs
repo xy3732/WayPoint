@@ -7,7 +7,9 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class GameManager : Singleton<GameManager>
 {
-    [HideInInspector] GameObject cameraObject;
+    private Pooling pooling;
+
+    private GameObject cameraObject;
 
     [HideInInspector] public Vector3 mousePos { get; set; }
 
@@ -16,7 +18,8 @@ public class GameManager : Singleton<GameManager>
         // 프레임 타겟
         Application.targetFrameRate = 122;
 
-        if (cameraObject == null) cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+        cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+        pooling = GetComponent<Pooling>();
     }
 
     private void Start()
@@ -28,9 +31,9 @@ public class GameManager : Singleton<GameManager>
 
     private void FixedUpdate()
     {
+        // 마우스 포지션 업데이트
         var screenPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         screenPos.z = 0;
-
         mousePos = screenPos;
     }
 }

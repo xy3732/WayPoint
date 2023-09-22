@@ -21,7 +21,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     public Port input;
     public Port output;
-    public NodeView(Node node) : base("Assets/GamePIxBT/USS/NodeView.uxml")
+    public NodeView(Node node) : base("Assets/Project/External/GamePIxBT/USS/NodeView.uxml")
     {
         this.node = node;
         this.title = node.name;

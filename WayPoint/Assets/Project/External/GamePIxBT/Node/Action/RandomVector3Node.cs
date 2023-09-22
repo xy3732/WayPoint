@@ -19,9 +19,9 @@ public class RandomVector3Node : ActionNode
 
     protected override State OnUpdate()
     {
-        btContainer.moveToPosition.x = Random.Range(min.x, max.x);
-        btContainer.moveToPosition.y = Random.Range(min.y, max.y);
-        btContainer.moveToPosition.z = Random.Range(min.z, max.z);
+        btContainer.targetPosition.x = Random.Range(min.x, max.x);
+        btContainer.targetPosition.y = Random.Range(min.y, max.y);
+        btContainer.targetPosition.z = Random.Range(min.z, max.z);
 
         return State.Success;
     }

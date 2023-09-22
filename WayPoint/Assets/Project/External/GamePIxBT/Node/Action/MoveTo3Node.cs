@@ -26,13 +26,13 @@ public class MoveTo3Node : ActionNode
         Vector3 dir;
         Quaternion lookTarget;
 
-        dir = btContainer.moveToPosition - container.transform.position;
+        dir = btContainer.targetPosition - container.transform.position;
         lookTarget = Quaternion.LookRotation(dir);
 
         container.transform.position += dir.normalized * Time.deltaTime * speed;
         container.transform.rotation = Quaternion.Lerp(container.transform.rotation, lookTarget, 0.25f);
 
-        if((container.transform.position - btContainer.moveToPosition).magnitude < 1f)
+        if((container.transform.position - btContainer.targetPosition).magnitude < 1f)
         {
             return State.Success;
         }

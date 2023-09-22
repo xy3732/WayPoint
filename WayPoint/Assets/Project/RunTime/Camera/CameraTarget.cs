@@ -5,19 +5,16 @@ using UnityEngine;
 public class CameraTarget : MonoBehaviour
 {
     [SerializeField] private float threshold;
+    [SerializeField] private float centerAncor = 0.5f;
 
     private void FixedUpdate()
     {
         Transform player = Player.instance.transform;
         Vector3 mousePos = GameManager.instance.mousePos;
 
-        Vector3 targetPos = (mousePos);
+        mousePos.x = Mathf.Clamp(mousePos.x, -threshold + player.position.x, threshold + player.position.x);
+        mousePos.y = Mathf.Clamp(mousePos.y, -threshold + player.position.y + centerAncor, threshold + player.position.y+ centerAncor);
 
-        targetPos.x = Mathf.Clamp(targetPos.x, -threshold + player.position.x, threshold + player.position.x);
-        targetPos.y = Mathf.Clamp(targetPos.y, -threshold + player.position.y, threshold + player.position.y);
-
-        transform.position = Vector3.Lerp(transform.localPosition, targetPos, Time.deltaTime * 3);
-        //transform.position += targetPos;
-
+        transform.position = Vector3.Lerp(transform.localPosition, mousePos, Time.deltaTime * 3);
     }
 }
