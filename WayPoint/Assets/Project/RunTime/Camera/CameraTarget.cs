@@ -7,7 +7,7 @@ public class CameraTarget : MonoBehaviour
     [SerializeField] private float threshold;
     [SerializeField] private float centerAncor = 0.5f;
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         Transform player = Player.instance.transform;
         Vector3 mousePos = GameManager.instance.mousePos;

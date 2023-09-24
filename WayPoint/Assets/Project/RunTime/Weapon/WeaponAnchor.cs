@@ -21,7 +21,7 @@ public class WeaponAnchor : MonoBehaviour
     {
         AnchorPlayer();
         MouseLookUp();
-        flipWeapon();
+        flip();
     }
 
     private void AnchorPlayer()
@@ -29,18 +29,18 @@ public class WeaponAnchor : MonoBehaviour
         transform.position = playerObject.transform.position + anchor;
     }
 
-    private void flipWeapon()
+    private void flip()
     {
         if (transform.rotation.eulerAngles.z > 90 
             && transform.rotation.eulerAngles.z < 270)
         {
             weaponObject.transform.localScale = new Vector3(1, -1, 1);
-            Player.instance.transform.localScale = FlipVector3.Left;
+            Player.instance.FlipSprite(FlipVector3.Left);
         }
         else
         {
             weaponObject.transform.localScale = new Vector3(1, 1, 1);
-            Player.instance.transform.localScale = FlipVector3.Right;
+            Player.instance.FlipSprite(FlipVector3.Right);
         }
     }
 

@@ -21,10 +21,10 @@ public class WeaponData : Singleton<WeaponData>
         isReload = false;
         maxReload = 4f;
 
-        maxClip = 31;
+        maxClip = 30;
         curClip = maxClip;
 
-        shotMaxDelay = 0.1f;
+        shotMaxDelay = 0.2f;
     }
 
     private void Start()

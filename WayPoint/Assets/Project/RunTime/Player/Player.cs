@@ -30,10 +30,22 @@ public class Player : Singleton<Player>
 
     private void Start()
     {
-        playerInput.move = testMove;
+        playerInput.move = MoveTo;
         playerInput.idle = AnimationSetIdle;
         playerInput.shot = Shot;
         playerInput.reload = Reload;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("enemy"))
+        {
+            hit();
+        }
+    }
+
+    public void FlipSprite(Vector3 flip)
+    {
+        transform.localScale = flip;
     }
 
     private void Shot()
@@ -47,20 +59,12 @@ public class Player : Singleton<Player>
     }
 
     // 캐릭터 이동
-    private void testMove(Vector3 input)
+    private void MoveTo(Vector3 input)
     {
         Vector3 moveVelocity = move(input);
 
         rigid.MovePosition(rigid.position + (Vector2)moveVelocity * moveSpeed * Time.smoothDeltaTime);
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.CompareTag("enemy"))
-        {
-            hit();
-        }
     }
 
     private void hit()

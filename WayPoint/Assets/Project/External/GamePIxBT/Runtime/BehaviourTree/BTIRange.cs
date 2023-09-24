@@ -14,19 +14,20 @@ public class BTIRange : MonoBehaviour
         this.container = container;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (container == null) return;
 
-        container.isStopMove = true;
-        container.isInrange = true;
+        if(other.CompareTag("Bullet"))
+        {
+            container.Hp -= 1;
+        }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (container == null) return;
 
-        container.isStopMove = false;
-        container.isInrange = false;
+        container.stopVelocity = true;
     }
 }

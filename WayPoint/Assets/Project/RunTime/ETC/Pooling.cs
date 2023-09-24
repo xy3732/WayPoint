@@ -24,9 +24,10 @@ public class Pooling : Singleton<Pooling>
         if (pool.Count > 0) getObject = pool.Dequeue();
         else getObject = CreateObjects(enemyPool, gameObject);
 
-        getObject.gameObject.SetActive(true);
+        getObject.SetActive(true);
         getObject.transform.position = transform.position;
 
+        Debug.Log($"{getObject.name}", getObject);
         return getObject;
     }
 
