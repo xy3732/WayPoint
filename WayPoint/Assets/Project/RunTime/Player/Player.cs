@@ -10,13 +10,16 @@ public class Player : Singleton<Player>
     private Animator animator;
     private Rigidbody2D rigid;
     private PlayerInput playerInput;
-
+    
     private GameObject weaponObject;
+
     [HideInInspector] public WeaponData weaponData;
 
     [HideInInspector] public Vector3 Direction = FlipVector3.Default;
 
-    public float moveSpeed;
+    [HideInInspector] public float moveSpeed;
+
+    public PlayerSO playerDataSO;
 
     private void Awake()
     {
@@ -30,6 +33,8 @@ public class Player : Singleton<Player>
 
     private void Start()
     {
+        init();
+
         playerInput.move = MoveTo;
         playerInput.idle = AnimationSetIdle;
         playerInput.shot = Shot;
@@ -41,6 +46,13 @@ public class Player : Singleton<Player>
         {
             hit();
         }
+    }
+
+    public void init()
+    {
+        animator.runtimeAnimatorController = playerDataSO.animator;
+        moveSpeed = playerDataSO.speed;
+        weaponSprites.instance.set(playerDataSO);
     }
 
     public void FlipSprite(Vector3 flip)
