@@ -17,12 +17,14 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
     [field: SerializeField] private Color32 normalColor { get; set; }
 
     private Image image;
+    private GameObject mainSkillSprite;
     private RectTransform rect;
 
     private void Awake()
     {
         image = GetComponent<Image>();
         rect = GetComponent<RectTransform>();
+        mainSkillSprite = transform.GetChild(0).gameObject;
     }
 
     private void OnEnable()
@@ -41,7 +43,7 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        image.color = hoverColor;
+        image.color = normalColor;
         image.sprite = selectedImage;
 
         rect.DOScale(new Vector3(1.05f, 1.05f, 1.05f),0.15f).SetEase(Ease.OutBack).SetUpdate(true);
