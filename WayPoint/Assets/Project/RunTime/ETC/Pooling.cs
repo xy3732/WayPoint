@@ -30,6 +30,19 @@ public class Pooling : Singleton<Pooling>
         return getObject;
     }
 
+    public GameObject getObject(ref Queue<GameObject> pool, GameObject parent, GameObject gameObject)
+    {
+        GameObject getObject;
+
+        if (pool.Count > 0) getObject = pool.Dequeue();
+        else getObject = CreateObjects(enemyPool, gameObject);
+
+        getObject.SetActive(true);
+        getObject.transform.SetParent(parent.transform);
+
+        return getObject;
+    }
+
     //Instantiate() 대신해서 사용
     public GameObject getObject(ref Queue<GameObject> pool,Transform transform)
     {

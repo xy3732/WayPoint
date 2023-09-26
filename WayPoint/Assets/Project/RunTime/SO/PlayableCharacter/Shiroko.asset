@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <animator>k__BackingField: {fileID: 9100000, guid: 7488d7c3bc4e06f4c840be80814dfc92, type: 2}
   <speed>k__BackingField: 13
+  <hp>k__BackingField: 0
   <weapon>k__BackingField: {fileID: 3262998593502680889, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
   <leftHand>k__BackingField: {fileID: -1749832810412010897, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
   <rightHand>k__BackingField: {fileID: 8561296645812072517, guid: 04a4955771bfa344c98fef64ccdeeeff, type: 3}
+  <abilitySelectAble>k__BackingField: 3

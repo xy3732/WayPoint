@@ -50,6 +50,8 @@ public class GameManager : Singleton<GameManager>
             spawnLevel = spawnManager.spawnSlot.Length - 1;
         }
 
+        if (Input.GetKeyDown(KeyCode.F1)) abilitySelector.instance.createButton();
+
     }
 
     private void FixedUpdate()

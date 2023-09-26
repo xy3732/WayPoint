@@ -25,10 +25,18 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
         rect = GetComponent<RectTransform>();
     }
 
+    private void OnEnable()
+    {
+        image.color = normalColor;
+        image.sprite = normalImage; 
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         image.color = clickCOlor;
         image.sprite = selectedImage;
+
+        abilitySelector.instance.deleteButton();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -36,7 +44,7 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
         image.color = hoverColor;
         image.sprite = selectedImage;
 
-        rect.DOScale(new Vector3(1.05f, 1.05f, 1.05f),0.15f).SetEase(Ease.OutBack);
+        rect.DOScale(new Vector3(1.05f, 1.05f, 1.05f),0.15f).SetEase(Ease.OutBack).SetUpdate(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -44,6 +52,6 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
         image.color = normalColor;
         image.sprite = normalImage;
 
-        rect.DOScale(new Vector3(1,1,1), 0.15f).SetEase(Ease.OutBack);
+        rect.DOScale(new Vector3(1,1,1), 0.15f).SetEase(Ease.OutBack).SetUpdate(true);
     }
 }

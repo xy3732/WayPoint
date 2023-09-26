@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <prefab>k__BackingField: {fileID: 3582241701567298393, guid: 71604410f97d394469da8dd2555d0d42, type: 3}
   <spawnDelay>k__BackingField: 2
-  <hp>k__BackingField: 5
+  <hp>k__BackingField: 7
   <damage>k__BackingField: 0
   <exp>k__BackingField: 12

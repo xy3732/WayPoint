@@ -19,21 +19,25 @@ public class Player : Singleton<Player>
 
     public PlayerSO playerDataSO;
     [HideInInspector] public PlayerData playerData = new PlayerData();
+    [HideInInspector] public BuffData buff { get; set; }
 
     private void Awake()
     {
+        buff = new BuffData();
+        buff.init();
+
         playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
 
         weaponObject = GameObject.FindGameObjectWithTag("Weapon");
         weaponData = weaponObject.GetComponent<WeaponData>();
+
+        init();
     }
 
     private void Start()
     {
-        init();
-
         playerInput.move = MoveTo;
         playerInput.idle = AnimationSetIdle;
         playerInput.shot = Shot;
@@ -92,6 +96,8 @@ public class Player : Singleton<Player>
 
             UImanager.instance.levelTextUI(playerData.level);
             UImanager.instance.expBarUI(playerData.exp, playerData.maxExp);
+
+            abilitySelector.instance.createButton();
         }
     }
 
@@ -139,13 +145,31 @@ public class PlayerData
     public float maxExp { get; set; }
     public int level { get; set; }
 
+    public int abilitySelectAble { get; set; }
+
     public void set(PlayerSO data)
     {
         speed = data.speed;
         hp = data.hp;
+        abilitySelectAble = data.abilitySelectAble;
 
         level = 1;
         exp = 0;
         maxExp = 100;
     }
 }
+
+public class BuffData
+{
+    public float reload { get; set; }
+    public float speed { get; set; }
+    public float damage {get; set;}
+
+    public void init()
+    {
+        reload = 1;
+        speed = 1;
+        damage = 1;
+    }
+}
+

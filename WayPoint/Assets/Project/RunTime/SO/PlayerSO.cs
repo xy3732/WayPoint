@@ -16,4 +16,8 @@ public class PlayerSO : ScriptableObject
     [field: SerializeField] public Sprite leftHand { get; set; }
 
     [field: SerializeField] public Sprite rightHand { get; set; }
+
+    [field: Space(20)]
+
+    [field: SerializeField] public int abilitySelectAble { get; set; }
 }
