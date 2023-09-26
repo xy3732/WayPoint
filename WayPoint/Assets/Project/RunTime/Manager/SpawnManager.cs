@@ -24,7 +24,7 @@ public class SpawnManager :Singleton<SpawnManager>
         if (spawnTimer >= spawnSlot[GameManager.instance.spawnLevel].enemySO.spawnDelay)
         {
             spawnTimer = 0f;
-            Spawn();
+            //Spawn();
         }
 
         if (Input.GetKeyDown(KeyCode.F1)) Spawn();

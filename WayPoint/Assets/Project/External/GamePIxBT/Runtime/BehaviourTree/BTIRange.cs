@@ -5,6 +5,7 @@ using UnityEngine;
 public class BTIRange : MonoBehaviour
 {
     [HideInInspector] public Container container;
+    [HideInInspector] private BehaviourTreeRunner thisObject;
 
     // BehaviourTree 시작되면 불러와서 실행
     // awkae, Start로 container를 불러올려고 하니 OntringerEnter가 먼저 실행 된다.
@@ -12,6 +13,8 @@ public class BTIRange : MonoBehaviour
     public void OnRunnerAwake(Container container)
     {
         this.container = container;
+
+        thisObject = transform.GetComponentInParent<BehaviourTreeRunner>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,7 +23,8 @@ public class BTIRange : MonoBehaviour
 
         if(other.CompareTag("Bullet"))
         {
-            container.Hp -= 1;
+            var bullet = other.GetComponent<Bullet>();
+            thisObject.hit(bullet.dmamage);
         }
     }
 

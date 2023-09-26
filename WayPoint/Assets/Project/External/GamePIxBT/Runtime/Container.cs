@@ -19,7 +19,7 @@ public class Container
     [HideInInspector] public ScriptSequenceNode scriptSequence;
 
     //Enemy Only
-    [HideInInspector] public int Hp { get; set; }
+    [HideInInspector] public float Hp { get; set; }
 
     public static Container CreateFromGameObject(GameObject gameObject)
     {

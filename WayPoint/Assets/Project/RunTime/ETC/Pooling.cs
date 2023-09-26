@@ -27,7 +27,6 @@ public class Pooling : Singleton<Pooling>
         getObject.SetActive(true);
         getObject.transform.position = transform.position;
 
-        Debug.Log($"{getObject.name}", getObject);
         return getObject;
     }
 

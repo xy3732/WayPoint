@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
 
     float limt = 0;
 
+    [HideInInspector]public float dmamage = 1;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();

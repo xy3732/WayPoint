@@ -32,8 +32,22 @@ public class BehaviourTreeRunner : MonoBehaviour
         // tree가 없으면 취소
         if (!tree) return;
 
-        if (container.Hp <= 0) pool.setObject(ref pool.enemyPool, gameObject);
         tree.Update();
+    }
+
+    public void hit(float damage)
+    {
+        container.Hp -= damage;
+
+        isDie();
+    }
+    public void isDie()
+    {
+        if(container.Hp <= 0)
+        {
+            Player.instance.getExp(so.exp);
+            pool.setObject(ref pool.enemyPool, gameObject);
+        }
     }
 
     private void bindTree()

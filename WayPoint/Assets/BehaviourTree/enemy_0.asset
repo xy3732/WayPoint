@@ -37,7 +37,7 @@ MonoBehaviour:
   state: 0
   started: 1
   guid: 09d8dbae1f4c49b4a99381ca92598952
-  position: {x: -79, y: 619}
+  position: {x: 79.00001, y: 620.3225}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -59,7 +59,7 @@ MonoBehaviour:
   state: 2
   started: 0
   guid: cd7150628df4f6441bfe8f253599cbbf
-  position: {x: -237.00002, y: 619.05005}
+  position: {x: -79, y: 620.3225}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -127,7 +127,7 @@ MonoBehaviour:
   state: 0
   started: 1
   guid: ef24d5830a6d4e543901f9cd96886557
-  position: {x: -158, y: 458}
+  position: {x: 0, y: 459.3225}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -175,7 +175,7 @@ MonoBehaviour:
   state: 0
   started: 1
   guid: 66781ecae669aa54bb324eba21efdd09
-  position: {x: 158.00003, y: 457.99997}
+  position: {x: 316, y: 459.3225}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 

@@ -10,16 +10,15 @@ public class Player : Singleton<Player>
     private Animator animator;
     private Rigidbody2D rigid;
     private PlayerInput playerInput;
-    
+
     private GameObject weaponObject;
 
     [HideInInspector] public WeaponData weaponData;
 
     [HideInInspector] public Vector3 Direction = FlipVector3.Default;
 
-    [HideInInspector] public float moveSpeed;
-
     public PlayerSO playerDataSO;
+    [HideInInspector] public PlayerData playerData = new PlayerData();
 
     private void Awake()
     {
@@ -48,26 +47,52 @@ public class Player : Singleton<Player>
         }
     }
 
+    // 이니시에이터
     public void init()
     {
+        playerData.set(playerDataSO);
+
         animator.runtimeAnimatorController = playerDataSO.animator;
-        moveSpeed = playerDataSO.speed;
         weaponSprites.instance.set(playerDataSO);
     }
 
+    // 스프라이트 플립
     public void FlipSprite(Vector3 flip)
     {
         transform.localScale = flip;
     }
 
+    // 발사
     private void Shot()
     {
         weaponData.Shot();
     }
 
+    // 재장전
     private void Reload()
     {
         weaponData.doReload();
+    }
+
+    public void getExp(float exp)
+    {
+        playerData.exp += exp;
+
+        UImanager.instance.expBarUI(playerData.exp, playerData.maxExp);
+
+        levelUp();
+    }
+
+    public void levelUp()
+    {
+        if(playerData.exp >= playerData.maxExp)
+        {
+            playerData.level++;
+            playerData.exp = 0;
+
+            UImanager.instance.levelTextUI(playerData.level);
+            UImanager.instance.expBarUI(playerData.exp, playerData.maxExp);
+        }
     }
 
     // 캐릭터 이동
@@ -75,10 +100,11 @@ public class Player : Singleton<Player>
     {
         Vector3 moveVelocity = move(input);
 
-        rigid.MovePosition(rigid.position + (Vector2)moveVelocity * moveSpeed * Time.smoothDeltaTime);
+        rigid.MovePosition(rigid.position + (Vector2)moveVelocity * playerData.speed * Time.smoothDeltaTime);
 
     }
 
+    // 피격시
     private void hit()
     {
         rigid.velocity = Vector2.zero;
@@ -100,5 +126,26 @@ public class Player : Singleton<Player>
         if (Input.GetKey(KeyCode.W)) velocity = (velocity + Vector3.up).normalized;
 
         return velocity;
+    }
+
+}
+
+public class PlayerData
+{
+    public float speed { get; set; }
+    public float hp { get; set; }
+
+    public float exp { get; set; }
+    public float maxExp { get; set; }
+    public int level { get; set; }
+
+    public void set(PlayerSO data)
+    {
+        speed = data.speed;
+        hp = data.hp;
+
+        level = 1;
+        exp = 0;
+        maxExp = 100;
     }
 }

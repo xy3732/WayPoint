@@ -7,6 +7,7 @@ public class PlayerSO : ScriptableObject
 {
     [field: SerializeField] public RuntimeAnimatorController animator { get; set; }
     [field: SerializeField] public float speed { get; set; }
+    [field: SerializeField] public float hp { get; set; }
 
     [field: Space(20)]
 
