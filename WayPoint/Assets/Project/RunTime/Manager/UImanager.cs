@@ -10,13 +10,39 @@ public class UImanager : Singleton<UImanager>
     [field: SerializeField] private TextMeshProUGUI weaponClipText { get; set; }
 
     [field: SerializeField] private Image clipBar { get; set; }
+    
+    [field: Space(20)]
+    [field: SerializeField] private Image characterBoard { get; set; }
+    [field: SerializeField] private Image character { get; set; }
+    [field: SerializeField] private Image hpBar { get; set; }
+    [field: SerializeField] private Image spBar { get; set; }
+    
     [field: Space(20)]
     [field: SerializeField] private TextMeshProUGUI levelText { get; set; }
     [field: SerializeField] private Image expBar { get; set; }
+
+    private Player player;
     private void Start()
     {
         WeaponUpdateUI(Player.instance.weaponData.curClip, Player.instance.weaponData.maxClip);
         expBarUI(Player.instance.playerData.exp, Player.instance.playerData.maxExp);
+
+        player = Player.instance;
+    }
+
+    public void characterHitUI()
+    {
+        character.sprite = player.playerDataSO.hitStateSprite;
+
+        character.gameObject.transform.DOShakePosition(1f,2f);
+        characterBoard.gameObject.transform.DOShakePosition(1f, 2f);
+
+        Invoke("characterNormalUI", 0.5f);
+    }
+
+    private void characterNormalUI()
+    {
+        character.sprite = player.playerDataSO.normalStateSprite;
     }
 
     public void WeaponUpdateUI(int curClip, int maxClip)

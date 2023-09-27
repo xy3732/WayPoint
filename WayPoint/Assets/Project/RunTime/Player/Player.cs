@@ -36,13 +36,12 @@ public class Player : Singleton<Player>
         playerInput.idle = AnimationSetIdle;
         playerInput.shot = Shot;
         playerInput.reload = Reload;
+        playerInput.hit = hit;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void Update()
     {
-        if (other.gameObject.CompareTag("enemy"))
-        {
-            hit();
-        }
+        curHit += Time.deltaTime;    
     }
 
     // 이니시에이터
@@ -66,11 +65,6 @@ public class Player : Singleton<Player>
     public void addAbility(AbilitySO ability)
     {
         abilitys.Add(ability);
-    }
-
-    public void setAbilitys()
-    {
- 
     }
 
     // 스프라이트 플립
@@ -124,9 +118,15 @@ public class Player : Singleton<Player>
     }
 
     // 피격시
+    private float curHit = 0f;
     private void hit()
     {
-        rigid.velocity = Vector2.zero;
+        if (curHit < playerData.invicivMax) return;
+        curHit = 0;
+
+        UImanager.instance.characterHitUI();
+
+        rigid.velocity = Vector2.zero;  
     }
 
     // 에니메이션 IDLE 로 설정
@@ -152,20 +152,30 @@ public class Player : Singleton<Player>
 public class PlayerData
 {
     public float speed { get; set; }
+    public float maxHp { get; set; }
     public float hp { get; set; }
-
+    public float sp { get; set; }
     public float exp { get; set; }
     public float maxExp { get; set; }
-    public int level { get; set; }
+    public float maxSp { get; set; }
+    public float invicivMax { get; set; }
 
+    public int level { get; set; }
     public int abilitySelectAble { get; set; }
 
     public void set(PlayerSO data)
     {
         speed = data.speed;
-        hp = data.hp;
+
+        maxHp = data.maxHp;
+        hp = maxHp;
+
+        maxSp = data.maxSp;
+        sp = 0;
+
         abilitySelectAble = data.abilitySelectAble;
 
+        invicivMax = 0.2f;
         level = 1;
         exp = 0;
         maxExp = 100;
@@ -183,9 +193,10 @@ public class BuffData
     {
         reload = 1;
         speed = 1;
-        shotDelay = 0;
 
+        shotDelay = 0;
         damage = 0;
+        
     }
 }
 
