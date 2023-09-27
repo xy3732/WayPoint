@@ -16,6 +16,8 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector] public float timer { get; set; }
     [HideInInspector] public int spawnLevel { get; set; }
 
+    [field: SerializeField] public AbilitySO[] abilitys { get; set; }
+
     private void Awake()
     {
         // «¡∑π¿” ≈∏∞Ÿ

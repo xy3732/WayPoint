@@ -21,6 +21,11 @@ public class BTIRange : MonoBehaviour
     {
         if (container == null) return;
 
+        if(other.CompareTag("map"))
+        {
+            container.stopVelocity = true;
+        }
+
         if(other.CompareTag("Bullet"))
         {
             var bullet = other.GetComponent<Bullet>();

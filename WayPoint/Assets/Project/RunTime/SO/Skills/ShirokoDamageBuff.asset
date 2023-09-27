@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abbceaa762f70c4ab0b15ac1594ed1d, type: 3}
   m_Name: ShirokoDamageBuff
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 0
+  <character>k__BackingField: "\uC2DC\uB85C\uCF54"
   <type>k__BackingField: 1
-  <abilitySprite>k__BackingField: {fileID: 0}
+  <abilitySprite>k__BackingField: {fileID: 21300000, guid: 0c537900d873b0445b16c25cf7e78066, type: 3}
   <color>k__BackingField:
     serializedVersion: 2
     rgba: 4283001599
-  <buffAmount>k__BackingField: 1
+  <mainText>k__BackingField: "\uC57D\uC810 \uC0AC\uACA9"
+  <level>k__BackingField: 0
+  <buffAmount>k__BackingField:
+  - 0
+  - 1
+  - 1
+  - 2
+  - 4
+  - 10

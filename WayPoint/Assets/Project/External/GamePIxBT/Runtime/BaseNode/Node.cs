@@ -14,7 +14,7 @@ public abstract class Node : ScriptableObject
     // 기본 State는 Running으로 설정
     [HideInInspector] public State state = State.Running;
     [HideInInspector] public bool started = false;
-    public string guid;
+    public string guid { get; set; }
     [HideInInspector] public Vector2 position;
     [HideInInspector] public BTContainer btContainer;
     [HideInInspector] public Container container;

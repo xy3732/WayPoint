@@ -18,6 +18,7 @@ public class Player : Singleton<Player>
     [HideInInspector] public Vector3 Direction = FlipVector3.Default;
 
     public PlayerSO playerDataSO;
+    [field: SerializeField] public List<AbilitySO> abilitys { get; set; }
     [HideInInspector] public PlayerData playerData = new PlayerData();
     [HideInInspector] public BuffData buff { get; set; }
 
@@ -25,13 +26,6 @@ public class Player : Singleton<Player>
     {
         buff = new BuffData();
         buff.init();
-
-        playerInput = GetComponent<PlayerInput>();
-        animator = GetComponent<Animator>();
-        rigid = GetComponent<Rigidbody2D>();
-
-        weaponObject = GameObject.FindGameObjectWithTag("Weapon");
-        weaponData = weaponObject.GetComponent<WeaponData>();
 
         init();
     }
@@ -52,12 +46,31 @@ public class Player : Singleton<Player>
     }
 
     // 이니시에이터
-    public void init()
+    private void init()
     {
+        abilitys = new List<AbilitySO>();
+
+        playerInput = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
+
+        weaponObject = GameObject.FindGameObjectWithTag("Weapon");
+        weaponData = weaponObject.GetComponent<WeaponData>();
+
         playerData.set(playerDataSO);
 
         animator.runtimeAnimatorController = playerDataSO.animator;
         weaponSprites.instance.set(playerDataSO);
+    }
+
+    public void addAbility(AbilitySO ability)
+    {
+        abilitys.Add(ability);
+    }
+
+    public void setAbilitys()
+    {
+ 
     }
 
     // 스프라이트 플립
@@ -69,7 +82,7 @@ public class Player : Singleton<Player>
     // 발사
     private void Shot()
     {
-        weaponData.Shot();
+        weaponData.Shot(buff.shotDelay);
     }
 
     // 재장전
@@ -162,6 +175,7 @@ public class PlayerData
 public class BuffData
 {
     public float reload { get; set; }
+    public float shotDelay { get; set; }
     public float speed { get; set; }
     public float damage {get; set;}
 
@@ -169,7 +183,9 @@ public class BuffData
     {
         reload = 1;
         speed = 1;
-        damage = 1;
+        shotDelay = 0;
+
+        damage = 0;
     }
 }
 
