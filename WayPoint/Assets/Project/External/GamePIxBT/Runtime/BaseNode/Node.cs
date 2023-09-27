@@ -24,6 +24,7 @@ public abstract class Node : ScriptableObject
     public bool alreadySelected = false;
     // Script Only
     [HideInInspector] public int selectNode = 0;
+
     public State Update()
     {
         // 해당 노드가 처음 실행 될떄 Onstart를 실행

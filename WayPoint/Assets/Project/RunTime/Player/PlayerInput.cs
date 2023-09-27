@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     public Action idle { get; set; }
     public Action shot { get; set; }
     public Action reload { get; set; }
+    public Action hit { get; set; }
 
     [HideInInspector] public bool onClickLeft { get; set; }
 
@@ -24,6 +25,14 @@ public class PlayerInput : MonoBehaviour
 
         // 키보드 R
         GetReloadWeapon();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("enemy"))
+        {
+            hit?.Invoke();
+        }
     }
 
     // 캐릭터 이동 처리 
