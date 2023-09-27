@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RepeatNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: 4f425c90565d8ea4f89b84d381dce44b
   position: {x: 0, y: 140.36}
   btContainer:
@@ -21,7 +21,7 @@ MonoBehaviour:
   description: 
   alreadySelected: 0
   selectNode: 0
-  child: {fileID: 3865561724676830250}
+  child: {fileID: 4324994524373069013}
 --- !u!114 &-5151599835348536521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,15 +35,15 @@ MonoBehaviour:
   m_Name: MoveToVector2
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: 09d8dbae1f4c49b4a99381ca92598952
-  position: {x: 0, y: 430.36}
+  position: {x: 79.00001, y: 620.3225}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
   alreadySelected: 0
   selectNode: 0
-  speed: 5
+  speed: 10
 --- !u!114 &-458348345575665439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,10 +56,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3e1b8661fe7614e9189149fb6c5ac8, type: 3}
   m_Name: SetPlayerPosNode
   m_EditorClassIdentifier: 
-  state: 0
+  state: 2
   started: 0
   guid: cd7150628df4f6441bfe8f253599cbbf
-  position: {x: -158, y: 430.36}
+  position: {x: -79, y: 620}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -86,6 +86,8 @@ MonoBehaviour:
   - {fileID: 3865561724676830250}
   - {fileID: -5151599835348536521}
   - {fileID: -458348345575665439}
+  - {fileID: 4324994524373069013}
+  - {fileID: 6367015637351237855}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2416800354327545690
@@ -101,7 +103,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: c93cbb1c5dd7cb34dbcb69c61161525c
   position: {x: 0, y: -9.639999}
   btContainer:
@@ -123,9 +125,9 @@ MonoBehaviour:
   m_Name: SequenceNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: ef24d5830a6d4e543901f9cd96886557
-  position: {x: 0, y: 277.36}
+  position: {x: 0, y: 459.3225}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -134,3 +136,48 @@ MonoBehaviour:
   children:
   - {fileID: -458348345575665439}
   - {fileID: -5151599835348536521}
+--- !u!114 &4324994524373069013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96b8be734d2d864496176bb0f6a00fe, type: 3}
+  m_Name: Parallel
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 1
+  guid: 9417e8341fa683c46bb208cfe217eec2
+  position: {x: -0.00004653931, y: 288.8501}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  children:
+  - {fileID: 3865561724676830250}
+  - {fileID: 6367015637351237855}
+--- !u!114 &6367015637351237855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fc125fa68970d4cbe79bcbd7abe11e, type: 3}
+  m_Name: FlipSpriteNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 1
+  guid: 66781ecae669aa54bb324eba21efdd09
+  position: {x: 315, y: 459}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0

@@ -9,14 +9,20 @@ public class Bullet : MonoBehaviour
 
     float limt = 0;
 
+    [HideInInspector] public float dmamage { get; set; }
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+
+        dmamage = 1 + Player.instance.buff.damage;
     }
 
     private void OnEnable()
     {
         limt = 0;
+
+        dmamage = 1 + Player.instance.buff.damage;
     }
 
     private void LateUpdate()
@@ -25,5 +31,13 @@ public class Bullet : MonoBehaviour
 
         limt += Time.deltaTime;
         if (limt > 2f) Pooling.instance.setObject(ref Pooling.instance.bulletPool,gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("enemy"))
+        {
+            Pooling.instance.setObject(ref Pooling.instance.bulletPool, gameObject);
+        }
     }
 }

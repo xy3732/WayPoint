@@ -21,10 +21,10 @@ public class WeaponData : Singleton<WeaponData>
         isReload = false;
         maxReload = 4f;
 
-        maxClip = 31;
+        maxClip = 30;
         curClip = maxClip;
 
-        shotMaxDelay = 0.1f;
+        shotMaxDelay = 0.2f;
     }
 
     private void Start()
@@ -40,14 +40,28 @@ public class WeaponData : Singleton<WeaponData>
     private void FixedUpdate()
     {
         shotCurDelay += Time.deltaTime;
-        if(isReload) curReload += Time.deltaTime;
+
+        if (isReload)  curReload += Time.deltaTime;
+
     }
 
-    public void Shot()
+    public void SetReloadSpeed()
+    {
+        float reloadBuff = 0.01f * (100 - Player.instance.buff.reload);
+        maxReload = maxReload * reloadBuff;
+
+        Debug.Log(maxReload * reloadBuff);
+    }
+
+    public void Shot(float buff)
     {
         if (curClip <= 0 && !isReload) doReload();
 
-        if (shotCurDelay < shotMaxDelay || curClip <= 0) return;
+        float buffDelay = 0.01f * (100 - buff);
+
+        if (shotCurDelay < shotMaxDelay * buffDelay || curClip <= 0) return;
+
+        Debug.Log(shotMaxDelay * buffDelay);
 
         // weapon 업데이트
         shotCurDelay = 0;

@@ -2,44 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager :Singleton<SpawnManager>
 {
     private Transform[] spawnPoint;
-    [ SerializeField] private SpawnSlots[] spawnSlot;
 
+    [field: SerializeField] public SpawnSlots[] spawnSlot { get; set; }
 
-    private float timer;
+    private float spawnTimer;
 
     private void Awake()
     {
-        timer = 0;
+        spawnTimer = 0;
 
         spawnPoint = GetComponentsInChildren<Transform>();
     }
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        spawnTimer += Time.deltaTime;
 
-        if(timer >= 0.5f)
+        if (spawnTimer >= spawnSlot[GameManager.instance.spawnLevel].enemySO.spawnDelay)
         {
-            timer = 0f;
+            spawnTimer = 0f;
             Spawn();
         }
     }
 
     private void Spawn()
     {
-        GameObject enemy = Pooling.instance.getObject
+        GameObject enemy = spawnSlot[0].enemySO.prefab;
+
+        var data = enemy.GetComponent<BehaviourTreeRunner>();
+        data.so = spawnSlot[0].enemySO;
+
+        GameObject spawnObject = Pooling.instance.getObject
             (ref Pooling.instance.enemyPool,
-            spawnPoint[Random.Range(1,spawnPoint.Length)], 
-            spawnSlot[0].spawnData);
+            spawnPoint[Random.Range(1, spawnPoint.Length)],
+            enemy);
     }
 }
 
 [System.Serializable]
 public class SpawnSlots
 {
-    public GameObject spawnData;
+    public EnemySO enemySO;
 }
 

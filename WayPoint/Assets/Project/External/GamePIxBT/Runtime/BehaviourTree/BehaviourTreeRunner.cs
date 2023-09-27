@@ -6,11 +6,25 @@ public class BehaviourTreeRunner : MonoBehaviour
 {
     public BehaviourTree tree;
 
+    private Pooling pool;
+
+    public EnemySO so;
+
     // 오브젝트의 값을 저장
     public Container container = null;
     private void Awake()
     {
         bindTree();
+    }
+
+    private void Start()
+    {
+        pool = Pooling.instance;
+    }
+
+    private void OnEnable()
+    {
+        Init();
     }
 
     private void Update()
@@ -19,6 +33,21 @@ public class BehaviourTreeRunner : MonoBehaviour
         if (!tree) return;
 
         tree.Update();
+    }
+
+    public void hit(float damage)
+    {
+        container.Hp -= damage;
+
+        isDie();
+    }
+    public void isDie()
+    {
+        if(container.Hp <= 0)
+        {
+            Player.instance.getExp(so.exp);
+            pool.setObject(ref pool.enemyPool, gameObject);
+        }
     }
 
     private void bindTree()
@@ -31,11 +60,20 @@ public class BehaviourTreeRunner : MonoBehaviour
         var component = gameObject?.GetComponentInChildren<BTIRange>();
         component?.OnRunnerAwake(container);
 
-        // 실행되면 트리 복사 해서 사용.
-        tree = tree.Clone();
+        Init();
+
+         // 실행되면 트리 복사 해서 사용.
+         tree = tree.Clone();
         tree.Bind(container);
     }
-
+    static float halfMin = 1.0f / 30.0f;
+    private void Init()
+    {
+        GameManager data = GameManager.instance;
+        // 정보 Init
+        container.Hp = (int)so.hp + (int)(data.timer * halfMin);
+        container.stopVelocity = true;
+    }
 
     // 추후 UImanager로 이동할 예정
     public void ScriptTrigerBtn()

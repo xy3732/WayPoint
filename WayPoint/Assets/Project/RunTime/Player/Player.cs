@@ -12,57 +12,118 @@ public class Player : Singleton<Player>
     private PlayerInput playerInput;
 
     private GameObject weaponObject;
+
     [HideInInspector] public WeaponData weaponData;
 
     [HideInInspector] public Vector3 Direction = FlipVector3.Default;
 
-    public float moveSpeed;
+    public PlayerSO playerDataSO;
+    [field: SerializeField] public List<AbilitySO> abilitys { get; set; }
+    [HideInInspector] public PlayerData playerData = new PlayerData();
+    [HideInInspector] public BuffData buff { get; set; }
 
     private void Awake()
     {
+        buff = new BuffData();
+        buff.init();
+
+        init();
+    }
+
+    private void Start()
+    {
+        playerInput.move = MoveTo;
+        playerInput.idle = AnimationSetIdle;
+        playerInput.shot = Shot;
+        playerInput.reload = Reload;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("enemy"))
+        {
+            hit();
+        }
+    }
+
+    // 이니시에이터
+    private void init()
+    {
+        abilitys = new List<AbilitySO>();
+
         playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
 
         weaponObject = GameObject.FindGameObjectWithTag("Weapon");
         weaponData = weaponObject.GetComponent<WeaponData>();
+
+        playerData.set(playerDataSO);
+
+        animator.runtimeAnimatorController = playerDataSO.animator;
+        weaponSprites.instance.set(playerDataSO);
     }
 
-    private void Start()
+    public void addAbility(AbilitySO ability)
     {
-        playerInput.move = testMove;
-        playerInput.idle = AnimationSetIdle;
-        playerInput.shot = Shot;
-        playerInput.reload = Reload;
+        abilitys.Add(ability);
     }
 
+    public void setAbilitys()
+    {
+ 
+    }
+
+    // 스프라이트 플립
+    public void FlipSprite(Vector3 flip)
+    {
+        transform.localScale = flip;
+    }
+
+    // 발사
     private void Shot()
     {
-        weaponData.Shot();
+        weaponData.Shot(buff.shotDelay);
     }
 
+    // 재장전
     private void Reload()
     {
         weaponData.doReload();
     }
 
-    // 캐릭터 이동
-    private void testMove(Vector3 input)
+    public void getExp(float exp)
     {
-        Vector3 moveVelocity = move(input);
+        playerData.exp += exp;
 
-        rigid.MovePosition(rigid.position + (Vector2)moveVelocity * moveSpeed * Time.smoothDeltaTime);
+        UImanager.instance.expBarUI(playerData.exp, playerData.maxExp);
 
+        levelUp();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void levelUp()
     {
-        if(other.gameObject.CompareTag("enemy"))
+        if(playerData.exp >= playerData.maxExp)
         {
-            hit();
+            playerData.level++;
+            playerData.exp = 0;
+
+            UImanager.instance.levelTextUI(playerData.level);
+            UImanager.instance.expBarUI(playerData.exp, playerData.maxExp);
+
+            abilitySelector.instance.createButton();
         }
     }
 
+    // 캐릭터 이동
+    private void MoveTo(Vector3 input)
+    {
+        Vector3 moveVelocity = move(input);
+
+        rigid.MovePosition(rigid.position + (Vector2)moveVelocity * playerData.speed * Time.smoothDeltaTime);
+
+    }
+
+    // 피격시
     private void hit()
     {
         rigid.velocity = Vector2.zero;
@@ -85,4 +146,46 @@ public class Player : Singleton<Player>
 
         return velocity;
     }
+
 }
+
+public class PlayerData
+{
+    public float speed { get; set; }
+    public float hp { get; set; }
+
+    public float exp { get; set; }
+    public float maxExp { get; set; }
+    public int level { get; set; }
+
+    public int abilitySelectAble { get; set; }
+
+    public void set(PlayerSO data)
+    {
+        speed = data.speed;
+        hp = data.hp;
+        abilitySelectAble = data.abilitySelectAble;
+
+        level = 1;
+        exp = 0;
+        maxExp = 100;
+    }
+}
+
+public class BuffData
+{
+    public float reload { get; set; }
+    public float shotDelay { get; set; }
+    public float speed { get; set; }
+    public float damage {get; set;}
+
+    public void init()
+    {
+        reload = 1;
+        speed = 1;
+        shotDelay = 0;
+
+        damage = 0;
+    }
+}
+

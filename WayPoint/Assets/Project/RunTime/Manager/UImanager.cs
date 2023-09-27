@@ -7,12 +7,16 @@ using DG.Tweening;
 using TMPro;
 public class UImanager : Singleton<UImanager>
 {
-    [SerializeField] private TextMeshProUGUI weaponClipText;
+    [field: SerializeField] private TextMeshProUGUI weaponClipText { get; set; }
 
-    [SerializeField] private Image clipBar;
+    [field: SerializeField] private Image clipBar { get; set; }
+    [field: Space(20)]
+    [field: SerializeField] private TextMeshProUGUI levelText { get; set; }
+    [field: SerializeField] private Image expBar { get; set; }
     private void Start()
     {
         WeaponUpdateUI(Player.instance.weaponData.curClip, Player.instance.weaponData.maxClip);
+        expBarUI(Player.instance.playerData.exp, Player.instance.playerData.maxExp);
     }
 
     public void WeaponUpdateUI(int curClip, int maxClip)
@@ -23,11 +27,20 @@ public class UImanager : Singleton<UImanager>
         weaponBarUI(curClip, maxClip);
     }
 
+    public void expBarUI(float cur, float max)
+    {
+        float tempAmount = cur / max;
+        expBar.fillAmount = tempAmount;
+    }
 
+    public void levelTextUI(float level)
+    {
+        levelText.text = string.Format($"Lv . {level}");
+    }
 
     public void weaponBarUI(float cur, float max)
     {
-        float tempAmount = (float)cur / (float)max;
+        float tempAmount = cur / max;
         clipBar.fillAmount = tempAmount;
     }
 
