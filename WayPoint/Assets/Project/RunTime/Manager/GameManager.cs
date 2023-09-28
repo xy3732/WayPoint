@@ -4,6 +4,7 @@ using UnityEngine;
 
 // pixel perfect camera component
 using UnityEngine.Experimental.Rendering.Universal;
+using System.Linq;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -53,7 +54,6 @@ public class GameManager : Singleton<GameManager>
         }
 
         if (Input.GetKeyDown(KeyCode.F1)) abilitySelector.instance.createButton();
-
     }
 
     private void FixedUpdate()
@@ -62,5 +62,17 @@ public class GameManager : Singleton<GameManager>
         var screenPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         screenPos.z = 0;
         mousePos = screenPos;
+    }
+
+    public void abilityDelete(int ID)
+    {
+        for(int i=0; i< abilitys.Length; i++)
+        {
+            if(abilitys[i].id == ID)
+            {
+                abilitys = abilitys.Where(n => n.id != ID).ToArray();
+                break;
+            }
+        }
     }
 }

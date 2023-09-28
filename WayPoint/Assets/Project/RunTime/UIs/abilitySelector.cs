@@ -34,7 +34,7 @@ public class abilitySelector : Singleton<abilitySelector>
         // 해당 버튼 오브젝트들 뒤에 있는 검은색 오브젝트
         blackAlphaObject.GetComponent<Image>().DOColor(new Color32(0, 0, 0, 150), 0.5f).SetEase(Ease.OutQuint).SetUpdate(true);
 
-        for (int i = 0; i < Player.instance.playerData.abilitySelectAble; i++)
+        for (int i = 0; i < checkAbilityAmount(); i++)
         {
             // 풀링으로 오브젝트 생성
             var buttonObject = Pooling.instance.getObject(ref pool, gameObject, abilitySelectorButton);
@@ -56,7 +56,7 @@ public class abilitySelector : Singleton<abilitySelector>
 
     private void selectAbilitys()
     {
-        for(int i=0; i< Player.instance.playerData.abilitySelectAble; i++)
+        for(int i=0; i< checkAbilityAmount(); i++)
         {
             int random = Random.Range(0, GameManager.instance.abilitys.Length);
             var select = GameManager.instance.abilitys[random];
@@ -64,6 +64,22 @@ public class abilitySelector : Singleton<abilitySelector>
             if(abilitys.Contains(select)) i--;
             else abilitys.Add(select);
         }
+    }
+
+    private int checkAbilityAmount()
+    {
+        int count;
+
+        if (Player.instance.playerData.abilitySelectAble <= GameManager.instance.abilitys.Length)
+        {
+            count = Player.instance.playerData.abilitySelectAble;
+        }
+        else
+        {
+            count = GameManager.instance.abilitys.Length;
+        }
+
+        return count;
     }
 
     // 버튼 에니메이션

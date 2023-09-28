@@ -127,7 +127,14 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
         Player.instance.addAbility(ability);
         ability.level += 1;
 
+        // 해당 어빌리티가 buff 형태라면 buff player data 업데이트
         if (ability.type == AbilitySO.SkillType.buff) ability.buff();
+
+        // 해당 어빌리티가 레벨에 도달하면 선택 풀에서 제외
+        if(ability.level >= ability.buffAmount.Length -1)
+        {
+            GameManager.instance.abilityDelete(ability.id);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

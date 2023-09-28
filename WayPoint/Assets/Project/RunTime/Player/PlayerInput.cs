@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour
     public Action idle { get; set; }
     public Action shot { get; set; }
     public Action reload { get; set; }
-    public Action hit { get; set; }
+    public Action<float> hit { get; set; }
 
     [HideInInspector] public bool onClickLeft { get; set; }
 
@@ -31,7 +31,9 @@ public class PlayerInput : MonoBehaviour
     {
         if(other.gameObject.CompareTag("enemy"))
         {
-            hit?.Invoke();
+            var damage = other.GetComponent<BehaviourTreeRunner>().so.damage;
+
+            hit?.Invoke(damage);
         }
     }
 
