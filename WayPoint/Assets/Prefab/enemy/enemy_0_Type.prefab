@@ -84,7 +84,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.6875, y: 1.6875}
+  m_Size: {x: 0.27, y: 0.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -149,7 +149,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.6875, y: 1.6875}
-    newSize: {x: 1.6875, y: 1.6875}
+    newSize: {x: 0.27, y: 0.27}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 11400000, guid: 0b3bd560d6f26d042bc467546a1dfd33, type: 2}
+  so: {fileID: 11400000, guid: 502aadb453e6b5d49a3c3bb401b66eeb, type: 2}
 --- !u!1 &3582241701658158220
 GameObject:
   m_ObjectHideFlags: 0

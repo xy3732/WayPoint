@@ -9,9 +9,11 @@ public class Player : Singleton<Player>
 {
     private Animator animator;
     private Rigidbody2D rigid;
-    private PlayerInput playerInput;
+    [HideInInspector]public PlayerInput playerInput;
 
     private GameObject weaponObject;
+
+    [HideInInspector] public GameObject player;
 
     [HideInInspector] public WeaponData weaponData;
 
@@ -26,6 +28,8 @@ public class Player : Singleton<Player>
 
     private void Awake()
     {
+        player = this.gameObject;
+
         buff = new BuffData();
         buff.init();
 

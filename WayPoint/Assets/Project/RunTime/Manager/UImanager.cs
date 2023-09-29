@@ -12,9 +12,12 @@ public class UImanager : Singleton<UImanager>
     [field: SerializeField] public Image clipBar { get; set; }
     
     [field: Space(20)]
-    [field: SerializeField] private Image characterBoard { get; set; }
+    [field: SerializeField] private GameObject characterBoard { get; set; }
+    private Vector3 characterBoardNormalVector;
     [field: SerializeField] private Image character { get; set; }
+    private Vector3 characterNormalVector;
     [field: SerializeField] public Image hpBar { get; set; }
+    [field: SerializeField] public Image hpLateBar { get; set; }
     [field: SerializeField] public Image spBar { get; set; }
     
     [field: Space(20)]
@@ -26,7 +29,12 @@ public class UImanager : Singleton<UImanager>
     {
         WeaponUpdateUI(Player.instance.weaponData.curClip, Player.instance.weaponData.maxClip);
         barUI(expBar, Player.instance.playerData.exp, Player.instance.playerData.maxExp);
+
         barUI(hpBar, Player.instance.playerData.hp, Player.instance.playerData.maxHp);
+        barUI(hpLateBar, Player.instance.playerData.hp, Player.instance.playerData.maxHp);
+
+        characterBoardNormalVector = characterBoard.GetComponent<RectTransform>().transform.position;
+        characterNormalVector = character.GetComponent<RectTransform>().transform.position;
 
         player = Player.instance;
     }
@@ -36,12 +44,28 @@ public class UImanager : Singleton<UImanager>
         character.sprite = player.playerDataSO.hitStateSprite;
 
         character.gameObject.transform.DOShakePosition(1f,4f);
-        characterBoard.gameObject.transform.DOShakePosition(1f, 4f);
+        characterBoard.transform.DOShakePosition(1f, 4f);
+
         character.color = new Color32(255, 190, 190, 255);
 
         barUI(hpBar, Player.instance.playerData.hp, Player.instance.playerData.maxHp);
+        hpBar.DOColor(new Color32(255, 90, 30, 255), 0.5f).SetEase(Ease.OutQuint).OnComplete( () => doLateAnimationUpdate());
 
-        Invoke("characterNormalUI", 0.5f);
+    }
+
+    private void doLateAnimationUpdate()
+    {
+        hpLateBarUI();
+        characterNormalUI();
+
+        characterBoard.GetComponent<RectTransform>().transform.position = characterBoardNormalVector;
+        character.GetComponent<RectTransform>().transform.position = characterNormalVector;
+    }
+
+    private void hpLateBarUI()
+    {
+        barUI(hpLateBar, Player.instance.playerData.hp, Player.instance.playerData.maxHp);
+        hpBar.DOColor(new Color32(155, 225, 100, 255), 0.4f);
     }
 
     private void characterNormalUI()
@@ -61,7 +85,9 @@ public class UImanager : Singleton<UImanager>
     public void barUI(Image image, float cur, float max)
     {
         float tempAmount = cur / max;
-        image.fillAmount = tempAmount;
+
+        image.DOFillAmount(tempAmount, 0.5f);
+        //image.fillAmount = tempAmount;
     }
 
     public void levelTextUI(float level)

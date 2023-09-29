@@ -37,7 +37,10 @@ public class BehaviourTreeRunner : MonoBehaviour
 
     public void hit(float damage)
     {
+        DamageFontContainer damageEffect = DamageFontContainer.instance;
+
         container.Hp -= damage;
+        damageEffect.createDamageEffect(gameObject, damage);
 
         isDie();
     }

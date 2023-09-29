@@ -12,10 +12,11 @@ public class GameManager : Singleton<GameManager>
 
     private GameObject cameraObject;
     private SpawnManager spawnManager;
-
+    private PlayerInput playerInput;
     [HideInInspector] public Vector3 mousePos { get; set; }
     [HideInInspector] public float timer { get; set; }
     [HideInInspector] public int spawnLevel { get; set; }
+    [HideInInspector] public bool isPause { get; set; }
 
     [field: SerializeField] public AbilitySO[] abilitys { get; set; }
 
@@ -27,20 +28,31 @@ public class GameManager : Singleton<GameManager>
         cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
         pooling = GetComponent<Pooling>();
 
+        isPause = false;
+
         timer = 0;
         spawnLevel = 0;
     }
 
     private void Start()
     {
+        playerInput = Player.instance.playerInput;
         spawnManager = SpawnManager.instance;
 
         // pixel perfect 컴포넌트가 있을시에만 실행
         var pixelPerfect = cameraObject?.GetComponent<PixelPerfectCamera>();
         if (pixelPerfect != null) pixelPerfect.enabled = true;
+
+        playerInput.Escape = DoEsacpe;
     }
 
-    public static float min = 1.0f / 5.0f;
+    private void DoEsacpe()
+    {
+        isPause = !isPause;
+        Time.timeScale = isPause ? 0 : 1;
+    }
+
+    public static float min = 1.0f / 30.0f;
     private void Update()
     {
         timer += Time.deltaTime;
