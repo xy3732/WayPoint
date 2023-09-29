@@ -9,21 +9,27 @@ public class Player : Singleton<Player>
 {
     private Animator animator;
     private Rigidbody2D rigid;
-    private PlayerInput playerInput;
+    [HideInInspector]public PlayerInput playerInput;
 
     private GameObject weaponObject;
+
+    [HideInInspector] public GameObject player;
 
     [HideInInspector] public WeaponData weaponData;
 
     [HideInInspector] public Vector3 Direction = FlipVector3.Default;
 
     public PlayerSO playerDataSO;
+
+    // 플레이 도중에 얻는 어빌리티 임시 저장.
     [field: SerializeField] public List<AbilitySO> abilitys { get; set; }
     [HideInInspector] public PlayerData playerData = new PlayerData();
     [HideInInspector] public BuffData buff { get; set; }
 
     private void Awake()
     {
+        player = this.gameObject;
+
         buff = new BuffData();
         buff.init();
 
@@ -89,7 +95,7 @@ public class Player : Singleton<Player>
     {
         playerData.exp += exp;
 
-        UImanager.instance.expBarUI(playerData.exp, playerData.maxExp);
+        UImanager.instance.barUI(UImanager.instance.expBar, playerData.exp, playerData.maxExp);
 
         levelUp();
     }
@@ -102,7 +108,7 @@ public class Player : Singleton<Player>
             playerData.exp = 0;
 
             UImanager.instance.levelTextUI(playerData.level);
-            UImanager.instance.expBarUI(playerData.exp, playerData.maxExp);
+            UImanager.instance.barUI(UImanager.instance.expBar, playerData.exp, playerData.maxExp);
 
             abilitySelector.instance.createButton();
         }
@@ -119,10 +125,11 @@ public class Player : Singleton<Player>
 
     // 피격시
     private float curHit = 0f;
-    private void hit()
+    private void hit(float damage)
     {
         if (curHit < playerData.invicivMax) return;
         curHit = 0;
+        playerData.hp -= damage;
 
         UImanager.instance.characterHitUI();
 

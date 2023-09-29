@@ -39,7 +39,7 @@ public class WeaponData : Singleton<WeaponData>
 
     private void FixedUpdate()
     {
-        shotCurDelay += Time.deltaTime;
+        shotCurDelay += Time.deltaTime; 
 
         if (isReload)  curReload += Time.deltaTime;
 
@@ -60,8 +60,6 @@ public class WeaponData : Singleton<WeaponData>
         float buffDelay = 0.01f * (100 - buff);
 
         if (shotCurDelay < shotMaxDelay * buffDelay || curClip <= 0) return;
-
-        Debug.Log(shotMaxDelay * buffDelay);
 
         // weapon 업데이트
         shotCurDelay = 0;
@@ -88,7 +86,8 @@ public class WeaponData : Singleton<WeaponData>
 
     private void Reload()
     {
-        uImanager.weaponBarUI(curReload, maxReload);
+        //uImanager.weaponBarUI(curReload, maxReload);
+        uImanager.barUI(uImanager.clipBar, curReload, maxReload);
 
         if (curReload < maxReload) return;
 

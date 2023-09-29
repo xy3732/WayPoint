@@ -9,10 +9,10 @@ public class Pooling : Singleton<Pooling>
     [HideInInspector] public Queue<GameObject> bulletPool = new Queue<GameObject>();
     [HideInInspector] public Queue<GameObject> enemyPool = new Queue<GameObject>();
 
-    private GameObject CreateObjects(Queue<GameObject> pool, GameObject insObject)
+    private GameObject CreateObjects(GameObject insObject)
     {
         GameObject poolObject = Instantiate(insObject);
-        poolObject.SetActive(false);
+        //poolObject.SetActive(false);
 
         return poolObject;
     }
@@ -22,10 +22,28 @@ public class Pooling : Singleton<Pooling>
         GameObject getObject;
 
         if (pool.Count > 0) getObject = pool.Dequeue();
-        else getObject = CreateObjects(enemyPool, gameObject);
+        else getObject = CreateObjects(gameObject);
 
         getObject.SetActive(true);
         getObject.transform.position = transform.position;
+
+        return getObject;
+    }
+
+    public GameObject getUiObject(ref Queue<GameObject> pool,GameObject uiParent, GameObject parent, GameObject gameObject, float damage)
+    {
+        GameObject getObject;
+
+        if (pool.Count > 0) getObject = pool.Dequeue();
+        else getObject = CreateObjects(gameObject);
+
+        getObject.GetComponent<DamageFont>().damage = damage;
+
+        getObject.SetActive(true);
+        getObject.transform.SetParent(uiParent.transform);
+        getObject.transform.position = Camera.main.WorldToScreenPoint(parent.transform.position);
+
+        getObject.GetComponent<DamageFont>().DoAnimation();
 
         return getObject;
     }
@@ -35,7 +53,7 @@ public class Pooling : Singleton<Pooling>
         GameObject getObject;
 
         if (pool.Count > 0) getObject = pool.Dequeue();
-        else getObject = CreateObjects(enemyPool, gameObject);
+        else getObject = CreateObjects(gameObject);
 
         getObject.SetActive(true);
         getObject.transform.SetParent(parent.transform);
@@ -52,7 +70,7 @@ public class Pooling : Singleton<Pooling>
         // 먼저 큐에 들어가 있는 오브젝트를 가져온다.
         if (pool.Count > 0) getObject = pool.Dequeue();
         // 오브젝트가 없으면 생성.
-        else getObject = CreateObjects(bulletPool, bulletPrefab);
+        else getObject = CreateObjects(bulletPrefab);
 
         // 해당 오브젝트를 활성화
         getObject.gameObject.SetActive(true);

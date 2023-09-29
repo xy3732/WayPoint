@@ -200,6 +200,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: cube1_move_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 27
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eedb824e2795eefd0800000000000000
+      internalID: -2310811208805466642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cube1_move_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 28
+        width: 27
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42afe530c288aba30800000000000000
+      internalID: 4231844522484496932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cube1_move_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 27
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87461932df7647a0800000000000000
+      internalID: -6393282080128219250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cube1_move_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 28
+        width: 27
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8221d733c156e2e00800000000000000
+      internalID: 1021865337257005608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -212,7 +296,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       cube0_move_2: -8794412173309032581
+      cube1_move_3: 1021865337257005608
       cube0_move_1: -1142874181577327446
+      cube1_move_0: -2310811208805466642
+      cube1_move_1: 4231844522484496932
+      cube1_move_2: -6393282080128219250
       cube0_move_0: -2840037289872645410
       cube0_move_3: -8162522036801082367
   spritePackingTag: 

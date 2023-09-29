@@ -11,7 +11,9 @@ public class PlayerInput : MonoBehaviour
     public Action idle { get; set; }
     public Action shot { get; set; }
     public Action reload { get; set; }
-    public Action hit { get; set; }
+
+    public Action Escape { get; set; }
+    public Action<float> hit { get; set; }
 
     [HideInInspector] public bool onClickLeft { get; set; }
 
@@ -25,13 +27,18 @@ public class PlayerInput : MonoBehaviour
 
         // Å°º¸µå R
         GetReloadWeapon();
+
+        // ESC
+        EscButton();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("enemy"))
         {
-            hit?.Invoke();
+            var damage = other.GetComponent<BehaviourTreeRunner>().so.damage;
+
+            hit?.Invoke(damage);
         }
     }
 
@@ -59,5 +66,11 @@ public class PlayerInput : MonoBehaviour
     private void GetLeftMouseButton()
     {
          if(Input.GetMouseButton(0)) shot?.Invoke();
+    }
+
+    private void EscButton()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape)) Escape?.Invoke();
     }
 }
