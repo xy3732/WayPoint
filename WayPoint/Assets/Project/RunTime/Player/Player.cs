@@ -82,7 +82,7 @@ public class Player : Singleton<Player>
     // 발사
     private void Shot()
     {
-        weaponData.Shot(buff.shotDelay);
+        weaponData.Shot(buff);
     }
 
     // 재장전
@@ -166,6 +166,7 @@ public class PlayerData
     public float maxExp { get; set; }
     public float maxSp { get; set; }
     public float invicivMax { get; set; }
+    public float critical { get; set; }
 
     public int level { get; set; }
     public int abilitySelectAble { get; set; }
@@ -179,6 +180,8 @@ public class PlayerData
 
         maxSp = data.maxSp;
         sp = 0;
+
+        critical = data.critical;
 
         abilitySelectAble = data.abilitySelectAble;
 
@@ -194,7 +197,8 @@ public class BuffData
     public float reload { get; set; }
     public float shotDelay { get; set; }
     public float speed { get; set; }
-    public float damage {get; set;}
+    public float damage { get; set; }
+    public float critical { get; set; }
 
     public void init()
     {
@@ -203,6 +207,7 @@ public class BuffData
 
         shotDelay = 0;
         damage = 0;
+        critical = 0;
         
     }
 }

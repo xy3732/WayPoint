@@ -7,7 +7,7 @@ public class DamageBuff : AbilitySO
 {
     public override void buff()
     {
-        Player.instance.buff.damage += buffAmount[level];
+        Player.instance.buff.critical += buffAmount[level];
     }
 
     public override void setText()

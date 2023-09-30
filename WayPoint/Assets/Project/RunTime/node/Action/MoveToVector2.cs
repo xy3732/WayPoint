@@ -34,7 +34,7 @@ public class MoveToVector2 : ActionNode
             }
 
             Vector3 pos = btContainer.targetPosition - container.transform.position;
-            container.transform.position += pos.normalized * Time.smoothDeltaTime * speed;
+            container.transform.position += pos.normalized * speed * Time.deltaTime;
 
             if ((container.transform.position - btContainer.targetPosition).magnitude < 1f)
             {

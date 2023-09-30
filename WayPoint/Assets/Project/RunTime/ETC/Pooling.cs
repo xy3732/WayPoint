@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using TMPro;
+
 public class Pooling : Singleton<Pooling>
 {
     public GameObject bulletPrefab;
@@ -30,7 +32,7 @@ public class Pooling : Singleton<Pooling>
         return getObject;
     }
 
-    public GameObject getUiObject(ref Queue<GameObject> pool,GameObject uiParent, GameObject parent, GameObject gameObject, float damage)
+    public GameObject getUiObject(ref Queue<GameObject> pool,GameObject uiParent, GameObject parent, GameObject gameObject, float damage, Color32 color)
     {
         GameObject getObject;
 
@@ -38,6 +40,7 @@ public class Pooling : Singleton<Pooling>
         else getObject = CreateObjects(gameObject);
 
         getObject.GetComponent<DamageFont>().damage = damage;
+        getObject.GetComponent<TextMeshProUGUI>().color = color;
 
         getObject.SetActive(true);
         getObject.transform.SetParent(uiParent.transform);

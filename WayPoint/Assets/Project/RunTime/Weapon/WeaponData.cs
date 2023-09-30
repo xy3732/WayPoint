@@ -53,11 +53,11 @@ public class WeaponData : Singleton<WeaponData>
         Debug.Log(maxReload * reloadBuff);
     }
 
-    public void Shot(float buff)
+    public void Shot(BuffData buff)
     {
         if (curClip <= 0 && !isReload) doReload();
 
-        float buffDelay = 0.01f * (100 - buff);
+        float buffDelay = 0.01f * (100 - buff.shotDelay);
 
         if (shotCurDelay < shotMaxDelay * buffDelay || curClip <= 0) return;
 

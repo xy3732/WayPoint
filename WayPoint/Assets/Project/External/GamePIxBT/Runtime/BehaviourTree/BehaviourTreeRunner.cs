@@ -39,9 +39,20 @@ public class BehaviourTreeRunner : MonoBehaviour
     {
         DamageFontContainer damageEffect = DamageFontContainer.instance;
 
-        container.Hp -= damage;
-        damageEffect.createDamageEffect(gameObject, damage);
-
+        float hitDamage;
+        float random = Random.Range(0, 100f);
+        if (Player.instance.playerData.critical >= random)
+        {
+            hitDamage = damage * 3;
+            damageEffect.createDamageEffect(gameObject, hitDamage, new Color32(255, 120 ,60, 255));
+        }
+        else
+        {
+            hitDamage = damage;
+            damageEffect.createDamageEffect(gameObject, hitDamage, new Color32(255,255,255,255));
+        }
+        container.Hp -= hitDamage;
+      
         isDie();
     }
     public void isDie()

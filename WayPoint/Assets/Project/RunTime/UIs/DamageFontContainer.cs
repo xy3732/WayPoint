@@ -8,9 +8,9 @@ public class DamageFontContainer : Singleton<DamageFontContainer>
     public Queue<GameObject> pool = new Queue<GameObject>();
 
 
-    public void createDamageEffect(GameObject parent, float damage)
+    public void createDamageEffect(GameObject parent, float damage, Color32 color)
     {
-        Pooling.instance.getUiObject(ref pool,this.gameObject , parent, DamagePrefab, damage);
+        Pooling.instance.getUiObject(ref pool,this.gameObject , parent, DamagePrefab, damage, color);
     }
      
     public void endEffect(GameObject gameobject)

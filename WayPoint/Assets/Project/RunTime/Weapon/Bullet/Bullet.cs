@@ -9,20 +9,20 @@ public class Bullet : MonoBehaviour
 
     float limt = 0;
 
-    [HideInInspector] public float dmamage { get; set; }
+    [HideInInspector] public float damage { get; set; }
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
 
-        dmamage = 1 + Player.instance.buff.damage;
+        damage = 1 + Player.instance.buff.damage;
     }
 
     private void OnEnable()
     {
         limt = 0;
 
-        dmamage = 1 + Player.instance.buff.damage;
+        float hitDamage = 1 + Player.instance.buff.damage;
     }
 
     private void LateUpdate()

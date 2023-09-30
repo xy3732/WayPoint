@@ -9,6 +9,7 @@ public class PlayerSO : ScriptableObject
     [field: SerializeField] public float speed { get; set; }
     [field: SerializeField] public float maxHp { get; set; }
     [field: SerializeField] public float maxSp { get; set; }
+    [field: SerializeField] public float critical { get; set; }
 
     [field: Space(20)]
 

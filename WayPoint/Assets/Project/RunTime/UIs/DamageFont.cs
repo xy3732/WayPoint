@@ -20,7 +20,6 @@ public class DamageFont : MonoBehaviour
         if (text == null) text = GetComponent<TextMeshProUGUI>();
 
         rect.DOScale(new Vector3(2f, 2f, 2f), 0);
-        text.color = new Color32(255, 255, 255, 255);
     }
 
     public void DoAnimation()

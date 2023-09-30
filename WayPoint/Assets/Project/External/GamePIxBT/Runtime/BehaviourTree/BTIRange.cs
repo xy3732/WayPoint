@@ -29,7 +29,7 @@ public class BTIRange : MonoBehaviour
         if(other.CompareTag("Bullet"))
         {
             var bullet = other.GetComponent<Bullet>();
-            thisObject.hit(bullet.dmamage);
+            thisObject.hit(bullet.damage);
         }
     }
 
