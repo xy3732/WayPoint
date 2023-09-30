@@ -10,9 +10,18 @@ public class FpsStatus : MonoBehaviour
     public Color color;
 
     float deltaTime = 0.0f;
+
+    [Space()]
+    public GameObject prefab;
+    public int amount;
     private void Start()
     {
         Application.targetFrameRate = 122;
+
+        for(int i= 0; i<amount; i++)
+        {
+            var obejcts = Instantiate(prefab);
+        }    
     }
 
     void Update()
@@ -30,11 +39,9 @@ public class FpsStatus : MonoBehaviour
         style.alignment = TextAnchor.UpperLeft;
         style.fontSize = fFont_Size;
         style.normal.textColor = color;
-
         float msec = deltaTime * 1000.0f;
         float fps = 1.0f / deltaTime;
-        string text = string.Format($"{msec:0.0} ms ({fps:0.} fps) ");
-
+        string text = string.Format($"{msec:0.0} ms ({fps:0.} fps) : objects amount : {amount}");
         GUI.Label(rect, text, style);
     }
 }

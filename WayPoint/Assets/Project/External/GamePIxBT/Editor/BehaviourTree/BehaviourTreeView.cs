@@ -62,16 +62,9 @@ public class BehaviourTreeView : GraphView
         // Root Node 积己
         if(tree.rootNode == null)
         {
-            try
-            {
-                tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
-                EditorUtility.SetDirty(tree);
-                AssetDatabase.SaveAssets();
-            }
-            catch
-            {
-
-            }
+            tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
+            EditorUtility.SetDirty(tree);
+            AssetDatabase.SaveAssets();
         }
 
         // 畴靛 积己

@@ -14,7 +14,7 @@ public abstract class Node : ScriptableObject
     // 기본 State는 Running으로 설정
     [HideInInspector] public State state = State.Running;
     [HideInInspector] public bool started = false;
-    public string guid { get; set; }
+    public string guid;
     [HideInInspector] public Vector2 position;
     [HideInInspector] public BTContainer btContainer;
     [HideInInspector] public Container container;
@@ -24,7 +24,6 @@ public abstract class Node : ScriptableObject
     public bool alreadySelected = false;
     // Script Only
     [HideInInspector] public int selectNode = 0;
-
     public State Update()
     {
         // 해당 노드가 처음 실행 될떄 Onstart를 실행
@@ -44,29 +43,16 @@ public abstract class Node : ScriptableObject
             started = false;
         }
 
+
         // 현재의 state를 반환한다.
         return state;
     }
 
-
-    // 강제 중단
-    public void Abort()
-    {
-        BehaviourTree.Traverse(this, (n) =>
-        {
-            n.started = false;
-            n.state = State.Running;
-            n.OnStop();
-        });
-    }
-
-    // 노드 클론 실행 
     public virtual Node Clone()
     {
         return Instantiate(this);
     }
 
-    // 노드 클론 실행 
     public virtual Node Clone(Node node)
     {
         return Instantiate(this);

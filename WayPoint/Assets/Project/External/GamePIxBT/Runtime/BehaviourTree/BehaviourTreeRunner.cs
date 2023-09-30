@@ -44,20 +44,20 @@ public class BehaviourTreeRunner : MonoBehaviour
         if (Player.instance.playerData.critical >= random)
         {
             hitDamage = damage * 3;
-            damageEffect.createDamageEffect(gameObject, hitDamage, new Color32(255, 120 ,60, 255));
+            damageEffect.createDamageEffect(gameObject, hitDamage, new Color32(255, 120, 60, 255));
         }
         else
         {
             hitDamage = damage;
-            damageEffect.createDamageEffect(gameObject, hitDamage, new Color32(255,255,255,255));
+            damageEffect.createDamageEffect(gameObject, hitDamage, new Color32(255, 255, 255, 255));
         }
         container.Hp -= hitDamage;
-      
+
         isDie();
     }
     public void isDie()
     {
-        if(container.Hp <= 0)
+        if (container.Hp <= 0)
         {
             Player.instance.getExp(so.exp);
             pool.setObject(ref pool.enemyPool, gameObject);
@@ -76,8 +76,8 @@ public class BehaviourTreeRunner : MonoBehaviour
 
         Init();
 
-         // 실행되면 트리 복사 해서 사용.
-         tree = tree.Clone();
+        // 실행되면 트리 복사 해서 사용.
+        tree = tree.Clone();
         tree.Bind(container);
     }
     static float halfMin = 1.0f / 30.0f;
@@ -100,7 +100,7 @@ public class BehaviourTreeRunner : MonoBehaviour
     {
         // 이미 컨테이너를 가지고 있으면 리턴
         if (container != null) return container;
-       
+
         // 없으면 생성
         return Container.CreateFromGameObject(gameObject);
     }
