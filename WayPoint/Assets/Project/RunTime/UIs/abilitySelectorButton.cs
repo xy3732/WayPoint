@@ -33,6 +33,10 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
 
     private RectTransform rect;
 
+    private Vector3 hoverVector = new Vector3(1.05f, 1.05f, 1.05f);
+    private Vector3 normalVector = new Vector3(1, 1, 1);
+    private Tweener rectTweener;
+
     private void Awake()
     {
         image = GetComponent<Image>();
@@ -46,12 +50,14 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
         descriptionText = transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
         characterNameText = transform.GetChild(3).gameObject.GetComponent<TextMeshProUGUI>();
         abilityTypeText = transform.GetChild(4).gameObject.GetComponent<TextMeshProUGUI>();
+
     }
+
 
     private void OnEnable()
     {
         image.color = normalColor;
-        image.sprite = normalImage; 
+        image.sprite = normalImage;
     }
 
     public void setAbility(AbilitySO ability)
@@ -142,7 +148,9 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
         image.color = normalColor;
         image.sprite = selectedImage;
 
-        rect.DOScale(new Vector3(1.05f, 1.05f, 1.05f),0.15f).SetEase(Ease.OutBack).SetUpdate(true);
+        rect.DOKill();
+        //rectTweener.ChangeEndValue(hoverVector,0.15f, true).Restart();
+        rect.DOScale(new Vector3(1.05f, 1.05f, 1.05f),0.15f).SetEase(Ease.OutBack).SetUpdate(true).SetAutoKill(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -150,6 +158,8 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
         image.color = normalColor;
         image.sprite = normalImage;
 
-        rect.DOScale(new Vector3(1,1,1), 0.15f).SetEase(Ease.OutBack).SetUpdate(true);
+        rect.DOKill();
+        //rectTweener.ChangeEndValue(normalVector, 0.15f, true).Restart();
+        rectTweener = rect.DOScale(new Vector3(1, 1, 1), 0.15f).SetEase(Ease.OutBack).SetUpdate(true);
     }
 }

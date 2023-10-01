@@ -56,11 +56,9 @@ public class WeaponData : Singleton<WeaponData>
     {
         float reloadBuff = 0.01f * (100 - Player.instance.buff.reload);
         maxReload = maxReload * reloadBuff;
-
-        Debug.Log(maxReload * reloadBuff);
     }
 
-    public void Shot(BuffData buff)
+    public void Shot(BuffData buff, BulletSO bullet)
     {
         if (curClip <= 0 && !isReload) doReload();
 
@@ -76,7 +74,8 @@ public class WeaponData : Singleton<WeaponData>
         uImanager.WeaponUpdateUI(curClip, maxClip);
 
         // Ç®¸µ
-        Pooling.instance.getObject(ref Pooling.instance.bulletPool,transform);
+        Pooling pool = Pooling.instance;
+        pool.bulletGetObject(ref pool.bulletPool,transform, pool.bulletPrefab, bullet);
     }
 
     private GameObject speechObject;

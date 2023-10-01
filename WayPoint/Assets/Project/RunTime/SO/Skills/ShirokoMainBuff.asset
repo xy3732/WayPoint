@@ -28,5 +28,5 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  <abilityObject>k__BackingField: {fileID: 0}
-  <delay>k__BackingField: 5
+  <abilityObject>k__BackingField: {fileID: 7395307832008836526, guid: 2e18cffe7379f6c4da403482ef5128f5, type: 3}
+  <delay>k__BackingField: 20

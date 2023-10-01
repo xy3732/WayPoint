@@ -9,7 +9,7 @@ public class Player : Singleton<Player>
 {
     private Animator animator;
     private Rigidbody2D rigid;
-    [HideInInspector]public PlayerInput playerInput;
+    [HideInInspector] public PlayerInput playerInput;
 
     private GameObject weaponObject;
 
@@ -21,15 +21,19 @@ public class Player : Singleton<Player>
 
     public PlayerSO playerDataSO;
 
+    // 메인 어빌리티 큐
+    public Queue<GameObject> abilityPool = new Queue<GameObject>();
+
     // 플레이 도중에 얻는 어빌리티 임시 저장.
     [field: SerializeField] public List<AbilitySO> buffAbilitys { get; set; }
     [field: SerializeField] public List<AbilitySO> mainAbilitys { get; set; }
     [HideInInspector] public PlayerData playerData = new PlayerData();
-    [HideInInspector] public BuffData buff { get; set; }
+    public BuffData buff { get; set; }
 
     private void Awake()
     {
         player = this.gameObject;
+        curHit = 0;
 
         buff = new BuffData();
         buff.init();
@@ -52,6 +56,8 @@ public class Player : Singleton<Player>
         {
             item.update();
         }
+
+        curHit += Time.deltaTime;
     }
 
     // 이니시에이터
@@ -87,7 +93,7 @@ public class Player : Singleton<Player>
     // 발사
     private void Shot()
     {
-        weaponData.Shot(buff);
+        weaponData.Shot(buff, playerData.bullet);
     }
 
     // 재장전
@@ -107,7 +113,7 @@ public class Player : Singleton<Player>
 
     public void levelUp()
     {
-        if(playerData.exp >= playerData.maxExp)
+        if (playerData.exp >= playerData.maxExp)
         {
             playerData.level++;
             playerData.exp = 0;
@@ -129,7 +135,7 @@ public class Player : Singleton<Player>
     }
 
     // 피격시
-    private float curHit = 0f;
+    private float curHit { get; set; }
     private void hit(float damage)
     {
         if (curHit < playerData.invicivMax) return;
@@ -176,6 +182,8 @@ public class PlayerData
     public int level { get; set; }
     public int abilitySelectAble { get; set; }
 
+    public BulletSO bullet { get; set; }
+
     public void set(PlayerSO data)
     {
         speed = data.speed;
@@ -186,11 +194,13 @@ public class PlayerData
         maxSp = data.maxSp;
         sp = 0;
 
+        bullet = data.bullet;
+
         critical = data.critical;
 
         abilitySelectAble = data.abilitySelectAble;
 
-        invicivMax = 0.2f;
+        invicivMax = 1f;
         level = 1;
         exp = 0;
         maxExp = 100;

@@ -30,7 +30,7 @@ public class SpawnManager :Singleton<SpawnManager>
             if (spawnTimer[i] >= spawnSlot[GameManager.instance.spawnLevel].enemySO[i].spawnDelay)
             {
                 spawnTimer[i] = 0;
-                Spawn(i);
+                //Spawn(i);
             }
 
         }

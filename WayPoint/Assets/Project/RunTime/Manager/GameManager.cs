@@ -59,7 +59,6 @@ public class GameManager : Singleton<GameManager>
 
         // 스폰 레벨
         spawnLevel = (int)(timer * min);
-        Debug.Log(spawnLevel);
         // 스폰 레벨이 스폰slot보다 크면 최대치로 재조정
         if (spawnLevel >= spawnManager.spawnSlot.Length)
         {

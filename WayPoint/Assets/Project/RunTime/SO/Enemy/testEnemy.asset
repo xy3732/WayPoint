@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 879291742db2619469a3cb6d590c5ade, type: 3}
-  m_Name: enemy_0
+  m_Name: testEnemy
   m_EditorClassIdentifier: 
-  <prefab>k__BackingField: {fileID: 3582241701567298393, guid: 71604410f97d394469da8dd2555d0d42, type: 3}
+  <prefab>k__BackingField: {fileID: 8611396675956854181, guid: 438bbdcbbb6777d4f98806a1cc06d9ba, type: 3}
   <spawnDelay>k__BackingField: 2
-  <hp>k__BackingField: 50
-  <damage>k__BackingField: 10
-  <exp>k__BackingField: 30
+  <hp>k__BackingField: 9999
+  <damage>k__BackingField: 0
+  <exp>k__BackingField: 0

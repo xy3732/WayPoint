@@ -31,4 +31,7 @@ public class PlayerSO : ScriptableObject
     [field: Space(20)]
     [field: SerializeField] public Sprite normalStateSprite { get; set; }
     [field: SerializeField] public Sprite hitStateSprite { get; set; }
+
+    [field: Space(20)]
+    [field: SerializeField] public BulletSO bullet { get; set; }
 }

@@ -100,11 +100,12 @@ public class UImanager : Singleton<UImanager>
         barUI(clipBar, curClip, maxClip);
     }
 
+    Tweener barTween;
     public void barUI(Image image, float cur, float max)
     {
         float tempAmount = cur / max;
 
-        image.DOFillAmount(tempAmount, 0.5f);
+        barTween = image.DOFillAmount(tempAmount, 0.5f);
         //image.fillAmount = tempAmount;
     }
 

@@ -19,6 +19,8 @@ public class abilitySelector : Singleton<abilitySelector>
     // 풀링 이스트
     [HideInInspector] public Queue<GameObject> pool = new Queue<GameObject>();
 
+    Tweener blackAlpha;
+
     // 버튼 생성
     public void createButton()
     {
@@ -32,15 +34,14 @@ public class abilitySelector : Singleton<abilitySelector>
         selectAbilitys();
 
         // 해당 버튼 오브젝트들 뒤에 있는 검은색 오브젝트
-        blackAlphaObject.GetComponent<Image>().DOColor(new Color32(0, 0, 0, 150), 0.5f).SetEase(Ease.OutQuint).SetUpdate(true);
-
+        blackAlpha = blackAlphaObject.GetComponent<Image>().DOColor(new Color32(0, 0, 0, 150), 0.5f).SetEase(Ease.OutQuint).SetUpdate(true).SetAutoKill(false);
         for (int i = 0; i < checkAbilityAmount(); i++)
         {
             // 풀링으로 오브젝트 생성
-            var buttonObject = Pooling.instance.getObject(ref pool, gameObject, abilitySelectorButton);
+            var buttonObject = Pooling.instance.abilityGetObject(ref pool, gameObject, abilitySelectorButton);
 
             // 트위닝 에니메이션을 위해 사이즈를 0으로 설정
-            buttonObject.GetComponent<RectTransform>().DOScale(new Vector3(0, 0, 0), 0).SetUpdate(true);
+            buttonObject.GetComponent<RectTransform>().DOScale(new Vector3(0, 0, 0), 0).SetUpdate(true).SetAutoKill(true);
 
             // 해당 오브젝트에서 ablitiy를 추출
             var select = buttonObject.GetComponent<abilitySelectorButton>();
@@ -83,13 +84,14 @@ public class abilitySelector : Singleton<abilitySelector>
     }
 
     // 버튼 에니메이션
+    Tweener tweenAnimation;
     private void doAnimation()
     {
         for (int i = 0; i < buttonList.Count; i++)
         {
             var button = buttonList[i].gameObject;
 
-            button.GetComponent<RectTransform>().DOScale(new Vector3(1, 1, 1), 0.075f).SetDelay(i * 0.05f).SetEase(Ease.OutBack).SetUpdate(true);
+            tweenAnimation = button.GetComponent<RectTransform>().DOScale(new Vector3(1, 1, 1), 0.075f).SetDelay(i * 0.05f).SetEase(Ease.OutBack).SetUpdate(true);
         }
     }
 
@@ -103,8 +105,9 @@ public class abilitySelector : Singleton<abilitySelector>
         Time.timeScale = 1;
         isActive = false;
 
+        blackAlpha.ChangeEndValue(new Color32(0, 0, 0, 10), 0.5f, true).SetEase(Ease.OutQuad).Restart();
         // 해당 버튼 오브젝트들 뒤에 있는 검은색 오브젝트
-        blackAlphaObject.GetComponent<Image>().DOColor(new Color32(0, 0, 0, 10), 0.5f).SetEase(Ease.OutQuad).SetUpdate(true);
+        //blackAlphaObject.GetComponent<Image>().DOColor(new Color32(0, 0, 0, 10), 0.5f).SetEase(Ease.OutQuad).SetUpdate(true).SetAutoKill(true);
 
         // 리스트에 있는 버튼 오브젝트를 풀링으로 지우기
         foreach (var item in buttonList)
