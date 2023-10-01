@@ -10,7 +10,12 @@ public class UImanager : Singleton<UImanager>
     [field: SerializeField] private TextMeshProUGUI weaponClipText { get; set; }
 
     [field: SerializeField] public Image clipBar { get; set; }
-    
+
+    [field: Space(20)]
+
+    public Queue<GameObject> speechPool = new Queue<GameObject>();
+    [field: SerializeField] public GameObject speechBublePrefab { get; set; }
+
     [field: Space(20)]
     [field: SerializeField] private GameObject characterBoard { get; set; }
     private Vector3 characterBoardNormalVector;
@@ -37,6 +42,14 @@ public class UImanager : Singleton<UImanager>
         characterNormalVector = character.GetComponent<RectTransform>().transform.position;
 
         player = Player.instance;
+    }
+
+    public GameObject speechUI()
+    {
+        var speechObject = Pooling.instance.getSpeechObject(ref speechPool, Player.instance.gameObject, speechBublePrefab);
+        speechObject.GetComponent<SpeechBuble>().onSpeech(SpeechBuble.SpeechTypes.Reload, Player.instance.gameObject);
+
+        return speechObject;
     }
 
     public void characterHitUI()
@@ -72,6 +85,11 @@ public class UImanager : Singleton<UImanager>
     {
         character.color = new Color32(255, 255, 255, 255);
         character.sprite = player.playerDataSO.normalStateSprite;
+    }
+
+    public void SpeechUpdateUI()
+    {
+
     }
 
     public void WeaponUpdateUI(int curClip, int maxClip)

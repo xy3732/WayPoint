@@ -22,7 +22,8 @@ public class Player : Singleton<Player>
     public PlayerSO playerDataSO;
 
     // 플레이 도중에 얻는 어빌리티 임시 저장.
-    [field: SerializeField] public List<AbilitySO> abilitys { get; set; }
+    [field: SerializeField] public List<AbilitySO> buffAbilitys { get; set; }
+    [field: SerializeField] public List<AbilitySO> mainAbilitys { get; set; }
     [HideInInspector] public PlayerData playerData = new PlayerData();
     [HideInInspector] public BuffData buff { get; set; }
 
@@ -53,7 +54,7 @@ public class Player : Singleton<Player>
     // 이니시에이터
     private void init()
     {
-        abilitys = new List<AbilitySO>();
+        buffAbilitys = new List<AbilitySO>();
 
         playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
@@ -70,7 +71,8 @@ public class Player : Singleton<Player>
 
     public void addAbility(AbilitySO ability)
     {
-        abilitys.Add(ability);
+        if (ability.type == AbilitySO.SkillType.buff) buffAbilitys.Add(ability);
+        else if (ability.type == AbilitySO.SkillType.Main) mainAbilitys.Add(ability);
     }
 
     // 스프라이트 플립
@@ -200,6 +202,8 @@ public class BuffData
     public float damage { get; set; }
     public float critical { get; set; }
 
+    public float clip { get; set; }
+
     public void init()
     {
         reload = 1;
@@ -208,6 +212,7 @@ public class BuffData
         shotDelay = 0;
         damage = 0;
         critical = 0;
+        clip = 0;
         
     }
 }

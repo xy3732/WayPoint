@@ -15,14 +15,14 @@ public class Bullet : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
 
-        damage = 1 + Player.instance.buff.damage;
+        damage = 10 + Player.instance.buff.damage;
     }
 
     private void OnEnable()
     {
         limt = 0;
 
-        float hitDamage = 1 + Player.instance.buff.damage;
+        damage = 10 + Player.instance.buff.damage;
     }
 
     private void LateUpdate()

@@ -59,9 +59,9 @@ public class abilitySelectorButton : MonoBehaviour, IPointerEnterHandler, IPoint
         bool isSameAbilityHave = false;
 
         // 플레이어가 어빌리티를 가지고 있지 않으면 패스
-        if (Player.instance.abilitys.Count != 0)
+        if (Player.instance.buffAbilitys.Count != 0)
         {
-            var abilitys = Player.instance.abilitys;
+            var abilitys = Player.instance.buffAbilitys;
 
             // 이미 가지고 있는 어벌리티 있으면 그 데이터를 버튼에 추가
           for(int i= 0; i< abilitys.Count; i++)

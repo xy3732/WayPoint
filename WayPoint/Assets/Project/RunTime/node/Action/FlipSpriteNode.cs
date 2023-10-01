@@ -18,8 +18,6 @@ public class FlipSpriteNode : ActionNode
 
     protected override State OnUpdate()
     {
-        Debug.Log($"{btContainer.targetPosition.x} - {container.transform.position.x}");
-
         if(btContainer.targetPosition.x <= container.transform.position.x)
         {
             container.transform.localScale = FlipVector3.Left;

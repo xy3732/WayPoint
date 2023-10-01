@@ -45,6 +45,13 @@ public class WeaponData : Singleton<WeaponData>
 
     }
 
+    public void setClip()
+    {
+        maxClip = maxClip + (int)Player.instance.buff.clip;
+
+        uImanager.WeaponUpdateUI(curClip, maxClip);
+    }
+
     public void SetReloadSpeed()
     {
         float reloadBuff = 0.01f * (100 - Player.instance.buff.reload);
@@ -72,9 +79,17 @@ public class WeaponData : Singleton<WeaponData>
         Pooling.instance.getObject(ref Pooling.instance.bulletPool,transform);
     }
 
+    private GameObject speechObject;
+
+    // 재장전 시작
     public void doReload()
     {
         if (isReload) return;
+
+        // 재장전 말풍선 생성
+        speechObject = uImanager.speechUI();
+        speechObject.GetComponent<SpeechBuble>().stopAnimation = false;
+        speechObject.GetComponent<SpeechBuble>().reloadAnimation();
 
         isReload = true;
 
@@ -84,9 +99,10 @@ public class WeaponData : Singleton<WeaponData>
         uImanager.WeaponUpdateUI(curClip, maxClip);
     }
 
+
+    // 재장전 중
     private void Reload()
     {
-        //uImanager.weaponBarUI(curReload, maxReload);
         uImanager.barUI(uImanager.clipBar, curReload, maxReload);
 
         if (curReload < maxReload) return;
@@ -94,6 +110,11 @@ public class WeaponData : Singleton<WeaponData>
         curClip = maxClip;
         isReload = false;
 
+        // 재장전 말풍선 제거
+        speechObject.GetComponent<SpeechBuble>().stopAnimation = true; 
+        Pooling.instance.setObject(ref uImanager.speechPool, speechObject);
+        
+        // 남은 탄창 업데이트
         uImanager.WeaponUpdateUI(curClip, maxClip);
     }
 }

@@ -14,7 +14,6 @@ public class Pooling : Singleton<Pooling>
     private GameObject CreateObjects(GameObject insObject)
     {
         GameObject poolObject = Instantiate(insObject);
-        //poolObject.SetActive(false);
 
         return poolObject;
     }
@@ -32,6 +31,19 @@ public class Pooling : Singleton<Pooling>
         return getObject;
     }
 
+    public GameObject getSpeechObject(ref Queue<GameObject> pool, GameObject parent, GameObject gameObject)
+    {
+        GameObject getObject;
+
+        if (pool.Count > 0) getObject = pool.Dequeue();
+        else getObject = CreateObjects(gameObject);
+
+        getObject.SetActive(true);
+
+        return getObject;
+    }
+
+    // DamageFont ¿ë
     public GameObject getUiObject(ref Queue<GameObject> pool,GameObject uiParent, GameObject parent, GameObject gameObject, float damage, Color32 color)
     {
         GameObject getObject;
