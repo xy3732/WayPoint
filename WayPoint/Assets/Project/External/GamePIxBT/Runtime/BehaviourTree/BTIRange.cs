@@ -7,6 +7,13 @@ public class BTIRange : MonoBehaviour
     [HideInInspector] public Container container;
     [HideInInspector] private BehaviourTreeRunner thisObject;
 
+    public enum objectType
+    { 
+        friendly,
+        enemy,
+    }
+    public objectType type;
+
     // BehaviourTree 시작되면 불러와서 실행
     // awkae, Start로 container를 불러올려고 하니 OntringerEnter가 먼저 실행 된다.
     // 상위 스크립트가 실행되면 실행 되도록 설정.
@@ -21,6 +28,24 @@ public class BTIRange : MonoBehaviour
     {
         if (container == null) return;
 
+        if(type  == objectType.enemy)
+        {
+            enemyOnTrigerEnter(other);
+        }
+
+        else if(type == objectType.friendly)
+        {
+            friendlyOnTrigerEnter(other);
+        }
+    }
+
+    public void friendlyOnTrigerEnter(Collider2D other)
+    {
+
+    }
+
+    public void enemyOnTrigerEnter(Collider2D other)
+    {
         if (other.CompareTag("map"))
         {
             container.stopVelocity = true;

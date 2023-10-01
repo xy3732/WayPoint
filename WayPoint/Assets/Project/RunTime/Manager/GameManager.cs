@@ -52,13 +52,14 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = isPause ? 0 : 1;
     }
 
-    public static float min = 1.0f / 30.0f;
+    public static float min = 1.0f / 10.0f;
     private void Update()
     {
         timer += Time.deltaTime;
 
         // 스폰 레벨
         spawnLevel = (int)(timer * min);
+        Debug.Log(spawnLevel);
         // 스폰 레벨이 스폰slot보다 크면 최대치로 재조정
         if (spawnLevel >= spawnManager.spawnSlot.Length)
         {

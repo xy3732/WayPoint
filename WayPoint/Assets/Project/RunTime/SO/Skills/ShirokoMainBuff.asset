@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941377ecd6860144d9a57d8aa7f17696, type: 3}
+  m_Name: ShirokoMainBuff
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: 5
+  <character>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <type>k__BackingField: 0
+  <abilitySprite>k__BackingField: {fileID: 21300000, guid: ac584dfec44bba749bbef1c8ecd950ee, type: 3}
+  <color>k__BackingField:
+    serializedVersion: 2
+    rgba: 4283001599
+  <mainText>k__BackingField: "\uB4DC\uB860 : \uD654\uB825 \uC9C0\uC6D0"
+  <level>k__BackingField: 0
+  <buffAmount>k__BackingField:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  <abilityObject>k__BackingField: {fileID: 0}
+  <delay>k__BackingField: 5

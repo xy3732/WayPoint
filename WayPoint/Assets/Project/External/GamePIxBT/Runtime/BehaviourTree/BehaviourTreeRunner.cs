@@ -8,7 +8,7 @@ public class BehaviourTreeRunner : MonoBehaviour
 
     private Pooling pool;
 
-    public EnemySO so;
+    public GameObjectSO so;
 
     // 오브젝트의 값을 저장
     public Container container = null;

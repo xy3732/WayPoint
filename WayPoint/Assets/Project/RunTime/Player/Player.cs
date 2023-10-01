@@ -48,7 +48,10 @@ public class Player : Singleton<Player>
 
     private void Update()
     {
-        curHit += Time.deltaTime;    
+        foreach (var item in mainAbilitys)
+        {
+            item.update();
+        }
     }
 
     // 이니시에이터

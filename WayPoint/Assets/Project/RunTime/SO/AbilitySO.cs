@@ -31,6 +31,11 @@ public abstract class AbilitySO : ScriptableObject
     [field: SerializeField] public int level { get; set; }
     [field: SerializeField] public float[] buffAmount { get; set; }
 
+    // Main
+    [field: Space(20)]
+    [field: SerializeField] public GameObject abilityObject { get; set; }
+    [field: SerializeField] public float delay { get; set; }
+    public float curDelay { get; set; }
 
     public abstract void buff();
     public abstract void update();
