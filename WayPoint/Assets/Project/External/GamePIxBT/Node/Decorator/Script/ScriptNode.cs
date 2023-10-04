@@ -13,7 +13,7 @@ public class ScriptNode : DecoratorNode
 
         // text ¼³Á¤
         container.textScript = script;
-        UIManager.instance.setText(container.textScript);
+        UiManager.instance.setScriptText(container.textScript);
     }
 
     protected override void OnStop()

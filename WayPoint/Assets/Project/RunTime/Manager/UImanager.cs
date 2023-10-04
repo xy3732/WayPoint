@@ -5,8 +5,22 @@ using UnityEngine.UI;
 
 using DG.Tweening;
 using TMPro;
-public class UImanager : Singleton<UImanager>
+public class UiManager : Singleton<UiManager>
 {
+
+    // Scripts
+    [field: SerializeField] private TextMeshProUGUI scriptText { get; set; }
+    private string message { get; set; }
+    private int index { get; set;}
+    [field: SerializeField] [field: Range(0,30)]private int CPS { get; set; }
+    [field: SerializeField] private GameObject buttonPrefab { get; set; }
+    [field: SerializeField] private GameObject buttonSelectGroupObject { get; set; }
+    [field: SerializeField] public GameObject UIsObject{get; set;}
+    [field: SerializeField] public GameObject ScriptsObject { get; set; }
+    [field: SerializeField] public GameObject scriptButtonObject { get; set; }
+    [HideInInspector] public List<Button> selectButtonList = new List<Button>();
+    // weapon Text
+    [field: Space(20)]
     [field: SerializeField] private TextMeshProUGUI weaponClipText { get; set; }
 
     [field: SerializeField] public Image clipBar { get; set; }
@@ -24,14 +38,16 @@ public class UImanager : Singleton<UImanager>
     [field: SerializeField] public Image hpBar { get; set; }
     [field: SerializeField] public Image hpLateBar { get; set; }
     [field: SerializeField] public Image spBar { get; set; }
-    
+
     [field: Space(20)]
     [field: SerializeField] private TextMeshProUGUI levelText { get; set; }
     [field: SerializeField] public Image expBar { get; set; }
 
-    private Player player;
+    private Player player { get; set; }
+    private Tweener hpBarTweener { get; set; }
     private void Start()
     {
+        
         WeaponUpdateUI(Player.instance.weaponData.curClip, Player.instance.weaponData.maxClip);
         barUI(expBar, Player.instance.playerData.exp, Player.instance.playerData.maxExp);
 
@@ -40,6 +56,8 @@ public class UImanager : Singleton<UImanager>
 
         characterBoardNormalVector = characterBoard.GetComponent<RectTransform>().transform.position;
         characterNormalVector = character.GetComponent<RectTransform>().transform.position;
+
+        hpBarTweener = hpBar.DOColor(new Color32(155, 225, 100, 255), 0.4f).SetAutoKill(false);
 
         player = Player.instance;
     }
@@ -56,14 +74,19 @@ public class UImanager : Singleton<UImanager>
     {
         character.sprite = player.playerDataSO.hitStateSprite;
 
+        character.gameObject.transform.DOKill();
         character.gameObject.transform.DOShakePosition(1f,4f);
+
+        characterBoard.transform.DOKill();
         characterBoard.transform.DOShakePosition(1f, 4f);
 
         character.color = new Color32(255, 190, 190, 255);
 
         barUI(hpBar, Player.instance.playerData.hp, Player.instance.playerData.maxHp);
-        hpBar.DOColor(new Color32(255, 90, 30, 255), 0.5f).SetEase(Ease.OutQuint).OnComplete( () => doLateAnimationUpdate());
-
+        hpBarTweener.ChangeEndValue(new Color32(255, 90, 30, 255), 0.5f, true).
+            SetEase(Ease.OutQuint).
+            OnComplete(() => doLateAnimationUpdate()).
+            Restart();
     }
 
     private void doLateAnimationUpdate()
@@ -78,18 +101,13 @@ public class UImanager : Singleton<UImanager>
     private void hpLateBarUI()
     {
         barUI(hpLateBar, Player.instance.playerData.hp, Player.instance.playerData.maxHp);
-        hpBar.DOColor(new Color32(155, 225, 100, 255), 0.4f);
+        hpBarTweener.ChangeEndValue(new Color32(155,255,100,255),0.4f, true).Restart();
     }
 
     private void characterNormalUI()
     {
         character.color = new Color32(255, 255, 255, 255);
         character.sprite = player.playerDataSO.normalStateSprite;
-    }
-
-    public void SpeechUpdateUI()
-    {
-
     }
 
     public void WeaponUpdateUI(int curClip, int maxClip)
@@ -100,13 +118,12 @@ public class UImanager : Singleton<UImanager>
         barUI(clipBar, curClip, maxClip);
     }
 
-    Tweener barTween;
     public void barUI(Image image, float cur, float max)
     {
         float tempAmount = cur / max;
 
-        barTween = image.DOFillAmount(tempAmount, 0.5f);
-        //image.fillAmount = tempAmount;
+        image.DOKill();
+        image.DOFillAmount(tempAmount, 0.5f);
     }
 
     public void levelTextUI(float level)
@@ -114,14 +131,96 @@ public class UImanager : Singleton<UImanager>
         levelText.text = string.Format($"Lv . {level}");
     }
 
+    #region scriptTextOnly
+    public void setScriptText(string text)
+    {
+        message = text;
+        TypeEffect();
+    }
 
+    private void TypeEffect()
+    {
+        scriptText.text = "";
+        index = 0;
+        Invoke("Effecting", 1 * (CPS * 0.01f));
+    }
+
+    private void Effecting()
+    {
+        if(scriptText.text == message || message == null) return;
+
+        scriptText.text += message[index];
+        index += 1;
+
+        Invoke("Effecting", 1 * (CPS * 0.01f));
+    }
+
+    public void InitButtonSelection(int num, List<Node> children, Container container)
+    {
+        // 버튼 생성전에 리스트를 한번 초기화 시킨다.
+        clearButtons();
+
+        // 해당 노드의 자식의 수만큼 반복한다.
+        for(int i=0; i<num; i++)
+        {
+            // 버튼 생성 ( 풀링으로 만들기)
+            var button = Instantiate(buttonPrefab);
+
+            // 버튼에 해당 자식번호 저장
+            button.AddComponent<selectionButtonNumber>();
+            var selectNumber = button.GetComponent<selectionButtonNumber>().selectNumber;
+
+            // 버튼에 이름 지정
+            button.name = children[i].description;
+
+            // 버튼 내부에 있는 text 변경;
+            var text = button.GetComponentInChildren<TextMeshProUGUI>();
+            text.text = children[i].description;
+
+            // 버튼의 부모 설정
+            button.transform.SetParent(buttonSelectGroupObject.transform);
+
+            // 버튼에 클릭 이벤트 추가
+            selectNumber = i;
+            button.GetComponent<Button>().onClick.AddListener(() => 
+            {
+                clickSelectBtn(selectNumber, container);
+                clearButtons();
+            });
+
+            selectButtonList.Add(button.GetComponent<Button>());
+        }
+    }
+
+    public void clickSelectBtn(int i, Container container)
+    {
+        container.buttonSelectNumber = i;
+    }
+
+    public void clearButtons()
+    {
+        if(selectButtonList != null)
+        {
+            for(int i=0; i< selectButtonList.Count; i++)
+            {
+                Destroy(selectButtonList[i].gameObject);
+            }
+
+            selectButtonList.Clear();
+        }
+    }
+    #endregion;
+
+    Tweener rectTween { get; set; }
     private void wepaonTextUI(float cur, float max)
     {
         weaponClipText.text = string.Format($"{cur} / {max}");
 
         var rect = weaponClipText.gameObject.GetComponent<RectTransform>();
 
-        rect.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0f);
-        rect.DOScale(new Vector3(1, 1, 1), 0.1f).SetEase(Ease.InOutCubic);
+        rectTween = rect.DOScale(new Vector3(1, 1, 1), 0f).SetAutoKill(false);
+
+        rectTween.ChangeEndValue(new Vector3(1.1f, 1.1f, 1.1f), 0f, false).Restart();
+        rectTween.ChangeEndValue(new Vector3(1,1,1),0.1f,true).SetEase(Ease.InOutCubic).Restart();
     }
 }

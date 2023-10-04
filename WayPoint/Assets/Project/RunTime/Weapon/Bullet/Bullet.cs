@@ -10,6 +10,9 @@ public class Bullet : MonoBehaviour
     [field: SerializeField] public BulletType type { get; set; }
     [field: SerializeField] public float lifeTime { get; set; }
     [field : SerializeField] public float damage { get; set; }
+    
+
+
 
     public GameObject target { get; set; }
 

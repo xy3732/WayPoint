@@ -106,7 +106,7 @@ public class Player : Singleton<Player>
     {
         playerData.exp += exp;
 
-        UImanager.instance.barUI(UImanager.instance.expBar, playerData.exp, playerData.maxExp);
+        UiManager.instance.barUI(UiManager.instance.expBar, playerData.exp, playerData.maxExp);
 
         levelUp();
     }
@@ -118,8 +118,8 @@ public class Player : Singleton<Player>
             playerData.level++;
             playerData.exp = 0;
 
-            UImanager.instance.levelTextUI(playerData.level);
-            UImanager.instance.barUI(UImanager.instance.expBar, playerData.exp, playerData.maxExp);
+            UiManager.instance.levelTextUI(playerData.level);
+            UiManager.instance.barUI(UiManager.instance.expBar, playerData.exp, playerData.maxExp);
 
             abilitySelector.instance.createButton();
         }
@@ -142,7 +142,7 @@ public class Player : Singleton<Player>
         curHit = 0;
         playerData.hp -= damage;
 
-        UImanager.instance.characterHitUI();
+        UiManager.instance.characterHitUI();
 
         rigid.velocity = Vector2.zero;  
     }

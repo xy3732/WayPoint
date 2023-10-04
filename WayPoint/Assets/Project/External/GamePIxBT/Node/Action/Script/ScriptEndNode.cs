@@ -9,7 +9,7 @@ public class ScriptEndNode : ActionNode
     protected override void OnStart()
     {
         // 나중에 disable로 설정할것
-        UIManager.instance.setText("");
+        UiManager.instance.setScriptText("");
     }
 
     protected override void OnStop()

@@ -20,6 +20,7 @@ public class GameManager : Singleton<GameManager>
 
     [field: SerializeField] public AbilitySO[] abilitys { get; set; }
 
+    [field: SerializeField] public GameObject debugTestObject { get; set; }
     private void Awake()
     {
         // «¡∑π¿” ≈∏∞Ÿ
@@ -52,7 +53,7 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = isPause ? 0 : 1;
     }
 
-    public static float min = 1.0f / 10.0f;
+    public static float min = 1.0f / 999f;
     private void Update()
     {
         timer += Time.deltaTime;
@@ -65,6 +66,7 @@ public class GameManager : Singleton<GameManager>
             spawnLevel = spawnManager.spawnSlot.Length - 1;
         }
 
+        if (Input.GetKeyDown(KeyCode.F2)) debugTestObject.SetActive(true);
         if (Input.GetKeyDown(KeyCode.F1)) abilitySelector.instance.createButton();
     }
 

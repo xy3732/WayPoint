@@ -169,8 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d1c607cd37a69478362925c9921460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <type>k__BackingField: 0
   tree: {fileID: 11400000, guid: 0b3bd560d6f26d042bc467546a1dfd33, type: 2}
-  so: {fileID: 11400000, guid: 502aadb453e6b5d49a3c3bb401b66eeb, type: 2}
+  so: {fileID: 11400000, guid: 92e2d4abb0b1f924485795ce55fdedb5, type: 2}
 --- !u!1 &3582241701658158220
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class BehaviourTreeRunner : MonoBehaviour
 {
+    public enum TreeType
+    {
+        gameObject,
+        script
+    }
+    [field: SerializeField]public TreeType type { get; set; }
+
     public BehaviourTree tree;
 
     private Pooling pool;
@@ -83,16 +90,26 @@ public class BehaviourTreeRunner : MonoBehaviour
     static float halfMin = 1.0f / 30.0f;
     private void Init()
     {
-        GameManager data = GameManager.instance;
-        // 정보 Init
-        container.Hp = (int)so.hp + (int)(data.timer * halfMin);
-        container.stopVelocity = true;
+        switch (type)
+        {
+            case TreeType.gameObject:
+
+                GameManager data = GameManager.instance;
+                // 정보 Init
+                container.Hp = (int)so.hp + (int)((data.timer * halfMin) * 5);
+                container.stopVelocity = true;
+
+                break;
+
+            case TreeType.script:
+                break;
+        }
     }
 
     // 추후 UImanager로 이동할 예정
     public void ScriptTrigerBtn()
     {
-        container.isScriptTriger = true;
+        if(gameObject.activeSelf) container.isScriptTriger = true;
     }
 
     // 컨테이너 생성

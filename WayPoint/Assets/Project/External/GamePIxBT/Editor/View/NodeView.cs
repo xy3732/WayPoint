@@ -105,17 +105,9 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         {
             AddToClassList("TrueSelectorNode");
         }
-        else if(node is MoveTo3Node)
-        {
-            AddToClassList("MoveToPosNode");
-        }
         else if(node is InRangeNode)
         {
             AddToClassList("InRangeNode");
-        }
-        else if(node is RandomVector3Node)
-        {
-            AddToClassList("RandomNode");
         }
     }
 
