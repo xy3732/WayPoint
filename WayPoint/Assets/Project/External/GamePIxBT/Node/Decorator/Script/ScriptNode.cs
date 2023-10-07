@@ -30,6 +30,10 @@ public class ScriptNode : DecoratorNode
             child.Update();
         }
 
+        if(child.state == State.Success)
+        {
+            Debug.Log($"Success Node - {guid}");
+        }
         return State.Running;
     }
 }

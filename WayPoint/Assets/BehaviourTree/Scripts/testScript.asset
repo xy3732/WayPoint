@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ad33d99484e68bd408103ecdc3b1d93c
-  position: {x: 0.0000731163, y: 819}
+  position: {x: 130.99998, y: 1235.9924}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -37,13 +37,59 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ec425a4d4a72cb749afdcb3f410ace99
-  position: {x: -184.69997, y: 311.00006}
+  position: {x: -212, y: 328}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
   alreadySelected: 0
   selectNode: 0
-  duration: 1.5
+  duration: 0.6
+--- !u!114 &-2852306134275282843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd163861d0cca8647bf53fac7ff2ef14, type: 3}
+  m_Name: DoScriptFade
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 50c96d8f2bfd09643a729dcbaf6795c7
+  position: {x: -370, y: 328}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  <arrayNumber>k__BackingField: 0
+  types: 0
+--- !u!114 &-746525213242974057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd163861d0cca8647bf53fac7ff2ef14, type: 3}
+  m_Name: DoScriptFade
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: fe8ef21e6b9a3164390201cc733ffc51
+  position: {x: -370, y: 1236.0001}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  <arrayNumber>k__BackingField: 0
+  types: 1
 --- !u!114 &-452422962394877483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,14 +105,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c759544f7431c2f4c825d371ff555d5a
-  position: {x: 0.0000731163, y: 311}
+  position: {x: 130.80003, y: 328.15002}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
-  description: first
+  description: 1
   alreadySelected: 0
   selectNode: 0
-  child: {fileID: 6231624282938021506}
-  script: "\uC751..."
+  child: {fileID: 4923470607304092031}
+  script: "\uC120\uC0DD\uB2D8. . \uC5EC\uAE30\uC57C."
   alreadyRead: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -93,8 +139,64 @@ MonoBehaviour:
   - {fileID: 2138019569484388065}
   - {fileID: -7847397680198232675}
   - {fileID: -452422962394877483}
+  - {fileID: 635315662155251504}
+  - {fileID: 4923470607304092031}
+  - {fileID: 3603947569854470671}
+  - {fileID: 4435316845817128816}
+  - {fileID: 2111725405904980523}
+  - {fileID: -2852306134275282843}
+  - {fileID: -746525213242974057}
+  - {fileID: 3361787466117511842}
+  - {fileID: 7372559256444143379}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &635315662155251504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5065fb9ee2060b44ea00d1daa0b1536b
+  position: {x: 131, y: 928}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 3
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: 3668485613098317676}
+  script: "\uC774\uC81C \uB9C9 \uC704\uCE58\uC5D0 \uB3C4\uCC29\uD588\uC5B4."
+  alreadyRead: 0
+--- !u!114 &2111725405904980523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d25def9c4ab8a4aa43c538abef2756, type: 3}
+  m_Name: DoScriptAnimation
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 22e0316561870144c87a4fb86e03a097
+  position: {x: -54, y: 928}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  <arrayNumber>k__BackingField: 0
+  types: 2
 --- !u!114 &2138019569484388065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,13 +212,58 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e5da9e9e2cd3ff44992b26646fe4accb
-  position: {x: -354.35, y: 312.00003}
+  position: {x: -528.0002, y: 328}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
   alreadySelected: 0
   selectNode: 0
   types: 0
+--- !u!114 &3361787466117511842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7986d86e8f0bf744bbf2d3480a2a5f9d, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 989d3252e959ce04998a61a63db5424b
+  position: {x: -54, y: 1236}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  duration: 0.6
+--- !u!114 &3603947569854470671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d25def9c4ab8a4aa43c538abef2756, type: 3}
+  m_Name: DoScriptAnimation
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 443babeeb76b415469a519dab324f04f
+  position: {x: -53.999992, y: 632}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  <arrayNumber>k__BackingField: 0
+  types: 1
 --- !u!114 &3668485613098317676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,15 +279,41 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5a3c22497545b974ab9b5fc0137b986b
-  position: {x: 0.0000731163, y: 658}
+  position: {x: 130.99998, y: 1074.9924}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
   alreadySelected: 0
   selectNode: 0
   children:
+  - {fileID: -746525213242974057}
   - {fileID: 5374975551495216179}
+  - {fileID: 3361787466117511842}
   - {fileID: -8120192718736450987}
+--- !u!114 &4435316845817128816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8576fc512b36c0a458e3e17425523308, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6ad5e29c377f21846ae6b6a7d7019b1e
+  position: {x: 131, y: 768}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  children:
+  - {fileID: 2111725405904980523}
+  - {fileID: 635315662155251504}
 --- !u!114 &4861063052301278468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,13 +329,37 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 67dc0fd97e819db42a2ea0af2a9eb9d4
-  position: {x: 0, y: 0}
+  position: {x: 130.80003, y: 17.149971}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
   alreadySelected: 0
   selectNode: 0
   child: {fileID: 8260440255751068660}
+--- !u!114 &4923470607304092031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8576fc512b36c0a458e3e17425523308, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f9c268f7b65ea8c4dac7aea47a2aff7a
+  position: {x: 130.80003, y: 474.15}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  children:
+  - {fileID: 3603947569854470671}
+  - {fileID: 6231624282938021506}
 --- !u!114 &5374975551495216179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +375,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 20222f9f331b150479af39f78934abc3
-  position: {x: -157.99994, y: 819}
+  position: {x: -212, y: 1235}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -200,15 +397,38 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 50ebf7b23a55a2648b4386d5da28ab22
-  position: {x: 0.0000731163, y: 478}
+  position: {x: 130.99994, y: 631.8002}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
-  description: second
+  description: 2
   alreadySelected: 0
   selectNode: 0
-  child: {fileID: 3668485613098317676}
-  script: "\uB098\uC57C.. \uC2DC\uB85C\uCF54.."
+  child: {fileID: 4435316845817128816}
+  script: "\uB098\uC57C.. \uC2DC\uB85C\uCF54."
   alreadyRead: 0
+--- !u!114 &7372559256444143379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90370a7fd864fc5478c26db667d2bc2b, type: 3}
+  m_Name: DoScriptMove
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 604db336d4158484da124aa47755003b
+  position: {x: -53.99997, y: 327.99997}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  <arrayNumber>k__BackingField: 0
+  types: 0
 --- !u!114 &8260440255751068660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +444,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 99f2d0178f6de1d41a40e5514e41ab8a
-  position: {x: 0, y: 152}
+  position: {x: 130.80003, y: 169.14996}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -232,5 +452,7 @@ MonoBehaviour:
   selectNode: 0
   children:
   - {fileID: 2138019569484388065}
+  - {fileID: -2852306134275282843}
   - {fileID: -7847397680198232675}
+  - {fileID: 7372559256444143379}
   - {fileID: -452422962394877483}

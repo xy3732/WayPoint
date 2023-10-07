@@ -276,6 +276,10 @@ MonoBehaviour:
   <UIsObject>k__BackingField: {fileID: 1625993149}
   <ScriptsObject>k__BackingField: {fileID: 83980594}
   <scriptButtonObject>k__BackingField: {fileID: 301280857}
+  <BoardUpObject>k__BackingField: {fileID: 950194286}
+  <BoardDownObject>k__BackingField: {fileID: 1155190364}
+  <CharacterSprites>k__BackingField:
+  - {fileID: 1731515875}
   selectButtonList: []
   <weaponClipText>k__BackingField: {fileID: 1230849444}
   <clipBar>k__BackingField: {fileID: 1166603300}
@@ -4020,12 +4024,12 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9998094
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 11.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5260,7 +5264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -220}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &950194287
@@ -93796,7 +93800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1155190365
@@ -125255,7 +125259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698382055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4982526, y: -4.3045416, z: 0.9966559}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125304,7 +125308,7 @@ GameObject:
   - component: {fileID: 1731515873}
   - component: {fileID: 1731515875}
   m_Layer: 5
-  m_Name: CharacterImage
+  m_Name: CharacterImage0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125380,8 +125384,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4d3c7f68a70d94f8376e60b3648586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <haloObject>k__BackingField: {fileID: 1953952571}
   <idle>k__BackingField: {fileID: 21300000, guid: aec4a89ba79ad82498d4e0d0220e754a, type: 3}
   <blink>k__BackingField: {fileID: 21300000, guid: 39ec7ccefa7855249b72b289f5a959b6, type: 3}
+  <smile>k__BackingField: {fileID: 21300000, guid: e071245a31839dd4c82b1ce38f132da0, type: 3}
+  <angry>k__BackingField: {fileID: 21300000, guid: 6cbc3e8d5f355c841befd499aaf4ca7b, type: 3}
+  <embarrassment>k__BackingField: {fileID: 21300000, guid: b62980f4a165683408a340f53e1cad84, type: 3}
+  <speak>k__BackingField: {fileID: 21300000, guid: b65f7d07423a3dd4fb45ed1f592067a0, type: 3}
 --- !u!1 &1785806881
 GameObject:
   m_ObjectHideFlags: 0

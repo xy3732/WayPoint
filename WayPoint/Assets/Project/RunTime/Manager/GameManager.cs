@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using System.Linq;
 
+using DG.Tweening;
+
 public class GameManager : Singleton<GameManager>
 {
     private Pooling pooling;

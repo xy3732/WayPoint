@@ -18,6 +18,9 @@ public class UiManager : Singleton<UiManager>
     [field: SerializeField] public GameObject UIsObject{get; set;}
     [field: SerializeField] public GameObject ScriptsObject { get; set; }
     [field: SerializeField] public GameObject scriptButtonObject { get; set; }
+    [field: SerializeField] public RectTransform BoardUpObject { get; set; }
+    [field: SerializeField] public RectTransform BoardDownObject { get; set; }
+    [field: SerializeField] public CharacterImageEffect[] CharacterSprites { get; set; }
     [HideInInspector] public List<Button> selectButtonList = new List<Button>();
     // weapon Text
     [field: Space(20)]
