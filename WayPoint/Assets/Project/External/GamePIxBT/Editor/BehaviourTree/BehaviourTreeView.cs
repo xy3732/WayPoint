@@ -219,8 +219,7 @@ public class BehaviourTreeView : GraphView
 
     // 마우스 오른쪽클릭 해서 뜨는 Context Menu
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
-    {
-        Debug.Log(tree.behaviourTreeType);
+    { 
 
         Vector2 mousePos = this.ChangeCoordinatesTo(contentViewContainer, evt.localMousePosition);
 

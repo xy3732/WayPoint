@@ -8,8 +8,31 @@ public class ScriptNode : DecoratorNode
     [field: SerializeField]public string schoolClubName { get; set; }
 
     [field: SerializeField] [field: TextArea(4, 2)] public string script { get; set; }
-    public bool alreadyRead = false;
+    
+    [field:Space(20)]
+    [field:Header("Script Effect Settings")]
+    [field: SerializeField] private int arrayNumber { get; set; }
+    public enum emotionEffect
+    {
+        none,
+        question,
+        shine,
+        waterDrop,
+    }
 
+    public enum selectEffect
+    {
+        idle,
+        speak,
+        smile,
+        angry,
+        embarrassment,
+    }
+    public selectEffect types;
+    public emotionEffect emtionTypes;
+
+    [HideInInspector] public bool alreadyRead = false;
+    private CharacterImageEffect image { get; set; }
     protected override void OnStart()
     {
         container.isScriptTriger = false;
@@ -20,6 +43,54 @@ public class ScriptNode : DecoratorNode
 
         if (!UiManager.instance.scriptsUiObject.activeSelf) UiManager.instance.scriptsUiObject.SetActive(true);
 
+        // effect ¼³Á¤
+        image = UiManager.instance.CharacterSprites[arrayNumber];
+        if (image == null) Debug.LogWarning($"{this.name} - CharacterImageEffect is null");
+
+        else
+        {
+            switch (types)
+            {
+                case selectEffect.idle:
+                    image.Idle();
+                    break;
+
+                case selectEffect.speak:
+                    image.Speak();
+                    break;
+
+                case selectEffect.smile:
+                    image.Smile();
+                    break;
+
+                case selectEffect.angry:
+                    image.Angry();
+                    break;
+
+                case selectEffect.embarrassment:
+                    image.Embarrassment();
+                    break;
+            }
+
+            switch (emtionTypes)
+            {
+                case emotionEffect.none:
+                    image.characterEmotion.None();
+                    break;
+
+                case emotionEffect.question:
+                    image.characterEmotion.QuestionMark();
+                    break;
+
+                case emotionEffect.shine:
+                    image.characterEmotion.Shine();
+                    break;
+
+                case emotionEffect.waterDrop:
+                    image.characterEmotion.WaterDrop();
+                    break;
+            }
+        }
     }
 
     protected override void OnStop()

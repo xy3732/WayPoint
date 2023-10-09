@@ -28,6 +28,8 @@ public class ScriptSequenceNode : CompositeNode
 
     protected override State OnUpdate()
     {
+        State curState = State.Running;
+
         if (alreadySelected)
         {
             children[selectNumber].Update();
@@ -51,7 +53,21 @@ public class ScriptSequenceNode : CompositeNode
                 }
             }
         }
+        for(int i=0; i< children.Count; i++)
+        {
+            if (children[i].state != State.Success)
+            {
+                curState = State.Running;
+                break;
+            }
+            else
+            {
+                curState = State.Success;
+            }
+        }
 
-        return State.Running;
+
+        return curState;
+
     }
 }
