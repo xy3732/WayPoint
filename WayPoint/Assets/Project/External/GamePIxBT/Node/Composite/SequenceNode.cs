@@ -23,8 +23,7 @@ public class SequenceNode : CompositeNode
     protected override State OnUpdate()
     {
         UnityEngine.Profiling.Profiler.BeginSample("SequenceNode");
-        // ���� current��°�� �ִ� �ڽ� ��带 ��������.
-        // ��������� ������� ������ �ȵ� ��带 �����ͼ� ���� ��Ų��.
+
         var child = children[current];
 
         switch (child.Update())
@@ -33,15 +32,14 @@ public class SequenceNode : CompositeNode
                 return State.Running;
             case State.Failure:
                 return State.Failure;
-                // ���� �̹� ������ ��� �̸� current ����.
+
             case State.Success:
                 current++;
                 break;
         }
 
         UnityEngine.Profiling.Profiler.EndSample();
-        // ���� �������� ����� ��°�� �ڽ��� ������ ��°�� ������� ���� ��ȯ,
-        // �ƴ϶�� ���������� ��ȯ.
+
         return current == children.Count ? State.Success : State.Running;
     }
 }

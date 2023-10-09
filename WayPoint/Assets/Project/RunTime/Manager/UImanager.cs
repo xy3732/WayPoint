@@ -9,6 +9,9 @@ public class UiManager : Singleton<UiManager>
 {
 
     // Scripts
+    [field: SerializeField] public GameObject scriptsUiObject { get; set; }
+    [field: SerializeField] private TextMeshProUGUI schoolClubText { get; set; }
+    [field: SerializeField] private TextMeshProUGUI characterNameText { get; set; }
     [field: SerializeField] private TextMeshProUGUI scriptText { get; set; }
     private string message { get; set; }
     private int index { get; set;}
@@ -135,8 +138,11 @@ public class UiManager : Singleton<UiManager>
     }
 
     #region scriptTextOnly
-    public void setScriptText(string text)
+    public void setScriptText(string characterName, string schoolClubName, string text)
     {
+        characterNameText.text = characterName;
+        schoolClubText.text = schoolClubName;
+
         message = text;
         TypeEffect();
     }

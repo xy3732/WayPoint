@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CharacterImageEffect : MonoBehaviour
 {
     private Image image { get; set; }
+    public characterEmotion characterEmotion { get; set; }
 
     [field: SerializeField] public GameObject haloObject { get; set; }
     [field: Space(20)]
@@ -22,6 +23,7 @@ public class CharacterImageEffect : MonoBehaviour
     private void Awake()
     {
         image = GetComponent<Image>();
+        characterEmotion = transform.GetChild(0).GetComponent<characterEmotion>();
     }
 
     private void Start()
@@ -80,9 +82,6 @@ public class CharacterImageEffect : MonoBehaviour
     private void doSpeak()
     {
         image.sprite = speak;
-
-        transform.DOKill();
-        transform.DOScale(new Vector3(1,1,1),0f);
     }
     #endregion
 
@@ -90,9 +89,6 @@ public class CharacterImageEffect : MonoBehaviour
     private void doSmile()
     {
         image.sprite = smile;
-
-        transform.DOKill();
-        transform.DOScale(new Vector3(1, 1, 1),0f);
     }
 
     #endregion
@@ -102,9 +98,6 @@ public class CharacterImageEffect : MonoBehaviour
     private void doAngry()
     {
         image.sprite = angry;
-
-        transform.DOKill();
-        transform.DOScale(new Vector3(1, 1, 1),0f);
     }
 
     #endregion
@@ -114,9 +107,6 @@ public class CharacterImageEffect : MonoBehaviour
     private void doEmbarrass()
     {
         image.sprite = embarrassment;
-
-        transform.DOKill();
-        transform.DOScale(new Vector3(1, 1, 1),0f);
     }
 
     #endregion

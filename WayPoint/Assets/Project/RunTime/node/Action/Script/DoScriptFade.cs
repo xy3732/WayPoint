@@ -31,7 +31,7 @@ public class DoScriptFade : ActionNode
             case DoFadeType.FadeIn:
                 image.DOKill();
                 image.DOColor(new Color32(40, 40, 40, 255), 0f);
-                image.DOColor(new Color32(255, 255, 255, 255), 0.4f);
+                image.DOColor(new Color32(255, 255, 255, 255), 0.3f);
                 break;
 
             case DoFadeType.FadeOut:
@@ -55,7 +55,10 @@ public class DoScriptFade : ActionNode
 
     private void endSet()
     {
+        // 캐릭터, 헤일러 오브젝트 off
         image.gameObject.SetActive(false);
         image.gameObject.GetComponent<CharacterImageEffect>().haloObject?.SetActive(false);
+
+        UiManager.instance.scriptsUiObject.SetActive(false);
     }
 }

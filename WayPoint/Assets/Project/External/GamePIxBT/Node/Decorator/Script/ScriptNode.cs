@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ScriptNode : DecoratorNode
 {
-    [TextArea(4, 2)] public string script;
+    [field: SerializeField]public string characterName { get; set; }
+    [field: SerializeField]public string schoolClubName { get; set; }
+
+    [field: SerializeField] [field: TextArea(4, 2)] public string script { get; set; }
     public bool alreadyRead = false;
 
     protected override void OnStart()
@@ -13,7 +16,10 @@ public class ScriptNode : DecoratorNode
 
         // text ¼³Á¤
         container.textScript = script;
-        UiManager.instance.setScriptText(container.textScript);
+        UiManager.instance.setScriptText(characterName,schoolClubName,script);
+
+        if (!UiManager.instance.scriptsUiObject.activeSelf) UiManager.instance.scriptsUiObject.SetActive(true);
+
     }
 
     protected override void OnStop()
@@ -30,10 +36,7 @@ public class ScriptNode : DecoratorNode
             child.Update();
         }
 
-        if(child.state == State.Success)
-        {
-            Debug.Log($"Success Node - {guid}");
-        }
-        return State.Running;
+        if(child.state == State.Success) return State.Success;
+        else return State.Running;
     }
 }

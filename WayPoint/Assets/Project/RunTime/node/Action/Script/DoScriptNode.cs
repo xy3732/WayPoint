@@ -40,7 +40,7 @@ public class DoScriptNode : ActionNode
                 uiManager.BoardDownObject.DOKill();
                 uiManager.BoardUpObject.DOKill();
                 uiManager.BoardUpObject.DOAnchorPos(new Vector3(0, 0, 0), 0.5f).SetEase(Ease.OutExpo);
-                uiManager.BoardDownObject.DOAnchorPos(new Vector3(0,-200,0),0.5f).SetEase(Ease.OutExpo).OnComplete( () => endSet(uiManager));
+                uiManager.BoardDownObject.DOAnchorPos(new Vector3(0,-220,0),0.5f).SetEase(Ease.OutExpo).OnComplete( () => endSet(uiManager));
                 break;
         }
     }
@@ -57,8 +57,12 @@ public class DoScriptNode : ActionNode
 
     private void endSet(UiManager uiManager)
     {
-        uiManager.UIsObject.SetActive(true);
+        // script(대사) 오브젝트들 비활성화
+        uiManager.scriptsUiObject.SetActive(false);
         uiManager.ScriptsObject.SetActive(false);
         uiManager.scriptButtonObject.SetActive(false);
+        // ui 오브젝트 활성화
+        uiManager.UIsObject.SetActive(true);
+
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ad33d99484e68bd408103ecdc3b1d93c
-  position: {x: 130.99998, y: 1235.9924}
+  position: {x: 131.00003, y: 1236.0001}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -82,7 +82,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: fe8ef21e6b9a3164390201cc733ffc51
-  position: {x: -370, y: 1236.0001}
+  position: {x: -370.00006, y: 1235.9998}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -105,14 +105,16 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c759544f7431c2f4c825d371ff555d5a
-  position: {x: 130.80003, y: 328.15002}
+  position: {x: 131, y: 328}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 1
   alreadySelected: 0
   selectNode: 0
   child: {fileID: 4923470607304092031}
-  script: "\uC120\uC0DD\uB2D8. . \uC5EC\uAE30\uC57C."
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uC120\uC0DD\uB2D8..\uC5EC\uAE30\uC57C."
   alreadyRead: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -165,14 +167,16 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5065fb9ee2060b44ea00d1daa0b1536b
-  position: {x: 131, y: 928}
+  position: {x: 130.99991, y: 927.9999}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 3
   alreadySelected: 0
   selectNode: 0
   child: {fileID: 3668485613098317676}
-  script: "\uC774\uC81C \uB9C9 \uC704\uCE58\uC5D0 \uB3C4\uCC29\uD588\uC5B4."
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uC774\uC81C \uB9C9 \uC704\uCE58\uC5D0 \uB3C4\uCC29\uD588\uC5B4"
   alreadyRead: 0
 --- !u!114 &2111725405904980523
 MonoBehaviour:
@@ -189,7 +193,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 22e0316561870144c87a4fb86e03a097
-  position: {x: -54, y: 928}
+  position: {x: -54.000008, y: 928}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -197,6 +201,7 @@ MonoBehaviour:
   selectNode: 0
   <arrayNumber>k__BackingField: 0
   types: 2
+  emtionTypes: 0
 --- !u!114 &2138019569484388065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +239,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 989d3252e959ce04998a61a63db5424b
-  position: {x: -54, y: 1236}
+  position: {x: -54.00007, y: 1235.9998}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -256,7 +261,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 443babeeb76b415469a519dab324f04f
-  position: {x: -53.999992, y: 632}
+  position: {x: -54, y: 632}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -264,6 +269,7 @@ MonoBehaviour:
   selectNode: 0
   <arrayNumber>k__BackingField: 0
   types: 1
+  emtionTypes: 2
 --- !u!114 &3668485613098317676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +285,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5a3c22497545b974ab9b5fc0137b986b
-  position: {x: 130.99998, y: 1074.9924}
+  position: {x: 130.99991, y: 1075}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -351,7 +357,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f9c268f7b65ea8c4dac7aea47a2aff7a
-  position: {x: 130.80003, y: 474.15}
+  position: {x: 131, y: 474}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -375,7 +381,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 20222f9f331b150479af39f78934abc3
-  position: {x: -212, y: 1235}
+  position: {x: -212.00006, y: 1234.9998}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -397,14 +403,16 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 50ebf7b23a55a2648b4386d5da28ab22
-  position: {x: 130.99994, y: 631.8002}
+  position: {x: 131, y: 632}
   btContainer:
     targetPosition: {x: 0, y: 0, z: 0}
   description: 2
   alreadySelected: 0
   selectNode: 0
   child: {fileID: 4435316845817128816}
-  script: "\uB098\uC57C.. \uC2DC\uB85C\uCF54."
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uB098\uC57C. \uC2DC\uB85C\uCF54."
   alreadyRead: 0
 --- !u!114 &7372559256444143379
 MonoBehaviour:
