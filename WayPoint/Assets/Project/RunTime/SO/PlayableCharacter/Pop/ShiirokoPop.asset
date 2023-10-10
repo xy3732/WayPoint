@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd3fea5b073935438756b65d9edff64, type: 3}
+  m_Name: ShiirokoPop
+  m_EditorClassIdentifier: 
+  <backgroundEffect>k__BackingField: {fileID: 21300000, guid: 2e91429c7b691744daf7179fd75f9374, type: 3}
+  <backgroundMask>k__BackingField: {fileID: 21300000, guid: dd0aecfeb4561494e8f587545ecaab78, type: 3}
+  <character48sprite>k__BackingField: {fileID: 21300000, guid: dd08a1f4bbd214046bfde2d501d2c109, type: 3}

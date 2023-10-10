@@ -62,16 +62,9 @@ public class BehaviourTreeView : GraphView
         // Root Node 생성
         if(tree.rootNode == null)
         {
-            try
-            {
-                tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
-                EditorUtility.SetDirty(tree);
-                AssetDatabase.SaveAssets();
-            }
-            catch
-            {
-
-            }
+            tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
+            EditorUtility.SetDirty(tree);
+            AssetDatabase.SaveAssets();
         }
 
         // 노드 생성
@@ -226,8 +219,7 @@ public class BehaviourTreeView : GraphView
 
     // 마우스 오른쪽클릭 해서 뜨는 Context Menu
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
-    {
-        Debug.Log(tree.behaviourTreeType);
+    { 
 
         Vector2 mousePos = this.ChangeCoordinatesTo(contentViewContainer, evt.localMousePosition);
 

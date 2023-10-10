@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7758334646363859245}
   - component: {fileID: 7758334646363859244}
+  - component: {fileID: 695227689461844974}
   - component: {fileID: 7758334646363859247}
   - component: {fileID: 7758334646363859242}
   - component: {fileID: 6370079081756231789}
@@ -87,6 +88,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &695227689461844974
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7758334646363859246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7758334646363859247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83e629c72f09274ea56ec0b6f4395f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <type>k__BackingField: 0
+  <lifeTime>k__BackingField: 2
+  <damage>k__BackingField: 10
 --- !u!50 &7758334646363859242
 Rigidbody2D:
   serializedVersion: 4

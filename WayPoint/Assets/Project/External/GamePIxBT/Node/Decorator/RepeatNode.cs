@@ -19,7 +19,8 @@ public class RepeatNode : DecoratorNode
 
     protected override State OnUpdate()
     {
-        child.Update();    
+        child.Update();
+        
         // 반복 실행이라 Suceess 반환으로 하면 안된다.
         // 지속적으로 Running 돌려줄것.
         return State.Running;

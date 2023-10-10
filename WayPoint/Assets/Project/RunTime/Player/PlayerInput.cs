@@ -45,6 +45,8 @@ public class PlayerInput : MonoBehaviour
     // 캐릭터 이동 처리 
     private void GetMovementKeyInput()
     {
+        if (UiManager.instance.ScriptsObject.activeSelf) return;
+
         if (Input.GetKey(KeyCode.A)) move?.Invoke(Vector3.left);
         else if (Input.GetKey(KeyCode.D)) move?.Invoke(Vector3.right);
 
@@ -59,13 +61,17 @@ public class PlayerInput : MonoBehaviour
     // 재장전키 발동시.
     private void GetReloadWeapon()
     {
+        if (UiManager.instance.ScriptsObject.activeSelf) return;
+
         if (Input.GetKey(KeyCode.R)) reload?.Invoke();
     }
 
     // 마우스 왼쪽 클릭시.
     private void GetLeftMouseButton()
     {
-         if(Input.GetMouseButton(0)) shot?.Invoke();
+        if (UiManager.instance.ScriptsObject.activeSelf) return;
+
+        if (Input.GetMouseButton(0)) shot?.Invoke();
     }
 
     private void EscButton()

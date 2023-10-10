@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using System.Linq;
 
+using DG.Tweening;
+
 public class GameManager : Singleton<GameManager>
 {
     private Pooling pooling;
@@ -19,7 +21,10 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector] public bool isPause { get; set; }
 
     [field: SerializeField] public AbilitySO[] abilitys { get; set; }
+    [field: SerializeField] public PopImageSO[] popCharacters { get; set; }
 
+    [field: SerializeField] public GameObject debugTestObject { get; set; }
+    [field: SerializeField] public GameObject debugTestObject2 { get; set; }
     private void Awake()
     {
         // «¡∑π¿” ≈∏∞Ÿ
@@ -52,7 +57,7 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = isPause ? 0 : 1;
     }
 
-    public static float min = 1.0f / 30.0f;
+    public static float min = 1.0f / 999f;
     private void Update()
     {
         timer += Time.deltaTime;
@@ -65,6 +70,8 @@ public class GameManager : Singleton<GameManager>
             spawnLevel = spawnManager.spawnSlot.Length - 1;
         }
 
+        if (Input.GetKeyDown(KeyCode.F3)) debugTestObject2.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.F2)) debugTestObject.SetActive(true);
         if (Input.GetKeyDown(KeyCode.F1)) abilitySelector.instance.createButton();
     }
 

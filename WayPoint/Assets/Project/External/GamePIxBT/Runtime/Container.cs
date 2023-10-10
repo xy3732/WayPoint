@@ -13,7 +13,7 @@ public class Container
     [HideInInspector] public bool isStopMove = false;
 
     // Script Only
-    [HideInInspector] public string textScript;
+    [HideInInspector] public string textScript { get; set; }
     [HideInInspector] public bool isScriptTriger = false;
     [HideInInspector] public int buttonSelectNumber = -1;
     [HideInInspector] public ScriptSequenceNode scriptSequence;

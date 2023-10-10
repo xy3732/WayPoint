@@ -9,7 +9,7 @@ public class Player : Singleton<Player>
 {
     private Animator animator;
     private Rigidbody2D rigid;
-    [HideInInspector]public PlayerInput playerInput;
+    [HideInInspector] public PlayerInput playerInput;
 
     private GameObject weaponObject;
 
@@ -21,14 +21,19 @@ public class Player : Singleton<Player>
 
     public PlayerSO playerDataSO;
 
+    // 메인 어빌리티 큐
+    public Queue<GameObject> abilityPool = new Queue<GameObject>();
+
     // 플레이 도중에 얻는 어빌리티 임시 저장.
-    [field: SerializeField] public List<AbilitySO> abilitys { get; set; }
+    [field: SerializeField] public List<AbilitySO> buffAbilitys { get; set; }
+    [field: SerializeField] public List<AbilitySO> mainAbilitys { get; set; }
     [HideInInspector] public PlayerData playerData = new PlayerData();
-    [HideInInspector] public BuffData buff { get; set; }
+    public BuffData buff { get; set; }
 
     private void Awake()
     {
         player = this.gameObject;
+        curHit = 0;
 
         buff = new BuffData();
         buff.init();
@@ -47,13 +52,18 @@ public class Player : Singleton<Player>
 
     private void Update()
     {
-        curHit += Time.deltaTime;    
+        foreach (var item in mainAbilitys)
+        {
+            item.update();
+        }
+
+        curHit += Time.deltaTime;
     }
 
     // 이니시에이터
     private void init()
     {
-        abilitys = new List<AbilitySO>();
+        buffAbilitys = new List<AbilitySO>();
 
         playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
@@ -70,7 +80,8 @@ public class Player : Singleton<Player>
 
     public void addAbility(AbilitySO ability)
     {
-        abilitys.Add(ability);
+        if (ability.type == AbilitySO.SkillType.buff) buffAbilitys.Add(ability);
+        else if (ability.type == AbilitySO.SkillType.Main) mainAbilitys.Add(ability);
     }
 
     // 스프라이트 플립
@@ -82,7 +93,7 @@ public class Player : Singleton<Player>
     // 발사
     private void Shot()
     {
-        weaponData.Shot(buff.shotDelay);
+        weaponData.Shot(buff, playerData.bullet);
     }
 
     // 재장전
@@ -95,20 +106,20 @@ public class Player : Singleton<Player>
     {
         playerData.exp += exp;
 
-        UImanager.instance.barUI(UImanager.instance.expBar, playerData.exp, playerData.maxExp);
+        UiManager.instance.barUI(UiManager.instance.expBar, playerData.exp, playerData.maxExp);
 
         levelUp();
     }
 
     public void levelUp()
     {
-        if(playerData.exp >= playerData.maxExp)
+        if (playerData.exp >= playerData.maxExp)
         {
             playerData.level++;
             playerData.exp = 0;
 
-            UImanager.instance.levelTextUI(playerData.level);
-            UImanager.instance.barUI(UImanager.instance.expBar, playerData.exp, playerData.maxExp);
+            UiManager.instance.levelTextUI(playerData.level);
+            UiManager.instance.barUI(UiManager.instance.expBar, playerData.exp, playerData.maxExp);
 
             abilitySelector.instance.createButton();
         }
@@ -124,14 +135,14 @@ public class Player : Singleton<Player>
     }
 
     // 피격시
-    private float curHit = 0f;
+    private float curHit { get; set; }
     private void hit(float damage)
     {
         if (curHit < playerData.invicivMax) return;
         curHit = 0;
         playerData.hp -= damage;
 
-        UImanager.instance.characterHitUI();
+        UiManager.instance.characterHitUI();
 
         rigid.velocity = Vector2.zero;  
     }
@@ -166,9 +177,12 @@ public class PlayerData
     public float maxExp { get; set; }
     public float maxSp { get; set; }
     public float invicivMax { get; set; }
+    public float critical { get; set; }
 
     public int level { get; set; }
     public int abilitySelectAble { get; set; }
+
+    public BulletSO bullet { get; set; }
 
     public void set(PlayerSO data)
     {
@@ -180,9 +194,13 @@ public class PlayerData
         maxSp = data.maxSp;
         sp = 0;
 
+        bullet = data.bullet;
+
+        critical = data.critical;
+
         abilitySelectAble = data.abilitySelectAble;
 
-        invicivMax = 0.2f;
+        invicivMax = 1f;
         level = 1;
         exp = 0;
         maxExp = 100;
@@ -194,7 +212,10 @@ public class BuffData
     public float reload { get; set; }
     public float shotDelay { get; set; }
     public float speed { get; set; }
-    public float damage {get; set;}
+    public float damage { get; set; }
+    public float critical { get; set; }
+
+    public float clip { get; set; }
 
     public void init()
     {
@@ -203,6 +224,8 @@ public class BuffData
 
         shotDelay = 0;
         damage = 0;
+        critical = 0;
+        clip = 0;
         
     }
 }

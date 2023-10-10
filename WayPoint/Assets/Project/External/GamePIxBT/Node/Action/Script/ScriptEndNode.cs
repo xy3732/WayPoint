@@ -9,7 +9,7 @@ public class ScriptEndNode : ActionNode
     protected override void OnStart()
     {
         // 나중에 disable로 설정할것
-        UIManager.instance.setText("");
+        UiManager.instance.setScriptText("","","");
     }
 
     protected override void OnStop()
@@ -24,11 +24,7 @@ public class ScriptEndNode : ActionNode
         { 
             alreadyRead = true;
             container.isScriptTriger = false;
-
-            Debug.Log(container.isScriptTriger);
         }
-
-        Debug.Log("Script end");
 
         // 해당 BehaviourTree 종료
         return State.Success;

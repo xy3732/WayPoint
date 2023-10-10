@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: enemy_1
   m_EditorClassIdentifier: 
   <prefab>k__BackingField: {fileID: 3582241701567298393, guid: 71604410f97d394469da8dd2555d0d42, type: 3}
-  <spawnDelay>k__BackingField: 4
-  <hp>k__BackingField: 7
-  <damage>k__BackingField: 5
-  <exp>k__BackingField: 12
+  <spawnDelay>k__BackingField: 3
+  <hp>k__BackingField: 70
+  <damage>k__BackingField: 20
+  <exp>k__BackingField: 30

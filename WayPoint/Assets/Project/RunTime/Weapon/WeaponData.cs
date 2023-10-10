@@ -14,7 +14,7 @@ public class WeaponData : Singleton<WeaponData>
     private float curReload = 0;
     [HideInInspector] public float maxReload { get; set; }
 
-    private UImanager uImanager;
+    private UiManager uImanager;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class WeaponData : Singleton<WeaponData>
 
     private void Start()
     {
-        uImanager = UImanager.instance;
+        uImanager = UiManager.instance;
     }
 
     private void Update()
@@ -45,19 +45,24 @@ public class WeaponData : Singleton<WeaponData>
 
     }
 
+    public void setClip()
+    {
+        maxClip = maxClip + (int)Player.instance.buff.clip;
+
+        uImanager.WeaponUpdateUI(curClip, maxClip);
+    }
+
     public void SetReloadSpeed()
     {
         float reloadBuff = 0.01f * (100 - Player.instance.buff.reload);
         maxReload = maxReload * reloadBuff;
-
-        Debug.Log(maxReload * reloadBuff);
     }
 
-    public void Shot(float buff)
+    public void Shot(BuffData buff, BulletSO bullet)
     {
         if (curClip <= 0 && !isReload) doReload();
 
-        float buffDelay = 0.01f * (100 - buff);
+        float buffDelay = 0.01f * (100 - buff.shotDelay);
 
         if (shotCurDelay < shotMaxDelay * buffDelay || curClip <= 0) return;
 
@@ -69,12 +74,21 @@ public class WeaponData : Singleton<WeaponData>
         uImanager.WeaponUpdateUI(curClip, maxClip);
 
         // 풀링
-        Pooling.instance.getObject(ref Pooling.instance.bulletPool,transform);
+        Pooling pool = Pooling.instance;
+        pool.bulletGetObject(ref pool.bulletPool,transform, pool.bulletPrefab, bullet);
     }
 
+    private GameObject speechObject;
+
+    // 재장전 시작
     public void doReload()
     {
         if (isReload) return;
+
+        // 재장전 말풍선 생성
+        speechObject = uImanager.speechUI();
+        speechObject.GetComponent<SpeechBuble>().stopAnimation = false;
+        speechObject.GetComponent<SpeechBuble>().reloadAnimation();
 
         isReload = true;
 
@@ -84,9 +98,10 @@ public class WeaponData : Singleton<WeaponData>
         uImanager.WeaponUpdateUI(curClip, maxClip);
     }
 
+
+    // 재장전 중
     private void Reload()
     {
-        //uImanager.weaponBarUI(curReload, maxReload);
         uImanager.barUI(uImanager.clipBar, curReload, maxReload);
 
         if (curReload < maxReload) return;
@@ -94,6 +109,11 @@ public class WeaponData : Singleton<WeaponData>
         curClip = maxClip;
         isReload = false;
 
+        // 재장전 말풍선 제거
+        speechObject.GetComponent<SpeechBuble>().stopAnimation = true; 
+        Pooling.instance.setObject(ref uImanager.speechPool, speechObject);
+        
+        // 남은 탄창 업데이트
         uImanager.WeaponUpdateUI(curClip, maxClip);
     }
 }

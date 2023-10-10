@@ -30,7 +30,7 @@ public class SpawnManager :Singleton<SpawnManager>
             if (spawnTimer[i] >= spawnSlot[GameManager.instance.spawnLevel].enemySO[i].spawnDelay)
             {
                 spawnTimer[i] = 0;
-                Spawn(i);
+                //Spawn(i);
             }
 
         }
@@ -38,7 +38,7 @@ public class SpawnManager :Singleton<SpawnManager>
 
     private void Spawn(int i)
     {
-        GameObject enemy = spawnSlot[0].enemySO[0].prefab;
+        GameObject enemy = spawnSlot[GameManager.instance.spawnLevel].enemySO[i].prefab;
 
         var data = enemy.GetComponent<BehaviourTreeRunner>();
         data.so = spawnSlot[GameManager.instance.spawnLevel].enemySO[i];
@@ -53,6 +53,6 @@ public class SpawnManager :Singleton<SpawnManager>
 [System.Serializable]
 public class SpawnSlots
 {
-    public EnemySO[] enemySO;
+    public GameObjectSO[] enemySO;
 }
 

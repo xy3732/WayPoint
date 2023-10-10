@@ -9,6 +9,7 @@ public class PlayerSO : ScriptableObject
     [field: SerializeField] public float speed { get; set; }
     [field: SerializeField] public float maxHp { get; set; }
     [field: SerializeField] public float maxSp { get; set; }
+    [field: SerializeField] public float critical { get; set; }
 
     [field: Space(20)]
 
@@ -30,4 +31,7 @@ public class PlayerSO : ScriptableObject
     [field: Space(20)]
     [field: SerializeField] public Sprite normalStateSprite { get; set; }
     [field: SerializeField] public Sprite hitStateSprite { get; set; }
+
+    [field: Space(20)]
+    [field: SerializeField] public BulletSO bullet { get; set; }
 }
