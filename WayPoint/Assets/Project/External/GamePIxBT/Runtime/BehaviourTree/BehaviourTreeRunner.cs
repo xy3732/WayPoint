@@ -109,7 +109,11 @@ public class BehaviourTreeRunner : MonoBehaviour
     // 추후 UImanager로 이동할 예정
     public void ScriptTrigerBtn()
     {
-        if(gameObject.activeSelf) container.isScriptTriger = true;
+        if (gameObject.activeSelf)
+        {
+            container.isScriptTriger = true;
+            Debug.Log(container.isScriptTriger);
+        }
     }
 
     // 컨테이너 생성

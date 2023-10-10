@@ -1,0 +1,490 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8361641033066341763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c14010beb51b4d48a4924c180d0355b, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 75f159378f495b047aef11f04b079fc2
+  position: {x: 0, y: 0}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: -3294147423102028776}
+--- !u!114 &-7057669926277992681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 3dad78bfbee55ef4ea624500b03e4226
+  position: {x: -0.0000038146973, y: 635}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 4
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: 5929525830285349309}
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uC774\uC81C \uBB50\uD558\uBA74 \uB420\uAE4C?"
+  <arrayNumber>k__BackingField: 0
+  types: 0
+  emtionTypes: 1
+  alreadyRead: 0
+--- !u!114 &-6731313124454574576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 384b6250f2dea5146aa41e4300d0e7b0
+  position: {x: -0.000022888184, y: 1077}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: -1909116124219867853}
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uC9C0\uAE08 \uB2F9\uC7A5 \uD589\uB3D9\uD560\uAC8C."
+  <arrayNumber>k__BackingField: 0
+  types: 3
+  emtionTypes: 0
+  alreadyRead: 0
+--- !u!114 &-6612452527817931728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7986d86e8f0bf744bbf2d3480a2a5f9d, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8271b6446f711a745b1eb69b5ece9a9c
+  position: {x: -364.70016, y: 274.7001}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  duration: 0.6
+--- !u!114 &-6164170914323414475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90370a7fd864fc5478c26db667d2bc2b, type: 3}
+  m_Name: DoScriptMove
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8b544d77d971521478e221a58e9fa921
+  position: {x: -206.70016, y: 274.7001}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  <arrayNumber>k__BackingField: 0
+  types: 0
+--- !u!114 &-6128062547093092129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e40cbd38f34125468716020586ad5f1, type: 3}
+  m_Name: DoScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 72c34e323c6d7ae4aa5b1e592d889d74
+  position: {x: -680.7002, y: 274.7001}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  types: 0
+--- !u!114 &-3294147423102028776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8576fc512b36c0a458e3e17425523308, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a8d0c736062f39d4f9ce238a359b7e61
+  position: {x: 0, y: 116}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  children:
+  - {fileID: -6128062547093092129}
+  - {fileID: 7634150470913424827}
+  - {fileID: -6612452527817931728}
+  - {fileID: -6164170914323414475}
+  - {fileID: -1894652320062240805}
+--- !u!114 &-1909116124219867853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8576fc512b36c0a458e3e17425523308, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f9ebac709ca6bfb44ad8dd94744f05c8
+  position: {x: 0, y: 1274}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  children:
+  - {fileID: 708525838957995682}
+  - {fileID: 3569977138331852116}
+  - {fileID: 4915414439506718305}
+  - {fileID: 3526442277239565951}
+--- !u!114 &-1894652320062240805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 15b6947edb7c4004dbc04d5158a3eb43
+  position: {x: -0.000029373172, y: 275.00006}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 1
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: 8339719742351221318}
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uC120\uC0DD\uB2D8..\uC5EC\uAE30\uC57C."
+  <arrayNumber>k__BackingField: 0
+  types: 0
+  emtionTypes: 0
+  alreadyRead: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c4fc3c8794f454e9b2f2d68611b580, type: 3}
+  m_Name: script1
+  m_EditorClassIdentifier: 
+  behaviourTreeType: 0
+  rootNode: {fileID: -8361641033066341763}
+  treeState: 0
+  nodes:
+  - {fileID: -8361641033066341763}
+  - {fileID: -3294147423102028776}
+  - {fileID: -6128062547093092129}
+  - {fileID: 7634150470913424827}
+  - {fileID: -6612452527817931728}
+  - {fileID: -6164170914323414475}
+  - {fileID: -1894652320062240805}
+  - {fileID: 8339719742351221318}
+  - {fileID: 3146803825937780730}
+  - {fileID: -7057669926277992681}
+  - {fileID: 5929525830285349309}
+  - {fileID: 6619855199085054260}
+  - {fileID: -6731313124454574576}
+  - {fileID: 3569977138331852116}
+  - {fileID: 4915414439506718305}
+  - {fileID: 3526442277239565951}
+  - {fileID: 708525838957995682}
+  - {fileID: -1909116124219867853}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &708525838957995682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449728e7d30792549904d07cebdd4628, type: 3}
+  m_Name: ScriptEndNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f2c6d58319ed9e344bb926fcafd44f80
+  position: {x: 0, y: 1432}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  alreadyRead: 0
+--- !u!114 &3146803825937780730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 152fd58a61cd6284d98af8f230906ee0
+  position: {x: -0.000002861023, y: 515.00006}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 3
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: -7057669926277992681}
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uC774\uC81C \uB9C9 \uC704\uCE58\uC5D0 \uB3C4\uCC29\uD588\uC5B4"
+  <arrayNumber>k__BackingField: 0
+  types: 2
+  emtionTypes: 0
+  alreadyRead: 0
+--- !u!114 &3526442277239565951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7986d86e8f0bf744bbf2d3480a2a5f9d, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: be93313dc8078ca45b1e56c023ec8fa9
+  position: {x: -207, y: 1433}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  duration: 0.6
+--- !u!114 &3569977138331852116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd163861d0cca8647bf53fac7ff2ef14, type: 3}
+  m_Name: DoScriptFade
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0eab6846cf9a53e47a6e4cfa035698ae
+  position: {x: -523.0002, y: 1432.6265}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  <arrayNumber>k__BackingField: 0
+  types: 1
+--- !u!114 &4915414439506718305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e40cbd38f34125468716020586ad5f1, type: 3}
+  m_Name: DoScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9e46c356f6ae07f46a4a1dd4d0691034
+  position: {x: -365.00006, y: 1433.0001}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  types: 1
+--- !u!114 &5929525830285349309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db82afd985e19d542b7720a183042dab, type: 3}
+  m_Name: ScriptSequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: dc400a3fbd19d9646bdf65dbf318928a
+  position: {x: 0, y: 821.36414}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  children:
+  - {fileID: 6619855199085054260}
+  selectNumber: -1
+--- !u!114 &6619855199085054260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: bb11e351d85350d43a19bb4d53e974a5
+  position: {x: 0.00004196167, y: 956.95026}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: "\uC77C\uB2E8 \uC0C1\uD669\uC744 \uC815\uB9AC\uD558\uC790."
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: -6731313124454574576}
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uC751. \uC54C\uACA0\uC5B4."
+  <arrayNumber>k__BackingField: 0
+  types: 0
+  emtionTypes: 0
+  alreadyRead: 0
+--- !u!114 &7634150470913424827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd163861d0cca8647bf53fac7ff2ef14, type: 3}
+  m_Name: DoScriptFade
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f4288d4a37db67444ac9a39c6257de73
+  position: {x: -522.7002, y: 274.7001}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  <arrayNumber>k__BackingField: 0
+  types: 0
+--- !u!114 &8339719742351221318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 46ecc583d19e3ad4aa333d5700ced7b1
+  position: {x: -0.000005722046, y: 395}
+  btContainer:
+    targetPosition: {x: 0, y: 0, z: 0}
+  description: 2
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: 3146803825937780730}
+  <characterName>k__BackingField: "\uC2DC\uB85C\uCF54"
+  <schoolClubName>k__BackingField: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  <script>k__BackingField: "\uB098\uC57C. \uC2DC\uB85C\uCF54."
+  <arrayNumber>k__BackingField: 0
+  types: 1
+  emtionTypes: 2
+  alreadyRead: 0

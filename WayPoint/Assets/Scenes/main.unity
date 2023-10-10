@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <type>k__BackingField: 1
-  tree: {fileID: 11400000, guid: 40336973cf691da48b9e284eec0191a2, type: 2}
+  tree: {fileID: 11400000, guid: 35dad47d17e99034d8252f5e251d33a2, type: 2}
   so: {fileID: 0}
 --- !u!4 &330864148
 Transform:
@@ -4118,13 +4118,13 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.99971724
+    width: 1
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 11.25
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

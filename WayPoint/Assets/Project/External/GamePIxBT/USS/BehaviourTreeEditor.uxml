@@ -10,7 +10,7 @@
             <BehaviourTreeView focusable="true" style="flex-grow: 1; overflow: hidden;" />
         </ui:VisualElement>
         <ui:VisualElement name="right-panel" style="width: 100px;">
-            <SplitView orientation="Vertical" fixed-pane-initial-dimension="300" style="width: 600px; flex-basis: auto;">
+            <SplitView orientation="Vertical" fixed-pane-initial-dimension="450" style="width: auto; flex-basis: auto;">
                 <ui:VisualElement name="inspector-container">
                     <ui:Label text="Insepctor" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
                     <InspectorView />
