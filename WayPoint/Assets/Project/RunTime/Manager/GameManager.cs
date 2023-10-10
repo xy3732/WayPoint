@@ -21,6 +21,7 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector] public bool isPause { get; set; }
 
     [field: SerializeField] public AbilitySO[] abilitys { get; set; }
+    [field: SerializeField] public PopImageSO[] popCharacters { get; set; }
 
     [field: SerializeField] public GameObject debugTestObject { get; set; }
     [field: SerializeField] public GameObject debugTestObject2 { get; set; }

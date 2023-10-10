@@ -11,9 +11,7 @@ public class SkillEffectSprites : MonoBehaviour
   
     [field: Space(20)]
 
-    [field: SerializeField] public Sprite backgroundEffect { get; set; }
-    [field: SerializeField] public Sprite backgroundMask { get; set; }
-    [field: SerializeField] public Sprite character { get; set; }
+    [field: SerializeField] public PopImageSO popSprites { get; set; }
 
 
 
@@ -74,13 +72,15 @@ public class SkillEffectSprites : MonoBehaviour
 
     private void onEnd()
     {
-        tweener = transform.DOScale(new Vector3(0,0,0), 0.4f).SetEase(Ease.OutQuad).OnComplete( () => active(false));
+        tweener = transform.DOScale(new Vector3(0,0,0), 0.4f).SetEase(Ease.OutQuad).OnComplete( () => end(false));
     }
 
-    private void active(bool set)
+    private void end(bool set)
     {
         transform.DOKill();
         gameObject.SetActive(set);
+
+        Pooling.instance.setObject(ref UiManager.instance.popUpPool, gameObject);
     }
 
     private void doShake(bool doCheck)
@@ -91,9 +91,9 @@ public class SkillEffectSprites : MonoBehaviour
 
     private void set()
     {
-        backGroundEffectSprite.sprite = backgroundEffect;
-        characterSprite.sprite = character;
-        mask.sprite = backgroundMask;
+        backGroundEffectSprite.sprite = popSprites.backgroundEffect;
+        characterSprite.sprite = popSprites.character48sprite;
+        mask.sprite = popSprites.backgroundMask;
 
         tweener = transform.DOScale(new Vector3(0.2f,0.2f,0.2f),0f).OnComplete( () => onStart()).SetAutoKill(false);
     }

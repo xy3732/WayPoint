@@ -34,7 +34,9 @@ public class UiManager : Singleton<UiManager>
     [field: Space(20)]
 
     public Queue<GameObject> speechPool = new Queue<GameObject>();
+    public Queue<GameObject> popUpPool = new Queue<GameObject>();
     [field: SerializeField] public GameObject speechBublePrefab { get; set; }
+    [field: SerializeField] public GameObject popUpPrefab { get; set; }
 
     [field: Space(20)]
     [field: SerializeField] private GameObject characterBoard { get; set; }
@@ -70,11 +72,19 @@ public class UiManager : Singleton<UiManager>
 
     public GameObject speechUI()
     {
-        var speechObject = Pooling.instance.getSpeechObject(ref speechPool, Player.instance.gameObject, speechBublePrefab);
+        GameObject speechObject = Pooling.instance.getSpeechObject(ref speechPool, Player.instance.gameObject, speechBublePrefab);
         speechObject.GetComponent<SpeechBuble>().onSpeech(SpeechBuble.SpeechTypes.Reload, Player.instance.gameObject);
 
         return speechObject;
     }
+
+    public GameObject popupUI()
+    {
+        GameObject popupObject = Pooling.instance.PopUpObject(ref popUpPool,GameManager.instance.popCharacters[0], popUpPrefab);
+
+        return popupObject;
+    }
+
 
     public void characterHitUI()
     {

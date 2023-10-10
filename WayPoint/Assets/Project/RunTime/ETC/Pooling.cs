@@ -32,6 +32,19 @@ public class Pooling : Singleton<Pooling>
         return getObject;
     }
 
+    public GameObject PopUpObject(ref Queue<GameObject> pool, PopImageSO pop, GameObject gameObject)
+    {
+        GameObject getObject;
+
+        if (pool.Count > 0) getObject = pool.Dequeue();
+        else getObject = CreateObjects(gameObject);
+
+        getObject.GetComponent<SkillEffectSprites>().popSprites = pop;
+        getObject.SetActive(true);
+
+        return getObject;
+    }
+
     public GameObject getSpeechObject(ref Queue<GameObject> pool, GameObject parent, GameObject gameObject)
     {
         GameObject getObject;
