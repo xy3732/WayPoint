@@ -46,7 +46,7 @@ public class WeaponAnchor : MonoBehaviour
 
     private void MouseLookUp()
     {
-        if (UiManager.instance.ScriptsObject.activeSelf) return;
+        if (UIManager.instance.ScriptsObject.activeSelf) return;
 
         GameManager gameManager = GameManager.instance;
         var angle = Mathf.Atan2(

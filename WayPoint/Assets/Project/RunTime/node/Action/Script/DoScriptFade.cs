@@ -19,7 +19,7 @@ public class DoScriptFade : ActionNode
 
     protected override void OnStart()
     {
-        image = UiManager.instance.CharacterSprites[arrayNumber].gameObject.GetComponent<Image>();
+        image = UIManager.instance.CharacterSprites[arrayNumber].gameObject.GetComponent<Image>();
 
         if (image == null)
         {
@@ -59,6 +59,6 @@ public class DoScriptFade : ActionNode
         image.gameObject.SetActive(false);
         image.gameObject.GetComponent<CharacterImageEffect>().haloObject?.SetActive(false);
 
-        UiManager.instance.scriptsUiObject.SetActive(false);
+        UIManager.instance.scriptsUiObject.SetActive(false);
     }
 }

@@ -15,7 +15,7 @@ public class DoScriptNode : ActionNode
 
     protected override void OnStart()
     {
-        var uiManager = UiManager.instance;
+        var uiManager = UIManager.instance;
 
         switch (types)
         {
@@ -55,7 +55,7 @@ public class DoScriptNode : ActionNode
         return State.Success;
     }
 
-    private void endSet(UiManager uiManager)
+    private void endSet(UIManager uiManager)
     {
         // script(대사) 오브젝트들 비활성화
         uiManager.scriptsUiObject.SetActive(false);

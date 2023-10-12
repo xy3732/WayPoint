@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 using DG.Tweening;
 using TMPro;
-public class UiManager : Singleton<UiManager>
+public class UIManager : Singleton<UIManager>
 {
 
     // Scripts
@@ -52,7 +52,6 @@ public class UiManager : Singleton<UiManager>
     [field: SerializeField] public Image expBar { get; set; }
 
     private Player player { get; set; }
-    private Tweener hpBarTweener { get; set; }
     private void Start()
     {
         
@@ -65,8 +64,7 @@ public class UiManager : Singleton<UiManager>
         characterBoardNormalVector = characterBoard.GetComponent<RectTransform>().transform.position;
         characterNormalVector = character.GetComponent<RectTransform>().transform.position;
 
-        hpBarTweener = hpBar.DOColor(new Color32(155, 225, 100, 255), 0.4f).SetAutoKill(false);
-
+        hpBar.DOColor(new Color32(155, 225, 100, 255), 0.4f);
         player = Player.instance;
     }
 
@@ -98,15 +96,19 @@ public class UiManager : Singleton<UiManager>
 
         character.color = new Color32(255, 190, 190, 255);
 
+        Debug.Log("1");
         barUI(hpBar, Player.instance.playerData.hp, Player.instance.playerData.maxHp);
-        hpBarTweener.ChangeEndValue(new Color32(255, 90, 30, 255), 0.5f, true).
-            SetEase(Ease.OutQuint).
-            OnComplete(() => doLateAnimationUpdate()).
-            Restart();
+
+        hpBar.DOKill();
+        hpBar.DOColor(new Color32(255, 90, 30, 255), 0.3f).
+           SetEase(Ease.OutQuint).
+            OnComplete(() => doLateAnimationUpdate());
     }
 
     private void doLateAnimationUpdate()
     {
+        Debug.Log("2");
+
         hpLateBarUI();
         characterNormalUI();
 
@@ -117,7 +119,9 @@ public class UiManager : Singleton<UiManager>
     private void hpLateBarUI()
     {
         barUI(hpLateBar, Player.instance.playerData.hp, Player.instance.playerData.maxHp);
-        hpBarTweener.ChangeEndValue(new Color32(155,255,100,255),0.4f, true).Restart();
+
+        hpBar.DOKill();
+        hpBar.DOColor(new Color32(155,255,100,255 ),0.4f);
     }
 
     private void characterNormalUI()

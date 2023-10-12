@@ -19,7 +19,7 @@ public class DoScriptMove : ActionNode
 
     protected override void OnStart()
     {
-        image = UiManager.instance.CharacterSprites[arrayNumber].gameObject?.GetComponent<RectTransform>();
+        image = UIManager.instance.CharacterSprites[arrayNumber].gameObject?.GetComponent<RectTransform>();
         if(image == null)
         {
             Debug.LogWarning($"{this.name} - RectTransform is null");

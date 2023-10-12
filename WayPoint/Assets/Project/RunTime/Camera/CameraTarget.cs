@@ -9,7 +9,7 @@ public class CameraTarget : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (UiManager.instance.scriptButtonObject.activeSelf) return;
+        if (UIManager.instance.scriptButtonObject.activeSelf) return;
 
         Transform player = Player.instance.transform;
         Vector3 mousePos = GameManager.instance.mousePos;

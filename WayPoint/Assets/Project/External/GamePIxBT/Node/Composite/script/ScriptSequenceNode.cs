@@ -18,7 +18,7 @@ public class ScriptSequenceNode : CompositeNode
         for(int i= 0; i< children.Count; i++) children[i].selectNode = i;
 
         // 버튼 생성
-       UiManager.instance.InitButtonSelection(children.Count, children,container);
+       UIManager.instance.InitButtonSelection(children.Count, children,container);
     }
 
     protected override void OnStop()
