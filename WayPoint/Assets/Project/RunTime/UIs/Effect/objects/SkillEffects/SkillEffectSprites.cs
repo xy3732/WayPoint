@@ -80,7 +80,7 @@ public class SkillEffectSprites : MonoBehaviour
         transform.DOKill();
         gameObject.SetActive(set);
 
-        Pooling.instance.setObject(ref UiManager.instance.popUpPool, gameObject);
+        Pooling.instance.setObject(ref UIManager.instance.popUpPool, gameObject);
     }
 
     private void doShake(bool doCheck)

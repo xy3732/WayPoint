@@ -39,12 +39,12 @@ public class ScriptNode : DecoratorNode
 
         // text 설정
         container.textScript = script;
-        UiManager.instance.setScriptText(characterName,schoolClubName,script);
+        UIManager.instance.setScriptText(characterName,schoolClubName,script);
 
-        if (!UiManager.instance.scriptsUiObject.activeSelf) UiManager.instance.scriptsUiObject.SetActive(true);
+        if (!UIManager.instance.scriptsUiObject.activeSelf) UIManager.instance.scriptsUiObject.SetActive(true);
 
         // effect 설정
-        image = UiManager.instance.CharacterSprites[arrayNumber];
+        image = UIManager.instance.CharacterSprites[arrayNumber];
         if (image == null) Debug.LogWarning($"{this.name} - CharacterImageEffect is null");
 
         else

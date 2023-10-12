@@ -14,7 +14,7 @@ public class WeaponData : Singleton<WeaponData>
     private float curReload = 0;
     [HideInInspector] public float maxReload { get; set; }
 
-    private UiManager uImanager;
+    private UIManager uImanager;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class WeaponData : Singleton<WeaponData>
 
     private void Start()
     {
-        uImanager = UiManager.instance;
+        uImanager = UIManager.instance;
     }
 
     private void Update()

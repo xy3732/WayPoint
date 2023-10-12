@@ -11,7 +11,7 @@ public abstract class AbilitySO : ScriptableObject
     }
 
     // id
-    [field: SerializeField] public int id { get; set; }
+    [field: SerializeField] public int id { get; set; } 
     [field: SerializeField] public string character { get; set; }
 
     // sprite , color
